@@ -1,0 +1,11 @@
+site_name: SamPenn KnowledgeBase
+
+theme:
+  name: material
+
+nav:
+  - 首页: index.md
+  - Codes:
+      - Codes: Codes/Jupyter.md
+  - LaserPlasma:
+      - LaserPlasma: LaserPlasma/基本手册.md
