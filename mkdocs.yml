@@ -1,11 +1,40 @@
+# ======================================
+# 网站基本信息
+# ======================================
+
 site_name: SamPenn KnowledgeBase
+
+# ======================================
+# 主题
+# ======================================
 
 theme:
   name: material
 
+# ======================================
+# 导航
+# ======================================
+
 nav:
   - 首页: index.md
   - Codes:
-      - Codes: Codes/Jupyter.md
-  - LaserPlasma:
-      - LaserPlasma: LaserPlasma/基本手册.md
+      - Codes: Codes/Jupyter.md                                 #AA:BB/CC.md AA为网站显示的导航栏，BB/CC.md为本地文件路径，以docs为根目录
+  - LaserPlasma:                                                             #一级导航
+      - LaserPlasma: LaserPlasma/基本手册.md           #二级导航
+
+
+# ======================================
+# Markdown 扩展
+# ======================================
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: false
+
+# ======================================
+# JavaScript
+# ======================================
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
