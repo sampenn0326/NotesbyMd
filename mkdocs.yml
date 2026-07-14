@@ -29,7 +29,7 @@ nav:
 
 markdown_extensions:
   - pymdownx.arithmatex:
-      generic: false
+      generic: true
 
 # ======================================
 # JavaScript
