@@ -35,12 +35,13 @@ nav:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.highlight:                 #代码语法高亮
+
+  - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
 
-  - pymdownx.superfences 
+  - pymdownx.superfences
 
 # ======================================
 # JavaScript
