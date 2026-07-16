@@ -6,6 +6,16 @@
 
 C++学习网：[C++学习网 – 世界上最好的中文C++学习网站](https://www.studycpp.cn/)
 
+在线汇编工具：
+
+菜鸟工具[C++ 在线工具 | 菜鸟工具](https://www.jyshare.com/compile/12/)
+
+onlineGDB[GDB online Debugger | Compiler - Code, Compile, Run, Debug online C, C++](https://www.onlinegdb.com/)
+
+Replit：[Home - Replit](https://replit.com/~)
+
+
+
 缓慢更新中(26.07.14)
 
 ### 变量
@@ -27,11 +37,251 @@ static int c;        // 定义：静态变量
 
 
 
-`constexpr`编译时已知
+#### 常量变量
 
-```c++
+```C++
+const int PI = 3.14;
 constexpr double PI = 3.141592653589793;
 ```
+
+`constexpr`编译期常量。
+
+
+
+# 二、函数
+
+
+
+## 2.0 基本简介
+
+1.用户定义函数的形式
+
+```C++
+返回值类型 函数名() // 函数头，告知编译器函数的存在
+{
+    // 函数体
+}
+```
+
+2.定义和调用函数的示例
+
+```C++
+#include <iostream>
+
+// 用户自定义函数 doPrint()
+void doPrint() // doPrint() 是被调函数
+{
+    std::cout << "In doPrint()\n";
+}
+
+// 定义函数 main()
+int main()
+{
+    std::cout << "Starting main()\n";
+    doPrint(); // 去执行函数 doPrint().  main() 是调用者.
+    std::cout << "Ending main()\n"; // doPrint() 执行结束后，返回这里继续执行
+
+    return 0;
+}
+```
+
+3.可多次调用；可嵌套地调用
+
+```C++
+#include <iostream>
+
+void doB()
+{
+    std::cout << "In doB()\n";
+}
+
+
+void doA()
+{
+    std::cout << "Starting doA()\n";
+
+    doB();
+
+    std::cout << "Ending doA()\n";
+}
+
+// Definition of function main()
+int main()
+{
+    std::cout << "Starting main()\n";
+
+    doA();
+
+    std::cout << "Ending main()\n";
+
+    return 0;
+}
+```
+
+4.函数不能在函数中定义
+
+## 2.1 返回值
+
+1.返回值给变量初始化
+
+```C++
+#include <iostream>
+
+int getValueFromUser() // 本函数返回一个int值
+{
+     std::cout << "Enter an integer: ";
+    int input{};
+    std::cin >> input;  
+
+    return input; // 将用户输入的值返回给调用函数
+}
+
+int main()
+{
+    int num { getValueFromUser() }; // 使用getValueFromUser()的结果初始化变量num
+
+    std::cout << num << " doubled is: " << num * 2 << '\n';
+
+    return 0;
+}
+```
+
+2.应确保具有非void返回类型的函数在所有情况下都返回值。
+
+3.函数只能返回单个值，但有各种方法可以解决函数只能返回单个值的限制。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# C++ 头文件、源文件与声明/定义的完整关系
+
+---
+
+## 一、直观比喻（建立画面感）
+
+想象你要**盖一栋房子**：
+
+- **头文件（.h）** = **设计图纸**（告诉工人这里要有什么，但还没动手建）
+- **源文件（.cpp）** = **施工过程**（按照图纸真正砌砖、搭梁）
+- **声明** = 图纸上写的"这里要有一扇门"（承诺存在）
+- **定义** = 工人在那个位置真的装了一扇门（实际创建）
+
+**关键：** 声明可以多次，但定义只能一次（否则工人会装两扇门冲突）。
+
+---
+
+## 二、声明 vs 定义（必须先分清）
+
+### 1. 声明（Declaration）
+**告诉编译器"这个东西存在"**，但不分配内存/不生成代码。
+
+```cpp
+// 函数声明（没有函数体）
+int add(int a, int b);
+
+// 变量声明（使用 extern，不分配内存）
+extern int globalCount;
+
+// 类声明（前向声明）
+class Student;  // 告诉编译器 Student 是一个类
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -197,3 +447,11 @@ int main() {
 
 
 
+
+
+## SoA和AoS
+
+- **AoS（Array of Structures）**：结构体的数组。数据按“对象”聚集，每个对象拥有所有属性。
+- **SoA（Structure of Arrays）**：数组的结构体。数据按“属性”聚集，每个属性单独放在一个连续数组中。
+
+例如
