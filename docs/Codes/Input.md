@@ -204,10 +204,12 @@ full.coarsening_ratio = 2 2
 
 
 
-# Reduced Diags
+# Reduced Diags 减量诊断
+
+一个输出H能谱的案例
 
 ```
-warpx.reduced_diags_names = histH ElecTemp      
+warpx.reduced_diags_names = histH
 
 histH.type = ParticleHistogram
 histH.intervals = 100
@@ -216,11 +218,10 @@ histH.bin_number = 400
 histH.bin_min = 5
 histH.bin_max = 100
 histH.histogram_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)"
-#筛选条件1：离子动能大于某阈值
+#筛选条件1：离子动能大于某阈值;如果只过滤能量较低的部分，直接设置bin_min即可
 histH.filter_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)>=10"
 #筛选条件2：前向性离子
 histH.filter_function(t,x,y,z,ux,uy,uz) = "uz>=0"
-
 ```
 
 
