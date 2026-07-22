@@ -138,6 +138,91 @@ my.constants.f = te/s2
 
 
 
+一种CH2靶
+
+```
+particles.species_names = ele H C
+
+H.species_type = proton
+H.injection_style = NUniformPerCell
+H.num_particles_per_cell_each_dim = 2 2
+H.momentum_distribution_type = at_rest
+H.profile = parse_density_function
+H.density_function(x,y,z) =  " n_H * (abs(x)<=x0)*((z<=D)*(z>=0) +(z<0)*(z>=z1)*exp(-abs(z)/L) ) "
+
+C.charge = 6*q_e                 #注意一般离子的电荷、质量设置格式
+C.mass = 12*m_p 
+C.injection_style = NUniformPerCell
+C.num_particles_per_cell_each_dim = 2 2
+C.momentum_distribution_type = at_rest
+C.profile = parse_density_function
+C.density_function(x,y,z) =  " n_C * (abs(x)<=x0)*((z<=D)*(z>=0) +(z<0)*(z>=z1)*exp(-abs(z)/L) ) "
+
+
+ele.species_type = electron
+ele.injection_style = NUniformPerCell
+ele.num_particles_per_cell_each_dim = 2 2
+ele.momentum_distribution_type = at_rest
+ele.profile = parse_density_function
+ele.density_function(x,y,z) = " n_e * (abs(x)<=x0)*((z<=D)*(z>=0) + (z<0)*(z>=z1)*exp(-abs(z)/L) ) "
+```
+
+
+
+
+
+
+
+# Diags
+
+
+
+## Full Diags
+
+```
+diagnostics.diags_names = full
+
+full.intervals = 100
+full.diag_type = Full
+full.format = openpmd
+full.openpmd_backend = h5
+full.write_species = 1
+full.species = ele H C
+full.ele.random_fraction = 0.01
+full.H.random_fraction = 0.01
+full.ele.variables = w ux uy uz x z
+full.H.variables = w ux uy uz x z
+full.fields_to_plot = Ex Ez rho_ele rho_H
+full.coarsening_ratio = 2 2
+```
+
+设置时需要考虑每步输出文件大小，其中粒子数据约10w->4.6MB，场数据$1k\times 1k $ cells的一种场量对应8MB。
+
+一次模拟总粒子数在100w-1000w为宜。
+
+
+
+
+
+# Reduced Diags
+
+```
+warpx.reduced_diags_names = histH ElecTemp      
+
+histH.type = ParticleHistogram
+histH.intervals = 100
+histH.species = hydrogen
+histH.bin_number = 400
+histH.bin_min = 5
+histH.bin_max = 100
+histH.histogram_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)"
+#筛选条件1：离子动能大于某阈值
+histH.filter_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)>=10"
+#筛选条件2：前向性离子
+histH.filter_function(t,x,y,z,ux,uy,uz) = "uz>=0"
+
+```
+
 
 
 

@@ -2,6 +2,12 @@
 
 
 
+# Theory
+
+![Yee grid layout and leapfrog time integration](https://warpx.readthedocs.io/en/latest/_images/Yee_grid.png)
+
+
+
 
 
 ## 调用链
