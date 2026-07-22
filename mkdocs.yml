@@ -24,7 +24,7 @@ nav:
       - Jupyter: Codes/Jupyter.md                                 #AA:BB/CC.md AA为网站显示的导航栏，BB/CC.md为本地文件路径，以docs为根目录
       - C++: Codes/C++.md
       - Input: Codes/Input.md
-  - LaserPlasma:                                                             #一级导航
+  - LaserPlasma:                                     #一级导航
       - 快速手册: LaserPlasma/基本手册.md           #二级导航
       - 离子加速: 离子加速/离子加速[笔记].md
 
