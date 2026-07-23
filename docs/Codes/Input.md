@@ -10,7 +10,7 @@
 
 ### 1.2.1 自定义A
 
-
+主要特点： &#9312; 时间形状是改良的高斯上升/下降沿+平顶；改良主要是去掉了高斯太长的尾巴。 &#9313; 横向分布是trivial的平面波；圆偏振。
 
 ```
 ################ Laser ################
@@ -41,7 +41,7 @@ my.constants.e = 2.718282
 my.constants.e1 = 1/sqrt(e) # e为自然常数，在warpx中没有内置需要定义
 
 my.constants.s1 = T
-my.constants.s2 = 2*T
+my.constants.s2 = 2*T  #s1, s2是控制上升下降沿的参数，具体而言2*s1是上升沿整体宽度
 my.constants.tau_p = 8*T
 
 my.constants.ts = 0  #脉冲起始
@@ -56,89 +56,42 @@ my.constants.f = te/s2
 
 <img src="https://cdn.jsdelivr.net/gh/sampenn0326/PicGo@main/img/laser_profile_flattop_with_modified_gussian_rise%26down.png" alt="laser_profile_flattop_with_modified_gussian_rise&down" style="zoom: 33%;" />
 
+### 1.2.2自定义B
 
 
 
+```
+lasers.names        = laser1
 
+laser1.position = 0. 0. zl
+laser1.direction = 0. 0. 1.
+laser1.polarization = 1. 0. 0.
+laser1.a0 = a0
+laser1.wavelength = lambda
+laser1.profile =  parse_field_function
+laser1.field_function(X,Y,t) = E0*cos(w*t)*((t>ts)*(t<ta)*(t-ts)/tr+(t>ta)*(t<tb)*1+(t>tb)*(t<te)*(1-(t-tb)/tf))
 
+#参数依赖
 
+my_contants.tr = 0   #上升沿rise宽度
+my_contants.tf = 0   #下降沿fall宽度
+my_contants.tp = 0   #平顶宽度
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+my_contants.ts = 0           #上升沿开始start
+my_contants.ta = ts + tr     #平顶开始
+my_contants.tb = ta + tp     #平顶结束
+my_contants.te = tb + tf     #下降沿结束end
+```
 
 
 
 # 2.等离子体靶
 
-
+## 2.1 供密度、成分参考
 
 一种CH2靶
+
+据称 $n_e =220 n_c$ 是接近实验参数的
 
 ```
 particles.species_names = ele H C
@@ -165,15 +118,25 @@ ele.num_particles_per_cell_each_dim = 2 2
 ele.momentum_distribution_type = at_rest
 ele.profile = parse_density_function
 ele.density_function(x,y,z) = " n_e * (abs(x)<=x0)*((z<=D)*(z>=0) + (z<0)*(z>=z1)*exp(-abs(z)/L) ) "
+
+C60.charge = 10*q_e
+C60.mass = 720*m_p 
+C60.injection_style = NUniformPerCell
+C60.num_particles_per_cell_each_dim = 2 2
+C60.momentum_distribution_type = at_rest
+C60.profile = parse_density_function
+C60.density_function(x,y,z) =  " n_C * (abs(x)<=x0)*((z<=D)*(z>=0) +(z<0)*(z>=z1)*exp(-abs(z)/L) ) "
 ```
 
+C60晶体的真实分子数密度1.38e21cm-3，或1.24nc。
+
+## 2.2 供形状几何参考
 
 
 
 
 
-
-# Diags
+# 3.Diags诊断
 
 
 
@@ -204,24 +167,33 @@ full.coarsening_ratio = 2 2
 
 
 
-# Reduced Diags 减量诊断
+# 4.Reduced Diags 减量诊断
 
-一个输出H能谱的案例
+一个输出H、e能谱的案例
 
 ```
-warpx.reduced_diags_names = histH
+warpx.reduced_diags_names = spec_H spec_e
 
-histH.type = ParticleHistogram
-histH.intervals = 100
-histH.species = hydrogen
-histH.bin_number = 400
-histH.bin_min = 5
-histH.bin_max = 100
-histH.histogram_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)"
+spec_H.type = ParticleHistogram
+spec_H.intervals = 100
+spec_H.species = H
+spec_H.bin_number = 400
+spec_H.bin_min = 5
+spec_H.bin_max = 100
+spec_H.histogram_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)"
 #筛选条件1：离子动能大于某阈值;如果只过滤能量较低的部分，直接设置bin_min即可
-histH.filter_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)>=10"
+spec_H.filter_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)>=10"
 #筛选条件2：前向性离子
-histH.filter_function(t,x,y,z,ux,uy,uz) = "uz>=0"
+spec_H.filter_function(t,x,y,z,ux,uy,uz) = "uz>=0"
+
+spec_e.type = ParticleHistogram
+spec_e.intervals = 200
+spec_e.species = ele
+spec_e.bin_number = 400
+spec_e.bin_min = 0
+spec_e.bin_max = 100
+spec_e.histogram_function(t,x,y,z,ux,uy,uz) = "0.510999*(sqrt(1+ux^2+uy^2+uz^2)-1)" #注意电子的静质量
+#spec_e.filter_function(t,x,y,z,ux,uy,uz) = "uz>=0"
 ```
 
 
