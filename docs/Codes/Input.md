@@ -132,6 +132,28 @@ C60晶体的真实分子数密度1.38e21cm-3，或1.24nc。
 
 ## 2.2 供形状几何参考
 
+一种横向正弦形靶。横向box恰好覆盖靶的一个横向空间周期时，可以恰当选用Periodic边界条件。
+
+```
+H.density_function(x,y,z) = " n_H * (z<=A0*sin(q*x))*(z>=-d0 + A0*sin(q*x)) "
+```
+
+一种um厚的平凸形靶。外加密度径向线性下降的调制。
+
+```
+H.density_function(x,y,z) = " nH*(z <= d0)*((z>=(x^2)/(2*Rc))*(1-abs(x)/RA)*(abs(x)<R0) ) "
+```
+
+一种nm数量级的凹凸形靶。
+
+```
+H.density_function(x,y,z) = " n_H*(z<=(d0*x^2)/(2*Rc^2))*(z>=(d0*(x^2/(2*Rc^2)-1)))*(abs(x)<=R0) "
+```
+
+
+
+
+
 
 
 
@@ -196,11 +218,13 @@ spec_e.histogram_function(t,x,y,z,ux,uy,uz) = "0.510999*(sqrt(1+ux^2+uy^2+uz^2)-
 #spec_e.filter_function(t,x,y,z,ux,uy,uz) = "uz>=0"
 ```
 
+能谱按histogram诊断和实际粒子数的关系：
+
+实际输出的每step的数据是分bin粒子数，按照ai解读官方文档的说法已经考虑了**粒子权重**，后处理时候该数据比上bin宽度就是真实的 $\mathrm{d}N/\mathrm{d}E$ 值。
 
 
 
-
-
+WarpX的 `BoundaryScrapingDiagnostics` 专门收集在吸收边界被删除的粒子，并记录粒子撞击边界的时间等信息。
 
 
 

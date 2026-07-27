@@ -418,6 +418,324 @@ print(f"模拟2最大叠加值: {np.max(sum_density2):.2f} {N_UNIT}")
 plt.show()
 ```
 
+### 1.3 动态Movie
+
+```python
+# =========== 密度演化GIF ===========
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+from openpmd_viewer import OpenPMDTimeSeries
+import os
+import warnings
+from IPython.display import HTML, display
+from scipy import constants as C
+
+# ==================== 参数配置 ====================
+data_path = '../diags/full'
+fig_dir = '../fig'
+SPECIES = 'ele'           # 物种
+FIELD = f'rho_{SPECIES}'       # 场量
+
+# 文件名设置
+FILENAME = None  # None: 自动生成 f'{SPECIES}_density.gif', 或自定义如 'my_density.gif'
+
+# 物理常数
+lambda0 = 1e-6
+CHARGE = -C.e
+T0 = lambda0/C.c
+nc = 1.1e27                    # 临界密度
+
+# 单位换算因子（原始数据 -> 绘图单位）
+DX = 1e-6         # 横轴（z方向）: m -> um
+DY = 1e-6         # 纵轴（x方向）: m -> um
+DT = T0           # 时间: s -> T0
+DN = CHARGE * nc  # 电荷密度 -> nc单位（除以DN得到归一化密度）
+
+# 单位标签
+Z_UNIT = '$\mu m$'
+X_UNIT = '$\mu m$'
+T_UNIT = '$T_0$'
+N_UNIT = '$n_c$'
+
+# 绘图参数
+CMAP = 'hot_r'                  # 颜色映射
+FIG_SIZE = (8, 5)              # 图形大小
+GIF_FPS = 5                    # GIF帧率
+GIF_INTERVAL_MS = 1000/GIF_FPS # 动画间隔(ms)
+GIF_DPI = 100                  # GIF分辨率
+
+# ==================== 范围选择 ====================
+# 范围限制: None 表示全部，否则为 (min, max)
+Z_RANGE = None              # z方向范围（横轴）单位: Z_UNIT
+X_RANGE = None            # x方向范围（纵轴）单位: X_UNIT
+T_RANGE = None                 # 时间范围（帧索引或时间值）单位: T_UNIT (None=全部, 或 (t_min, t_max))
+N_RANGE = (0, 100)             # 密度范围（只改变颜色映射，不改变数据）单位: N_UNIT (None=自动)
+
+# ==================== 加载数据 ====================
+print("正在加载诊断数据...")
+ts = OpenPMDTimeSeries(data_path)
+
+# 创建保存目录
+os.makedirs(fig_dir, exist_ok=True)
+
+# 设置文件名
+if FILENAME is None:
+    gif_filename = os.path.join(fig_dir, f'{SPECIES}_density.gif')
+else:
+    # 确保文件名有 .gif 后缀
+    if not FILENAME.endswith('.gif'):
+        FILENAME += '.gif'
+    gif_filename = os.path.join(fig_dir, FILENAME)
+
+# 获取所有迭代和时间
+all_iterations = ts.iterations
+all_times = ts.t  # 单位: 秒
+
+# 转换时间为T_UNIT
+all_times_T0 = all_times / DT
+
+# ==================== 应用时间范围 ====================
+def apply_time_range(iterations, times, t_range):
+    """应用时间范围过滤
+    
+    t_range 支持以下格式:
+    - None: 全部时间
+    - (start, end): 范围（可以是帧索引或时间值）
+    - start: 从 start 到结束
+    """
+    if t_range is None:
+        return list(range(len(iterations))), iterations, times
+    
+    # 处理单个值的情况
+    if not isinstance(t_range, (tuple, list)):
+        t_min, t_max = t_range, None
+    elif len(t_range) == 1:
+        t_min, t_max = t_range[0], None
+    else:
+        t_min, t_max = t_range[0], t_range[1]
+    
+    # 判断是帧索引还是时间值
+    if isinstance(t_min, int) and t_min < len(iterations):
+        # 帧索引范围
+        if t_max is None:
+            indices = list(range(t_min, len(iterations)))
+            print(f"时间范围（帧索引）: {t_min} - {len(iterations)-1}")
+        else:
+            if isinstance(t_max, int):
+                indices = list(range(t_min, min(t_max + 1, len(iterations))))
+                print(f"时间范围（帧索引）: {t_min} - {t_max}")
+            else:
+                # 混合模式: 起始帧索引，结束时间值
+                times_in_unit = times / DT if DT != 1 else times
+                mask = (times_in_unit >= t_min) & (times_in_unit <= t_max)
+                indices = np.where(mask)[0].tolist()
+                print(f"时间范围（帧索引起始，{T_UNIT}结束）: 帧≥{t_min} 且 t≤{t_max}")
+    else:
+        # 时间值范围
+        times_in_unit = times / DT if DT != 1 else times
+        if t_max is None:
+            mask = times_in_unit >= t_min
+            print(f"时间范围（{T_UNIT}）: ≥{t_min}")
+        else:
+            mask = (times_in_unit >= t_min) & (times_in_unit <= t_max)
+            print(f"时间范围（{T_UNIT}）: {t_min} - {t_max}")
+        indices = np.where(mask)[0].tolist()
+    
+    if len(indices) == 0:
+        warnings.warn(f"时间范围 {t_range} {T_UNIT} 内无数据，使用全部数据")
+        return list(range(len(iterations))), iterations, times
+    
+    filtered_iterations = [iterations[i] for i in indices]
+    filtered_times = times[indices]
+    
+    print(f"选择 {len(indices)}/{len(iterations)} 个时间步")
+    return indices, filtered_iterations, filtered_times
+
+frame_indices, selected_iterations, selected_times = apply_time_range(
+    all_iterations, all_times, T_RANGE
+)
+
+# 获取坐标信息用于范围裁剪
+_, info_first = ts.get_field(field=FIELD, iteration=selected_iterations[0])
+z_coords_full = info_first.z / DX  # 转换为 Z_UNIT
+x_coords_full = info_first.x / DY  # 转换为 X_UNIT
+
+# ==================== 应用空间范围 ====================
+def get_indices_and_extent(coords, range_val, unit_label):
+    """获取索引切片和extent范围"""
+    if range_val is None:
+        return slice(None), (coords[0], coords[-1])
+    else:
+        mask = (coords >= range_val[0]) & (coords <= range_val[1])
+        indices = np.where(mask)[0]
+        if len(indices) == 0:
+            warnings.warn(f"范围 {range_val} {unit_label} 内无数据")
+            return slice(None), (coords[0], coords[-1])
+        return indices, [range_val[0], range_val[1]]
+
+z_indices, z_extent = get_indices_and_extent(z_coords_full, Z_RANGE, Z_UNIT)
+x_indices, x_extent = get_indices_and_extent(x_coords_full, X_RANGE, X_UNIT)
+extent = [z_extent[0], z_extent[1], x_extent[0], x_extent[1]]
+
+# 打印范围信息
+print("\n=== 范围设置 ===")
+if Z_RANGE is None:
+    print(f"z范围: [{z_coords_full[0]:.1f}, {z_coords_full[-1]:.1f}] {Z_UNIT}")
+else:
+    print(f"z范围: {Z_RANGE} {Z_UNIT}")
+    
+if X_RANGE is None:
+    print(f"x范围: [{x_coords_full[0]:.1f}, {x_coords_full[-1]:.1f}] {X_UNIT}")
+else:
+    print(f"x范围: {X_RANGE} {X_UNIT}")
+    
+if T_RANGE is None:
+    print(f"t范围: [{all_times_T0[0]:.2f}, {all_times_T0[-1]:.2f}] {T_UNIT} ({len(selected_iterations)} 帧)")
+else:
+    print(f"t范围: {selected_times[0]/DT:.2f} - {selected_times[-1]/DT:.2f} {T_UNIT} ({len(selected_iterations)} 帧)")
+
+# ==================== 计算密度范围 ====================
+print("\n正在计算密度范围...")
+if N_RANGE is None:
+    n_max = 0
+    for iteration in selected_iterations:
+        rho, _ = ts.get_field(field=FIELD, iteration=iteration)
+        n_norm = rho / DN  # 直接得到归一化密度 (n/nc)
+        
+        # 应用范围裁剪
+        if isinstance(z_indices, np.ndarray):
+            n_cropped = n_norm[z_indices, :][:, x_indices]
+        else:
+            n_cropped = n_norm[:, x_indices] if isinstance(x_indices, np.ndarray) else n_norm
+        
+        n_max = max(n_max, np.max(n_cropped))
+    
+    VMIN, VMAX = 0, n_max
+    print(f"自动密度范围: 0 - {n_max:.2f} {N_UNIT}")
+else:
+    VMIN, VMAX = N_RANGE
+    print(f"指定密度范围: {VMIN} - {VMAX} {N_UNIT}")
+
+# ==================== 初始化图形 ====================
+iteration = selected_iterations[0]
+rho_first, _ = ts.get_field(field=FIELD, iteration=iteration)
+n_norm_first = rho_first / DN  # 直接得到归一化密度
+
+# 应用范围裁剪并转置 (imshow需要)
+def get_display_data(n_norm, z_indices, x_indices):
+    """获取用于显示的数据（已裁剪和转置）"""
+    if isinstance(z_indices, np.ndarray):
+        data = n_norm[z_indices, :][:, x_indices]
+    else:
+        data = n_norm[:, x_indices] if isinstance(x_indices, np.ndarray) else n_norm
+    return data.T
+
+n_display = get_display_data(n_norm_first, z_indices, x_indices)
+
+fig, ax = plt.subplots(figsize=FIG_SIZE)
+
+im = ax.imshow(n_display, cmap=CMAP, extent=extent,
+               origin='lower', aspect='auto',
+               vmin=VMIN, vmax=VMAX)
+
+# 设置标签和标题
+ax.set_xlabel(f'z ({Z_UNIT})', fontsize=12)
+ax.set_ylabel(f'x ({X_UNIT})', fontsize=12)
+
+# 时间标题 - 修正 LaTeX 语法
+t_current = selected_times[0] / DT
+if N_UNIT == '$n_c$':
+    title_text = f'{SPECIES.capitalize()} Density ($n_i/n_c$) at t={t_current:.2f} {T_UNIT}'
+else:
+    title_text = f'{SPECIES.capitalize()} Density ($n_i$ in {N_UNIT}) at t={t_current:.2f} {T_UNIT}'
+time_text = ax.set_title(title_text, fontsize=14)
+
+# 添加颜色条
+cbar = plt.colorbar(im, ax=ax, label=f'$n_i$ ({N_UNIT})', fraction=0.04, pad=0.01)
+plt.tight_layout()
+
+# ==================== 动画更新函数 ====================
+def update(frame_idx):
+    """更新动画帧"""
+    iteration = selected_iterations[frame_idx]
+    rho, _ = ts.get_field(field=FIELD, iteration=iteration)
+    n_norm = rho / DN  # 直接得到归一化密度
+    
+    # 应用范围裁剪并转置
+    n_display = get_display_data(n_norm, z_indices, x_indices)
+    im.set_data(n_display)
+    
+    # 更新时间标题 - 修正 LaTeX 语法
+    t_current = selected_times[frame_idx] / DT
+    if N_UNIT == '$n_c$':
+        title_text = f'{SPECIES.capitalize()} Density ($n_i/n_c$) at t={t_current:.2f} {T_UNIT}'
+    else:
+        title_text = f'{SPECIES.capitalize()} Density ($n_i$ in {N_UNIT}) at t={t_current:.2f} {T_UNIT}'
+    time_text.set_text(title_text)
+    
+    return [im, time_text]
+
+# ==================== 生成GIF ====================
+print("\n正在生成密度GIF...")
+anim = FuncAnimation(fig, update, frames=len(selected_iterations), 
+                     interval=GIF_INTERVAL_MS, blit=True)
+
+anim.save(gif_filename, writer='pillow', fps=GIF_FPS, dpi=GIF_DPI)
+print(f"GIF已保存: {gif_filename}")
+
+# ==================== 显示信息 ====================
+# 构建范围信息字符串
+range_info = []
+if Z_RANGE: 
+    range_info.append(f'z∈{Z_RANGE}{Z_UNIT}')
+if X_RANGE: 
+    range_info.append(f'x∈{X_RANGE}{X_UNIT}')
+if T_RANGE: 
+    if isinstance(T_RANGE, (tuple, list)) and len(T_RANGE) > 0:
+        if isinstance(T_RANGE[0], int) and (len(T_RANGE) == 1 or (len(T_RANGE) > 1 and isinstance(T_RANGE[1], int))):
+            if len(T_RANGE) == 1:
+                range_info.append(f't∈帧{T_RANGE[0]}-结束')
+            else:
+                range_info.append(f't∈帧{T_RANGE[0]}-{T_RANGE[1]}')
+        else:
+            if len(T_RANGE) == 1:
+                range_info.append(f't≥{T_RANGE[0]}{T_UNIT}')
+            else:
+                range_info.append(f't∈{T_RANGE[0]}-{T_RANGE[1]}{T_UNIT}')
+range_text = f'<br>显示范围: {", ".join(range_info)}' if range_info else ''
+
+# 时间范围字符串
+if T_RANGE is None:
+    time_range_str = f"{all_times_T0[0]:.2f} - {all_times_T0[-1]:.2f}"
+else:
+    if isinstance(T_RANGE, (tuple, list)) and len(T_RANGE) > 0:
+        if isinstance(T_RANGE[0], int) and (len(T_RANGE) == 1 or (len(T_RANGE) > 1 and isinstance(T_RANGE[1], int))):
+            if len(T_RANGE) == 1:
+                time_range_str = f"帧 {T_RANGE[0]} - 结束"
+            else:
+                time_range_str = f"帧 {T_RANGE[0]}-{T_RANGE[1]}"
+        else:
+            if len(T_RANGE) == 1:
+                time_range_str = f"≥{T_RANGE[0]}"
+            else:
+                time_range_str = f"{T_RANGE[0]} - {T_RANGE[1]}"
+    else:
+        time_range_str = str(T_RANGE)
+
+display(HTML(f'''
+<div style="text-align: center; margin: 20px;">
+    <h3>{SPECIES.capitalize()} Ion Density Evolution</h3>
+    <img src="{gif_filename}" style="max-width: 90%; border: 2px solid #ccc; border-radius: 10px;">
+    <p style="color: #666; margin-top: 10px;">
+        文件: {os.path.basename(gif_filename)} | 帧数: {len(selected_iterations)}/{len(all_iterations)} | 帧率: {GIF_FPS} fps<br>
+        密度范围: {VMIN:.2f} - {VMAX:.2f} {N_UNIT} | $n_c = {nc/1e27:.1f}\\times10^{{27}}$ m$^{{-3}}$ (λ={lambda0*1e6:.1f} μm)<br>
+        时间范围: {time_range_str} {T_UNIT} | $T_0 = 2\pi/\\omega = {T0*1e15:.2f}$ fs{range_text}
+    </p>
+</div>
+'''))
+```
+
 
 
 
@@ -654,6 +972,14 @@ def print_data_info():
 # 取消注释以查看数据信息
 # print_data_info()
 ```
+
+
+
+
+
+
+
+
 
 
 
