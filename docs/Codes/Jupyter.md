@@ -10,6 +10,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 ### 1.2 多步静态叠加
 
 适合于薄靶RPA，选取合适的cmap(最低值对应白色)，可以比较紧凑地展示靶的形状变化。不同时间步之间避免重合，因为是数密度值的直接相加。
@@ -1368,9 +1378,38 @@ if total_particles > 0:
 
 
 
+# 附录
+
+一种自定义 `colorbar` ，在一些文章中出现，但python中没有相同的 `cmap` 。
+
+```python
+# ==================== 自定义 colorbar ====================
+
+colors = [
+    "#ffffff",   # 0
+    "#2f2ef7",   # 浅蓝
+    "#034eff",   # 蓝
+    "#01b6fd",   # 青
+    "#1fffe4",   # 绿
+    "#83fe81",   # 黄
+    "#e9ff18",   # 橙
+    "#feac01",    # 红
+    "#fd4a00", 
+    "#e60203", 
+    "#630102"
+]
 
 
+cmap_yield = LinearSegmentedColormap.from_list(
+    "laser_yield",
+    colors,
+    N=256
+)
+```
 
+效果：
+
+![d4fe8bc0281f2307fd66519a400720be](Jupyter.assets/d4fe8bc0281f2307fd66519a400720be.png)
 
 
 

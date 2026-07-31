@@ -6,6 +6,22 @@
 
 ## 1.1 高斯激光
 
+```
+lasers.names        = laser1
+
+laser1.position = 0. 0. zl
+laser1.direction = 0. 0. 1.
+laser1.polarization = 1. 0. 0.
+laser1.a0 = a0
+laser1.wavelength = lambda
+laser1.phi0 = 0
+laser1.profile =  Gaussian
+laser1.profile_duration = 27e-15
+laser1.profile_t_peak = 20e-15
+laser1.profile_waist = 160e-6
+laser1.profile_focal_distance = 8e-6
+```
+
 ## 1.2 自定义
 
 ### 1.2.1 自定义A
@@ -17,7 +33,7 @@
 
 lasers.names = laser1 laser2
 
-laser1.position = 0. 0. zL
+laser1.position = 0. 0. zl
 laser1.direction = 0. 0. 1.
 laser1.polarization = 1. 0. 0.
 laser1.a0 = a0
@@ -37,21 +53,21 @@ laser1.field_function(X,Y,t) = E0*sin(w*t)*( e1*(t/s1)*(t>ts)*(t<ta)+exp(-(t-tb)
 
 #参数依赖
 
-my.constants.e = 2.718282
-my.constants.e1 = 1/sqrt(e) # e为自然常数，在warpx中没有内置需要定义
+my_constants.e = 2.718282
+my_constants.e1 = 1/sqrt(e) # e为自然常数，在warpx中没有内置需要定义
 
-my.constants.s1 = T
-my.constants.s2 = 2*T  #s1, s2是控制上升下降沿的参数，具体而言2*s1是上升沿整体宽度
-my.constants.tau_p = 8*T
+my_constants.s1 = T
+my_constants.s2 = 2*T  #s1, s2是控制上升下降沿的参数，具体而言2*s1是上升沿整体宽度
+my_constants.tau_p = 8*T
 
-my.constants.ts = 0  #脉冲起始
-my.constants.ta = ts + s1
-my.constants.tb = ta + s1
-my.constants.tc = tb + tau_p
-my.constants.td = tc + s2
-my.constants.te = td + s2
+my_constants.ts = 0  #脉冲起始
+my_constants.ta = ts + s1
+my_constants.tb = ta + s1
+my_constants.tc = tb + tau_p
+my_constants.td = tc + s2
+my_constants.te = td + s2
 
-my.constants.f = te/s2
+my_constants.f = te/s2
 ```
 
 <img src="https://cdn.jsdelivr.net/gh/sampenn0326/PicGo@main/img/laser_profile_flattop_with_modified_gussian_rise%26down.png" alt="laser_profile_flattop_with_modified_gussian_rise&down" style="zoom: 33%;" />
@@ -158,11 +174,9 @@ H.density_function(x,y,z) = " n_H*(z<=(d0*x^2)/(2*Rc^2))*(z>=(d0*(x^2/(2*Rc^2)-1
 
 
 
-# 3.Diags诊断
+# 3. Diags诊断
 
-
-
-## Full Diags
+## 3.1 Full Diagnostics
 
 ```
 diagnostics.diags_names = full
@@ -181,9 +195,44 @@ full.fields_to_plot = Ex Ez rho_ele rho_H
 full.coarsening_ratio = 2 2
 ```
 
-设置时需要考虑每步输出文件大小，其中粒子数据约10w->4.6MB，场数据$1k\times 1k $ cells的一种场量对应8MB。
+设置时需要考虑每步输出文件大小，其中粒子数据约 $10\mathrm{w}->4.6\mathrm{MB}$ ，场数据 $1\mathrm{k}\times1 \mathrm{k}$  cells的一种场量对应 $8\mathrm{MB}$ 。
 
-一次模拟总粒子数在100w-1000w为宜。
+一次模拟总粒子数在 $100\mathrm{w}-1000\mathrm{w}%$ 为宜。
+
+
+
+## 3.2 Time-Averaged Diagnostics
+
+`TimeAveraged` 诊断有三种模式： `none` ， `fixed_start` 和 `dynamic_start` ，对应**不平均**、**固定开端平均**和**移动窗口平均**。
+
+```
+avrg.time_average_mode = fixed_start
+avrg.average_start_step = 0
+
+avrg.time_average_mode = dynamic_start
+avrg.average_period_steps = 100
+avrg.average_period_time = 2e-15  # 优先级比上一行高
+```
+
+
+
+## 3.3 BackTransformed Diagnostics
+
+
+
+
+
+
+
+
+
+## 3.4 Boundary Scraping Diagnostics
+
+WarpX的 `BoundaryScrapingDiagnostics` 专门收集在吸收边界被删除的粒子，并记录粒子撞击边界的时间等信息。
+
+
+
+
 
 
 
@@ -200,7 +249,7 @@ spec_H.type = ParticleHistogram
 spec_H.intervals = 100
 spec_H.species = H
 spec_H.bin_number = 400
-spec_H.bin_min = 5
+spec_H.bin_min = 0
 spec_H.bin_max = 100
 spec_H.histogram_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)"
 #筛选条件1：离子动能大于某阈值;如果只过滤能量较低的部分，直接设置bin_min即可
@@ -209,7 +258,7 @@ spec_H.filter_function(t,x,y,z,ux,uy,uz) = "938.272*(sqrt(1+ux^2+uy^2+uz^2)-1)>=
 spec_H.filter_function(t,x,y,z,ux,uy,uz) = "uz>=0"
 
 spec_e.type = ParticleHistogram
-spec_e.intervals = 200
+spec_e.intervals = 100
 spec_e.species = ele
 spec_e.bin_number = 400
 spec_e.bin_min = 0
@@ -224,7 +273,7 @@ spec_e.histogram_function(t,x,y,z,ux,uy,uz) = "0.510999*(sqrt(1+ux^2+uy^2+uz^2)-
 
 
 
-WarpX的 `BoundaryScrapingDiagnostics` 专门收集在吸收边界被删除的粒子，并记录粒子撞击边界的时间等信息。
+
 
 
 
