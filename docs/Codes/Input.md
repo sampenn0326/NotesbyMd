@@ -2,6 +2,30 @@
 
 
 
+# 0.常数/计算
+
+激光相关常数设置
+
+```
+my_constants.lambda = 1.06e-6
+my_constants.T = lambda/clight
+my_constants.w = 2*pi/T
+my_constants.k = w/clight
+my_constants.nc = (1.115e15)/(lambda^2)
+
+my_constants.E0 = (a0)*(3.21e6)/lambda
+```
+
+
+
+
+
+
+
+
+
+
+
 # 1.激光
 
 ## 1.1 高斯激光
@@ -97,7 +121,62 @@ my_contants.ts = 0           #上升沿开始start
 my_contants.ta = ts + tr     #平顶开始
 my_contants.tb = ta + tp     #平顶结束
 my_contants.te = tb + tf     #下降沿结束end
+# 模拟验证发现，连接点处都不要带等号，否则报错
 ```
+
+### 1.2.3 自定义C
+
+```
+lasers.names = laser1 laser2
+
+laser1.position = 0. 0. zL
+laser1.direction = 0. 0. 1.
+laser1.polarization = 1. 0. 0.
+laser1.a0 = a0
+laser1.wavelength = lambda
+laser1.profile =  parse_field_function
+laser1.field_function(X,Y,t) = E0*cos(w*t)*exp(-(X*X)/(wE*wE))*exp(-(t-tpeak)^2/(tauE)^2)
+
+laser2.position = 0. 0. zL
+laser2.direction = 0. 0. 1.
+laser2.polarization = 0. 1. 0.
+laser2.a0 = a0
+laser2.wavelength = lambda
+laser2.profile =  parse_field_function
+laser2.field_function(X,Y,t) = E0*sin(w*t)*exp(-(Y*Y)/(wE*wE))*exp(-(t-tpeak)^2/(tauE)^2)
+
+my_constants.w =
+my_constants.E0 =
+my_constants.zL =
+my_constants.wE =
+my_constants.tpeak =
+my_constants.tauE =
+```
+
+### 1.2.4 自定义D
+
+```
+lasers.names = laser1 laser2
+
+laser1.position = 0. 0. zL
+laser1.direction = 0. 0. 1.
+laser1.polarization = 1. 0. 0.
+laser1.a0 = a0
+laser1.wavelength = lambda
+laser1.profile =  parse_field_function
+laser1.field_function(X,Y,t) = E0*cos(w*t)*((t>ts)*(t<ta)*sqrt((t-ts)/tr)+(t>ta)*(t<tb)*1+(t>tb)*(t<te)*sqrt(max(0,1-(t-tb)/tf)) )
+
+laser2.position = 0. 0. zL
+laser2.direction = 0. 0. 1.
+laser2.polarization = 0. 1. 0.
+laser2.a0 = a0
+laser2.wavelength = lambda
+laser2.profile =  parse_field_function
+laser2.field_function(X,Y,t) = E0*sin(w*t)*((t>ts)*(t<ta)*sqrt((t-ts)/tr)+(t>ta)*(t<tb)*1+(t>tb)*(t<te)*sqrt(max(0,1-(t-tb)/tf)) )
+#严格的I为梯形。下降脉冲需要用max(a,b)避免负数开根号
+```
+
+
 
 
 
