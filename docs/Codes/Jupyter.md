@@ -1,4 +1,4 @@
-说明：在Jupyter上分析WarpX跑完之后的诊断文件。针对不同的模拟有一些可以固定的notebook，遂记录备用。但超算运行Jupyter画图好像不如直接提交作业快，迟早进入故纸堆。
+说明：在Jupyter上分析WarpX跑完之后的诊断文件。针对不同的模拟有一些可以固定的notebook，遂记录备用。
 
 
 
@@ -7,6 +7,331 @@
 
 
 ### 1.1 单步
+
+### 1.1.1 单步单物种
+
+```python
+# =========== 单步绘制质子数密度 ===========
+import numpy as np
+import matplotlib.pyplot as plt
+from openpmd_viewer import OpenPMDTimeSeries
+from scipy import constants as C
+import os
+
+
+# ==================== 参数配置 ====================
+data_path = '../diags/field'
+
+SPECIES = 'H'
+FIELD = f'rho_{SPECIES}'
+
+# 指定 iteration
+ITERATION = 20000
+
+
+# ==================== 物理常数 ====================
+lambda1 = 1e-6
+omega = 2 * np.pi * C.c / lambda1
+T0 = 1 / omega
+
+nc = 1.1e27
+CHARGE = C.e
+
+
+# ==================== 单位 ====================
+DX = lambda1 / (2*np.pi)
+DY = lambda1 / (2*np.pi)
+
+Z_UNIT = '$c/\omega_0$'
+X_UNIT = '$c/\omega_0$'
+
+
+# ==================== 绘图参数 ====================
+CMAP = 'BuPu'
+
+FIG_SIZE = (6,5)
+DPI = 400
+
+VMIN = 0
+VMAX = 100
+
+
+# ==================== 范围 ====================
+ENABLE_RANGE = True
+
+Z_RANGE = (0,25)
+X_RANGE = (-25,25)
+
+
+# ==================== 读取 ====================
+ts = OpenPMDTimeSeries(data_path)
+
+rho, info = ts.get_field(
+    field=FIELD,
+    iteration=ITERATION
+)
+
+
+# ==================== 密度转换 ====================
+# rho [C/m3]
+# n/nc
+n_i = rho / CHARGE / nc
+
+
+# ==================== 坐标 ====================
+z_coords = info.z / DX
+x_coords = info.x / DY
+
+
+# ==================== 裁剪 ====================
+if ENABLE_RANGE:
+
+    z_mask = (z_coords >= Z_RANGE[0]) & (z_coords <= Z_RANGE[1])
+    x_mask = (x_coords >= X_RANGE[0]) & (x_coords <= X_RANGE[1])
+
+    n_plot = n_i[z_mask, :][:, x_mask].T
+
+    extent = [
+        z_coords[z_mask][0],
+        z_coords[z_mask][-1],
+        x_coords[x_mask][0],
+        x_coords[x_mask][-1]
+    ]
+
+else:
+
+    n_plot = n_i.T
+
+    extent = [
+        z_coords[0],
+        z_coords[-1],
+        x_coords[0],
+        x_coords[-1]
+    ]
+
+
+# ==================== 时间 ====================
+time_idx = list(ts.iterations).index(ITERATION)
+
+time_norm = ts.t[time_idx] / T0
+
+
+# ==================== 绘图 ====================
+fig, ax = plt.subplots(figsize=FIG_SIZE)
+
+im = ax.imshow(
+    n_plot,
+    cmap=CMAP,
+    extent=extent,
+    origin='lower',
+    aspect='auto',
+    vmin=VMIN,
+    vmax=VMAX
+)
+
+
+ax.set_xlabel(f'z ({Z_UNIT})')
+ax.set_ylabel(f'x ({X_UNIT})')
+
+ax.set_title(
+    f'Proton Density\n'
+    f'$t={time_norm:.2f}\\ \\omega_0^{{-1}}$'
+)
+
+
+cbar = plt.colorbar(
+    im,
+    ax=ax,
+    fraction=0.042,
+    pad=0.02
+)
+
+cbar.set_label('$n_H/n_c$')
+
+
+plt.tight_layout()
+plt.show()
+
+
+# 如果需要保存：
+# plt.savefig(
+#     f'nH_{ITERATION:06d}.png',
+#     dpi=DPI,
+#     bbox_inches='tight'
+# )
+```
+
+### 1.1.2 单步多物种
+
+分层两物种绘图的一种暂行方案
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from openpmd_viewer import OpenPMDTimeSeries
+from scipy import constants as C
+from matplotlib.colors import Normalize, LinearSegmentedColormap
+from matplotlib.cm import ScalarMappable
+
+# ================= 参数 =================
+data_path = '../diag_p02/full'
+t_target = 25     # T0
+save_path = '../fig/p02_HC_white_RGB_25T.png'
+
+# ================= 激光参数 =================
+lambda1 = 1.06e-6
+c = C.c
+T0 = lambda1/c
+nc = 1.115e27/(lambda1*1e6)**2
+qe = C.e
+
+# ================= 空间范围 =================
+Z_RANGE = (8,16)
+X_RANGE = (-4,4)
+
+# ================= 色标范围 =================
+VMIN_H = 0
+VMAX_H = 10
+VMIN_C = 0
+VMAX_C = 10
+
+# ================= 读取 =================
+ts = OpenPMDTimeSeries(data_path)
+time_array = np.array(ts.t)
+time_T0 = time_array/T0
+idx = np.argmin(np.abs(time_T0-t_target))
+iteration = ts.iterations[idx]
+t_real = time_T0[idx]
+print(f"target={t_target:.2f}T0, selected={t_real:.2f}T0, iteration={iteration}")
+
+# ================= 获取密度 =================
+rho_H, info = ts.get_field(field='rho_H', iteration=iteration)
+rho_C, _ = ts.get_field(field='rho_C', iteration=iteration)
+
+# ================= 转换为粒子数密度 =================
+nH = rho_H/(qe*nc)          # H: Z=1
+nC = rho_C/(6*qe*nc)        # C: Z=6
+
+# ================= 坐标 =================
+z = info.z/lambda1
+x = info.x/lambda1
+
+# ================= crop =================
+z_mask = ((z>=Z_RANGE[0]) & (z<=Z_RANGE[1]))
+x_mask = ((x>=X_RANGE[0]) & (x<=X_RANGE[1]))
+H = nH[z_mask,:][:,x_mask].T
+Cden = nC[z_mask,:][:,x_mask].T
+extent = [z[z_mask][0], z[z_mask][-1], x[x_mask][0], x[x_mask][-1]]
+
+# =====================================================
+#              RGB white-background mixing
+# =====================================================
+norm_H = Normalize(vmin=VMIN_H, vmax=VMAX_H)
+norm_C = Normalize(vmin=VMIN_C, vmax=VMAX_C)
+H_norm = norm_H(H)
+C_norm = norm_C(Cden)
+
+# ---------------- H layer ----------------
+RGB_H = np.zeros(H.shape+(3,))
+RGB_H[...,0] = 1
+RGB_H[...,1] = 1-H_norm
+RGB_H[...,2] = 1-H_norm
+
+# ---------------- C layer ----------------
+RGB_C = np.zeros(Cden.shape+(3,))
+RGB_C[...,0] = 1-C_norm
+RGB_C[...,1] = 1-C_norm
+RGB_C[...,2] = 1
+
+# ---------------- combine ----------------
+RGB = RGB_H * RGB_C
+RGB = np.clip(RGB, 0, 1)
+
+# =====================================================
+#                  colorbar
+# =====================================================
+cmap_H_bar = LinearSegmentedColormap.from_list("H_bar", ["white", "red"])
+cmap_C_bar = LinearSegmentedColormap.from_list("C_bar", ["white", "blue"])
+
+# =====================================================
+#                  plot
+# =====================================================
+fig, ax = plt.subplots(figsize=(6,3), dpi=150)
+ax.imshow(RGB, extent=extent, origin='lower', aspect='auto')
+ax.set_xlabel(r"$z/\lambda_0$")
+ax.set_ylabel(r"$x/\lambda_0$")
+ax.set_xticks(np.arange(Z_RANGE[0], Z_RANGE[1]+1, 1))
+ax.set_yticks(np.arange(X_RANGE[0], X_RANGE[1]+1, 4))
+ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.5)
+ax.set_title(rf"$t={t_real:.2f}T_0$")
+
+# =====================================================
+#                 H colorbar
+# =====================================================
+sm_H = ScalarMappable(norm=norm_H, cmap=cmap_H_bar)
+sm_H.set_array([])
+cbar_H = fig.colorbar(sm_H, ax=ax, fraction=0.046, pad=0.08)
+cbar_H.set_label(r"$n_H/n_c$")
+
+# =====================================================
+#                 C colorbar
+# =====================================================
+sm_C = ScalarMappable(norm=norm_C, cmap=cmap_C_bar)
+sm_C.set_array([])
+cbar_C = fig.colorbar(sm_C, ax=ax, fraction=0.046, pad=0.22)
+cbar_C.set_label(r"$n_C/n_c$")
+
+# ================= 保存 =================
+plt.tight_layout()
+print(f"Saving figure: {save_path}")
+plt.savefig(save_path, dpi=300, bbox_inches='tight')
+plt.show()
+print("Done!")
+```
+
+![961114aa9566f13f43538d20c3284b54](Jupyter.assets/961114aa9566f13f43538d20c3284b54.png)
+
+适合重叠不严重的时候；重叠会产生其它颜色
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1314,7 +1639,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # 读取数据文件
-filename = '../diagCP/reducedfiles/histH.txt'  # 替换为你的实际文件路径
+filename = '../diagCP/reducedfiles/spec_H.txt'  # 替换为你的实际文件路径
 
 # 读取头部获取bin中心值
 with open(filename, 'r') as f:
@@ -1376,6 +1701,458 @@ if total_particles > 0:
 
 
 
+# 5 1D Profile
+
+
+
+```python
+# =========== x-average density and Ez 1D profile ===========
+import numpy as np
+import matplotlib.pyplot as plt
+from openpmd_viewer import OpenPMDTimeSeries
+from scipy import constants as C
+
+# ================= 参数 =================
+t_target = 23       # T0
+SAVE_PLOT = True
+data_path = '../diag_p01/full'
+save_path = '../fig/profile_z_25T.png'
+
+# ================= 激光参数 =================
+lambda1 = 1.06e-6
+c = C.c
+T0 = lambda1/c
+nc = 1.115e27/(lambda1*1e6)**2
+qe = C.e
+
+# ================= 空间范围 =================
+Z_RANGE = (14.3,15.3)
+X_RANGE = (-4,4)
+
+# ================= 密度显示范围 =================
+NORM_MAX = None        # None自动
+EZ_RANGE = None        # None自动
+
+# ================= 读取 =================
+ts = OpenPMDTimeSeries(data_path)
+
+# ================= 时间选择 =================
+time_array = np.array(ts.t)
+time_T0 = time_array/T0
+idx = np.argmin(np.abs(time_T0-t_target))
+iteration = ts.iterations[idx]
+t_real = time_T0[idx]
+print(f"target={t_target:.3f} T0")
+print(f"selected={t_real:.3f} T0")
+print(f"iteration={iteration}")
+
+# ==================================================
+#                 density
+# ==================================================
+rho_H,info = ts.get_field(field='rho_H', iteration=iteration)
+rho_C,_ = ts.get_field(field='rho_C', iteration=iteration)
+rho_e,_ = ts.get_field(field='rho_ele', iteration=iteration)
+
+# ================= 转换 =================
+nH = rho_H/(qe*nc)
+nC = rho_C/(6*qe*nc)
+ne = -rho_e/(qe*nc*7)
+
+# ================= Ez =================
+Ez,_ = ts.get_field(field='E', coord='z', iteration=iteration)
+
+# ================= 坐标 =================
+z = info.z/lambda1
+x = info.x/lambda1
+
+# ================= crop =================
+z_mask = ((z>=Z_RANGE[0]) & (z<=Z_RANGE[1]))
+x_mask = ((x>=X_RANGE[0]) & (x<=X_RANGE[1]))
+nH = nH[z_mask,:][:,x_mask]
+nC = nC[z_mask,:][:,x_mask]
+ne = ne[z_mask,:][:,x_mask]
+Ez = Ez[z_mask,:][:,x_mask]
+z_crop = z[z_mask]
+
+# ==================================================
+#              x average
+# ==================================================
+nH_z = np.mean(nH, axis=1)
+nC_z = np.mean(nC, axis=1)
+ne_z = np.mean(ne, axis=1)
+Ez_z = np.mean(Ez, axis=1)
+
+# ==================================================
+#                 plot
+# ==================================================
+fig,ax1 = plt.subplots(figsize=(8,5), dpi=150)
+
+# ---------------- density ----------------
+ax1.plot(z_crop, nH_z, color="#ee0b06", linewidth=2, label="H$^+$")
+ax1.plot(z_crop, nC_z, color="#437974", linewidth=2, label="C$^{6+}$")
+ax1.plot(z_crop, ne_z, color="black", linewidth=2, label="electron")
+ax1.set_xlabel(r"$z/\lambda_0$")
+ax1.set_ylabel(r"$n/n_c$")
+ax1.legend(loc="upper left")
+ax1.grid(True, linestyle="--", linewidth=0.5, alpha=0.5)
+
+# ---------------- Ez ----------------
+ax2 = ax1.twinx()
+ax2.plot(z_crop, Ez_z, color="blue", linewidth=1.5, linestyle="--", label="$E_z$")
+ax2.set_ylabel(r"$E_z$ (V/m)", color="blue")
+if EZ_RANGE is not None:
+    ax2.set_ylim(EZ_RANGE)
+
+# 合并legend
+lines1,labels1=ax1.get_legend_handles_labels()
+lines2,labels2=ax2.get_legend_handles_labels()
+ax1.legend(lines1+lines2, labels1+labels2, loc="upper left")
+plt.title(rf"$t={t_real:.2f}T_0$")
+plt.tight_layout()
+
+# ================= 保存 =================
+if SAVE_PLOT:
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    print(f"saved: {save_path}")
+plt.show()
+
+# ================= 输出 =================
+print("\n========= max value =========")
+print("H max = %.2f nc" % nH_z.max())
+print("C max = %.2f nc" % nC_z.max())
+print("electron max = %.2f nc" % ne_z.max())
+print("Ez max = %.3e V/m" % np.max(abs(Ez_z)))
+```
+
+
+
+
+
+
+
+# MovieView
+
+## Case A
+
+单步：
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from openpmd_viewer import OpenPMDTimeSeries
+from scipy import constants as C
+from matplotlib.colors import Normalize, LinearSegmentedColormap
+from matplotlib.cm import ScalarMappable
+import os
+from matplotlib.gridspec import GridSpec
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+
+# ================= 参数配置 =================
+data_path = '../diag_p03/full'
+save_dir = '../fig'
+save_filename = 'four_panels_t14T0.png'
+t_target = 14
+lambda1 = 1e-6
+c = C.c
+T0 = lambda1/c
+nc = 1.115e27/(lambda1*1e6)**2
+qe = C.e
+Z_RANGE = (4, 16)
+X_RANGE = (-1, 1)
+VMIN_H = 0
+VMAX_H = 20
+VMIN_C = 0
+VMAX_C = 20
+NE_VMIN = 0
+NE_VMAX = 100
+NE_SYMMETRIC = True
+EZ_RANGE = None
+EX_RANGE = None
+FIG_SIZE = (14, 10)
+DPI = 150
+CMAP_E = 'RdBu_r'
+
+# ===================================================== 加载数据
+print("正在加载诊断数据...")
+ts = OpenPMDTimeSeries(data_path)
+print("\n可用的场:", ts.avail_fields)
+time_array = np.array(ts.t)
+time_T0 = time_array/T0
+TIMESTEP = np.argmin(np.abs(time_T0 - t_target))
+iteration = ts.iterations[TIMESTEP]
+t_real = time_T0[TIMESTEP]
+print("\n时间选择:")
+print(f"目标时间 = {t_target:.3f} T0")
+print(f"实际时间 = {t_real:.3f} T0")
+print(f"时间步 = {TIMESTEP}")
+print(f"iteration = {iteration}")
+
+# ===================================================== 获取粒子密度数据
+print("\n正在读取粒子密度数据...")
+rho_H, info_density = ts.get_field(field='rho_H', iteration=iteration)
+rho_C, _ = ts.get_field(field='rho_C', iteration=iteration)
+nH = rho_H / (qe * nc)
+nC = rho_C / (6 * qe * nc)
+rho_ele, _ = ts.get_field(field='rho_ele', iteration=iteration)
+ne = rho_ele / (qe * nc)
+ne_display = -ne
+z = info_density.z / lambda1
+x = info_density.x / lambda1
+z_mask = ((z >= Z_RANGE[0]) & (z <= Z_RANGE[1]))
+x_mask = ((x >= X_RANGE[0]) & (x <= X_RANGE[1]))
+H = nH[z_mask, :][:, x_mask].T
+Cden = nC[z_mask, :][:, x_mask].T
+Ne_display = ne_display[z_mask, :][:, x_mask].T
+extent = [z[z_mask][0], z[z_mask][-1], x[x_mask][0], x[x_mask][-1]]
+
+# ===================================================== 获取电场数据
+print("\n正在读取电场数据...")
+Ez, info_E = ts.get_field(field='E', coord='z', iteration=iteration)
+Ex, _ = ts.get_field(field='E', coord='x', iteration=iteration)
+if Ez.ndim == 3:
+    Ez_2d = Ez[:, 0, :]
+    Ex_2d = Ex[:, 0, :]
+else:
+    Ez_2d = Ez
+    Ex_2d = Ex
+def crop_field(data_2d, coords_z, coords_x, z_range, x_range):
+    z_mask = ((coords_z >= z_range[0]) & (coords_z <= z_range[1]))
+    x_mask = ((coords_x >= x_range[0]) & (coords_x <= x_range[1]))
+    cropped = data_2d[z_mask, :][:, x_mask]
+    return cropped
+z_range_m = [z * lambda1 for z in Z_RANGE]
+x_range_m = [x * lambda1 for x in X_RANGE]
+Ez_cropped = crop_field(Ez_2d, info_E.z, info_E.x, z_range_m, x_range_m)
+Ex_cropped = crop_field(Ex_2d, info_E.z, info_E.x, z_range_m, x_range_m)
+
+# ===================================================== 设置色标范围
+if NE_VMIN is None or NE_VMAX is None:
+    vmin_ne = np.min(Ne_display)
+    vmax_ne = np.max(Ne_display)
+    if NE_SYMMETRIC:
+        vmax_abs_ne = max(abs(vmin_ne), abs(vmax_ne))
+        vmin_ne, vmax_ne = -vmax_abs_ne, vmax_abs_ne
+else:
+    vmin_ne, vmax_ne = NE_VMIN, NE_VMAX
+if EZ_RANGE is None:
+    vmin_ez = np.min(Ez_cropped)
+    vmax_ez = np.max(Ez_cropped)
+    vmax_abs_ez = max(abs(vmin_ez), abs(vmax_ez))
+    vmin_ez, vmax_ez = -vmax_abs_ez, vmax_abs_ez
+else:
+    vmin_ez, vmax_ez = EZ_RANGE
+if EX_RANGE is None:
+    vmin_ex = np.min(Ex_cropped)
+    vmax_ex = np.max(Ex_cropped)
+    vmax_abs_ex = max(abs(vmin_ex), abs(vmax_ex))
+    vmin_ex, vmax_ex = -vmax_abs_ex, vmax_abs_ex
+else:
+    vmin_ex, vmax_ex = EX_RANGE
+print(f"\n电子密度范围 (-ne): {vmin_ne:.2e} - {vmax_ne:.2e}")
+print(f"Ez范围: {vmin_ez:.2e} - {vmax_ez:.2e} V/m")
+print(f"Ex范围: {vmin_ex:.2e} - {vmax_ex:.2e} V/m")
+
+# ===================================================== RGB white-background mixing
+norm_H = Normalize(vmin=VMIN_H, vmax=VMAX_H)
+norm_C = Normalize(vmin=VMIN_C, vmax=VMAX_C)
+H_norm = norm_H(H)
+C_norm = norm_C(Cden)
+RGB_H = np.zeros(H.shape + (3,))
+RGB_H[..., 0] = 1
+RGB_H[..., 1] = 1 - H_norm
+RGB_H[..., 2] = 1 - H_norm
+RGB_C = np.zeros(Cden.shape + (3,))
+RGB_C[..., 0] = 1 - C_norm
+RGB_C[..., 1] = 1 - C_norm
+RGB_C[..., 2] = 1
+RGB = RGB_H * RGB_C
+RGB = np.clip(RGB, 0, 1)
+cmap_H_bar = LinearSegmentedColormap.from_list("H_bar", ["white", "red"])
+cmap_C_bar = LinearSegmentedColormap.from_list("C_bar", ["white", "blue"])
+cmap_ne_bar = LinearSegmentedColormap.from_list("ne_bar", ["white", (0, 1, 0)])
+
+# ===================================================== 创建四子图 + colorbar布局
+fig = plt.figure(figsize=FIG_SIZE, dpi=DPI)
+gs = GridSpec(2, 4, figure=fig, width_ratios=[1, 0.05, 1, 0.05],
+              hspace=0.1, wspace=0.2, left=0.06, right=0.94, bottom=0.08, top=0.92)
+ax1 = fig.add_subplot(gs[0,0])
+ax2 = fig.add_subplot(gs[0,2])
+ax3 = fig.add_subplot(gs[1,0])
+ax4 = fig.add_subplot(gs[1,2])
+
+# ===================================================== 绘制图像
+im1 = ax1.imshow(RGB, extent=extent, origin='lower', aspect='auto')
+im2 = ax2.imshow(Ne_display, extent=extent, origin='lower', aspect='auto',
+                 cmap=cmap_ne_bar, vmin=vmin_ne, vmax=vmax_ne)
+extent_E = [Z_RANGE[0], Z_RANGE[1], X_RANGE[0], X_RANGE[1]]
+im3 = ax3.imshow(Ez_cropped.T, extent=extent_E, origin='lower', aspect='auto',
+                 cmap=CMAP_E, vmin=vmin_ez, vmax=vmax_ez)
+im4 = ax4.imshow(Ex_cropped.T, extent=extent_E, origin='lower', aspect='auto',
+                 cmap=CMAP_E, vmin=vmin_ex, vmax=vmax_ex)
+
+# ===================================================== ax1两个colorbar (inset)
+sm_H = ScalarMappable(norm=norm_H, cmap=cmap_H_bar)
+sm_H.set_array([])
+sm_C = ScalarMappable(norm=norm_C, cmap=cmap_C_bar)
+sm_C.set_array([])
+cax_H = inset_axes(ax1, width="5%", height="45%", loc="upper right",
+                   bbox_to_anchor=(0.08,0,1,1), bbox_transform=ax1.transAxes, borderpad=0)
+cax_C = inset_axes(ax1, width="5%", height="45%", loc="lower right",
+                   bbox_to_anchor=(0.08,0,1,1), bbox_transform=ax1.transAxes, borderpad=0)
+
+# ===================================================== 其他colorbar axes
+cax_ne = fig.add_subplot(gs[0,3])
+cax_Ez = fig.add_subplot(gs[1,1])
+cax_Ex = fig.add_subplot(gs[1,3])
+
+# 向左挪动colorbar
+for cax in [cax_ne, cax_Ez, cax_Ex]:
+    pos = cax.get_position()
+    cax.set_position([pos.x0-0.027, pos.y0, pos.width, pos.height])
+
+# ===================================================== Colorbar
+cb_H = fig.colorbar(sm_H, cax=cax_H)
+cb_H.set_label(r"$n_H/n_c$", fontsize=12)
+cb_C = fig.colorbar(sm_C, cax=cax_C)
+cb_C.set_label(r"$n_C/n_c$", fontsize=12)
+cb_ne = fig.colorbar(im2, cax=cax_ne)
+cb_ne.set_label(r"$n_e/n_c$", fontsize=12)
+cb_Ez = fig.colorbar(im3, cax=cax_Ez)
+cb_Ez.set_label(r"$E_z$ (V/m)", fontsize=12)
+cb_Ex = fig.colorbar(im4, cax=cax_Ex)
+cb_Ex.set_label(r"$E_x$ (V/m)", fontsize=12)
+
+# ===================================================== 坐标格式
+# ax1: 保留y轴，去掉x轴
+ax1.set_ylabel(r"$x/\lambda_0$", fontsize=14)
+ax1.set_yticks(np.arange(X_RANGE[0], X_RANGE[1]+1, 1))
+ax1.set_xticks([])
+ax1.set_xlabel("")
+ax1.grid(True, linestyle="--", linewidth=0.5, alpha=0.3)
+
+# ax2: x和y轴全部去掉
+ax2.set_xticks([])
+ax2.set_xlabel("")
+ax2.set_yticks([])
+ax2.set_ylabel("")
+ax2.grid(True, linestyle="--", linewidth=0.5, alpha=0.3)
+
+# ax3: 保留x和y轴
+ax3.set_xlabel(r"$z/\lambda_0$", fontsize=14)
+ax3.set_xticks(np.arange(Z_RANGE[0], Z_RANGE[1]+1, 2))
+ax3.set_ylabel(r"$x/\lambda_0$", fontsize=14)
+ax3.set_yticks(np.arange(X_RANGE[0], X_RANGE[1]+1, 1))
+ax3.grid(True, linestyle="--", linewidth=0.5, alpha=0.3)
+
+# ax4: 保留x轴，去掉y轴
+ax4.set_xlabel(r"$z/\lambda_0$", fontsize=14)
+ax4.set_xticks(np.arange(Z_RANGE[0], Z_RANGE[1]+1, 2))
+ax4.set_yticks([])
+ax4.set_ylabel("")
+ax4.grid(True, linestyle="--", linewidth=0.5, alpha=0.3)
+
+# ===================================================== 去掉所有子图标题
+
+# ===================================================== 总标题
+fig.suptitle(rf"$t={t_real:.2f}T_0$", fontsize=16, y=0.98)
+
+# ===================================================== 保存
+os.makedirs(save_dir, exist_ok=True)
+save_path = os.path.join(save_dir, save_filename)
+plt.savefig(save_path, dpi=300, bbox_inches='tight')
+print(f"\n图片保存: {save_path}")
+print("\n=== 绘图信息 ===")
+print(f"目标时间: {t_target:.2f} T0")
+print(f"实际时间: {t_real:.2f} T0")
+print(f"时间步: {TIMESTEP}")
+print(f"iteration: {iteration}")
+print(f"物理时间: {ts.t[TIMESTEP]*1e15:.2f} fs")
+print(f"z范围: {Z_RANGE[0]:.2f}-{Z_RANGE[1]:.2f} λ0")
+print(f"x范围: {X_RANGE[0]:.2f}-{X_RANGE[1]:.2f} λ0")
+plt.show()
+print("Done!")
+```
+
+![d06f77d1f10b9e9d313e8c3afce2875a](Jupyter.assets/d06f77d1f10b9e9d313e8c3afce2875a.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # 附录
@@ -1410,6 +2187,38 @@ cmap_yield = LinearSegmentedColormap.from_list(
 效果：
 
 ![d4fe8bc0281f2307fd66519a400720be](Jupyter.assets/d4fe8bc0281f2307fd66519a400720be.png)
+
+
+
+
+
+## py绘制多子图时的布局
+
+
+
+```python
+GridSpec(
+    2,2,
+    hspace=0.15,
+    wspace=0.15,
+    left=0.06,
+    right=0.94,
+    bottom=0.08,
+    top=0.92
+)
+```
+
+![matplotlib.figure.Figure.subplots_adjust — Matplotlib 3.10.9 documentation](https://images.openai.com/static-rsc-4/p_WADamn9lXSBupMYhtSyXutL8r8mCTC7g937lxUKRIK1IErhyOWdNDjzMx5tIkj4Kp70Xmyox5HNbsP5DBNL2suy4QFV3WqQIeVfkfB1CG4TvAUspIoDBTQW0BBgk6OFXm-O0NYAImJyJx7c8kWF2giPPvCSo5Tt0GglwzkVZQcvFRbGyxY2M6nKpX8CuAU?purpose=fullsize)
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -92,6 +92,10 @@ my_constants.td = tc + s2
 my_constants.te = td + s2
 
 my_constants.f = te/s2
+
+#注意：一般对高斯激光用脉宽刻画，脉宽是半高全宽。如果用s表示拐点，则
+
+s=HWHM/1.177=FWHM/2.354
 ```
 
 <img src="https://cdn.jsdelivr.net/gh/sampenn0326/PicGo@main/img/laser_profile_flattop_with_modified_gussian_rise%26down.png" alt="laser_profile_flattop_with_modified_gussian_rise&down" style="zoom: 33%;" />
