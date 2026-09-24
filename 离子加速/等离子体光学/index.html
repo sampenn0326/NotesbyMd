@@ -1,0 +1,1354 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F%5B%E7%AC%94%E8%AE%B0%5D/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>等离子体光学 - SamPenn KnowledgeBase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SamPenn KnowledgeBase" class="md-header__button md-logo" aria-label="SamPenn KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SamPenn KnowledgeBase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              等离子体光学
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SamPenn KnowledgeBase" class="md-nav__button md-logo" aria-label="SamPenn KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SamPenn KnowledgeBase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离子加速
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    离子加速
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../笔记" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../文献" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Jupyter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jupyter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/C%2B%2B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与等离子体相互作用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    激光与等离子体相互作用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaserPlasma/%E5%9F%BA%E6%9C%AC%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BF%80%E5%85%89%E4%B8%8E%E7%89%A9%E8%B4%A8%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与物质相互作用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F%5B%E7%AC%94%E8%AE%B0%5D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离子加速
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等离子体光学
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等离子体光学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 高次谐波辐射机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 高次谐波辐射机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chf_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHF 的三个基本要件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CHF 的三个基本要件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. 反射谐波的时间相干叠加
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. 凹面反射带来空间聚束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. 谐波功率效率的保证
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 高次谐波辐射机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 高次谐波辐射机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chf_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHF 的三个基本要件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CHF 的三个基本要件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. 反射谐波的时间相干叠加
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. 凹面反射带来空间聚束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. 谐波功率效率的保证
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>设入射激光沿 <span class="arithmatex">\(+z\)</span> 传播，等离子体位于 <span class="arithmatex">\(z&gt;0\)</span> ，反射光返回 <span class="arithmatex">\(z&lt;0\)</span> </p>
+<div class="arithmatex">\[
+\omega _p^2 (r,z) = \frac{e^2 n_e(r,z)}{\varepsilon _0 m_e},\qquad n_c (\omega )=\frac{\varepsilon _0 m_e \omega ^2}{e^2}
+\]</div>
+<p>设频率为 <span class="arithmatex">\(\omega\)</span> 对应的临界密度面为</p>
+<div class="arithmatex">\[
+z_c(r,\omega)= s(\omega)-\frac{r^2}{4f_g(\omega)}
+\]</div>
+<p>其中 <span class="arithmatex">\(s(\omega)\)</span> 为顶点位置， <span class="arithmatex">\(f_g(\omega)\)</span> 为几何焦距。若视其为真空中的理想反射镜，则平行光入射后的焦点为</p>
+<div class="arithmatex">\[
+Z_g(\omega)=s(\omega)-f_g(\omega)
+\]</div>
+<p>所以几何上不同频率对应不同焦点，这个条件相当于</p>
+<div class="arithmatex">\[
+\frac{dZ_g}{d\omega}= \frac{ds}{d\omega}-\frac{df_g}{\omega}\ne0
+\]</div>
+<p>其中有位置带来的顶点部分和形状带来的焦距部分贡献。</p>
+<p>考虑如下分布，</p>
+<div class="arithmatex">\[
+n_e(r,z) =\frac{\varepsilon_0m_e}{e^2}a^2 \left( \frac{z}{1-r^2/b^2} \right)^2
+\]</div>
+<p>其中 <span class="arithmatex">\(a\)</span> 控制纵向密度梯度， <span class="arithmatex">\(b\)</span>​ 控制横向弯曲程度。取 <span class="arithmatex">\(r=0\)</span> ，得到轴上为密度二次上升</p>
+<div class="arithmatex">\[
+n_e(0,z)=\frac{\varepsilon _0m_e}{e^2}a^2z^2,\qquad \omega _p(0,z)=az
+\]</div>
+<p>另一方面，对任意特定频率，令 <span class="arithmatex">\(\omega _p(r,z_c) =\omega\)</span> ，得到</p>
+<div class="arithmatex">\[
+z_c(r,\omega)=\frac{\omega}{a}\left( 1-\frac{r^2}{b^2} \right)
+\]</div>
+<p>对照前面的几何表达式，得到</p>
+<div class="arithmatex">\[
+s(\omega)=\frac{\omega}{a},\qquad f_g(\omega)=\frac{ab^2}{4\omega}
+\]</div>
+<p>所以，高频对应更深的轴上临界点，同时对应几何焦距更短的抛物面。在 <span class="arithmatex">\(z\)</span> 轴上的焦点坐标</p>
+<div class="arithmatex">\[
+Z_g(\omega) =s(\omega)-f_g(\omega)=\frac{\omega}{a}-\frac{ab^2}{4\omega}
+\]</div>
+<p>先不考虑入射脉冲的啁啾情况，仅看不同频率的焦点分布，实际上就依赖于参数 <span class="arithmatex">\(a,b\)</span> 的值。进一步可见，即便不考虑现实 <span class="arithmatex">\(a,b\)</span> 参数的取值，也只能是高频 $\omega $ 的焦点更靠近靶一侧，即 <span class="arithmatex">\(Z_g(\omega)\)</span> 一定随着 <span class="arithmatex">\(\omega\)</span> 的上升而增大。那么，flying focus的焦点传播速度（包括大小和方向）就只能通过调节入射啁啾来控制。</p>
+<p>如果从一种几何射线光学角度来简化考虑，激光被抛物线反射传播到焦点，其几何距离相当于直线传播到准线位置，即</p>
+<div class="arithmatex">\[
+z=s(\omega)+f_g(\omega)=\frac{\omega}{a} + \frac{ab^2}{4\omega}
+\]</div>
+<p>这个值随 <span class="arithmatex">\(\omega\)</span> 变化的单调性是不明朗的，而且实际上不能只算几何距离，而且要加上密度不均带来的光程/相位累积。</p>
+<h1 id="chf">固体表面的高次谐波、CHF脉络</h1>
+<blockquote>
+<p>这是26年9月，调研一些等离子体边界对激光脉冲调制的文献时，记录一些推导和发展节点。</p>
+</blockquote>
+<h2 id="1">1. 高次谐波辐射机制</h2>
+<h3 id="rom">ROM</h3>
+<p>设电子动量分成法向和切向两部分 <span class="arithmatex">\(p_n, p_\tau\)</span> ，即便电子总速度可以始终很接近光速，但决定反射表面推进速度的是法向运动。</p>
+<div class="arithmatex">\[
+\beta _s = \frac{p_n}{\sqrt{m_e^2 c^2 +p_n^2 +p_{\tau }^2}}
+\]</div>
+<p>表面运动对应的 $\gamma $ 因子是</p>
+<div class="arithmatex">\[
+\gamma _s =\frac{1}{\sqrt{1-\beta_s^2}} = \sqrt{1+\frac{p_n^2}{m_e^2c^2+p_{\tau}^2}}
+\]</div>
+<p>这与电子的总 <span class="arithmatex">\(\gamma\)</span> 因子</p>
+<div class="arithmatex">\[
+\gamma_e =\sqrt{1+\frac{p_n^2+p_{\tau}^2}{m_e^2c^2}}
+\]</div>
+<p>明显不同。如果 <span class="arithmatex">\(p_n,p_{\tau}\)</span> 都很大、彼此同量级，那么</p>
+<div class="arithmatex">\[
+\gamma _e \ge 1,\qquad \gamma _s \sim O(1)
+\]</div>
+<p>这是因为电子虽然运动得很快，但是相当一部分速度沿着表面，法向速度并没有极其接近 <span class="arithmatex">\(c\)</span> 。只有在某些时刻</p>
+<div class="arithmatex">\[
+p_{\tau}(t_g)=0,\qquad |p_n(t_g)|\ge m_e c
+\]</div>
+<p>ROM 和 CWE 是“强激光照射固体，形成过密等离子体表面”的情形下，两种不同的高次谐波产生机制，而且可以在同一次相互作用中同时存在。BGP 理论主要描述其中的相对论表面谐波，并不同时描述 CWE。</p>
+<p>ROM: relativistically oscillating plasma mirror </p>
+<p>CWE: coherent wake emission</p>
+<p>ROM 可以直观理解为：<strong>镜面迎着入射光快速运动时，反射波被压缩、频率提高；镜面周期性振荡，使反射波形发生周期性畸变，于是在频域出现高次谐波。</strong></p>
+<p>为什么一定是谐波？镜面反射的多普勒频率上移本是连续频谱？</p>
+<p><strong>多普勒频移本身并不保证产生整数次谐波。出现谐波，是因为镜面运动以及反射光的调制过程具有以激光周期为基准的重复性。</strong> 如果只发生一次快速反射或只产生一个短脉冲，完全可以得到连续的宽频谱。要区分<strong>瞬时频率</strong>和<strong>整个反射信号的傅里叶频谱</strong>。</p>
+<p>考虑以恒定速度迎向入射光的镜面。若镜面速度为 <span class="arithmatex">\(\beta c\)</span>​ ，反射光频率为</p>
+<div class="arithmatex">\[
+\omega _r = \frac{1+\beta}{1-\beta}\omega _0
+\]</div>
+<p>这个频率显然不一定是 <span class="arithmatex">\(\omega_0\)</span> 的整数倍。因此，<strong>“发生了多普勒上移”与“产生了高次谐波”不是同一个命题。</strong></p>
+<p>对于振荡镜面，<span class="arithmatex">\(\beta(t)\)</span> 随时间变化，相应的瞬时频率也可以连续变化。但若这种调制每隔一个激光周期重复，整个反射信号仍然具有周期性，其傅里叶谱便只能出现在整数倍基频处。</p>
+<h2 id="chf_1">CHF 的三个基本要件</h2>
+<h3 id="i">I. 反射谐波的时间相干叠加</h3>
+<h3 id="ii">II. 凹面反射带来空间聚束</h3>
+<h3 id="iii">III. 谐波功率效率的保证</h3>
+<h1 id="srssbs">SRS&amp;SBS</h1>
+<p>受激拉曼散射（Stimulated Raman Scattering, <strong>SRS</strong>）和受激布里渊散射（Stimulated Brillouin Scattering, <strong>SBS</strong>）都是激光等离子体中最典型的<strong>三波耦合参量不稳定性</strong>。最直观的区别是：</p>
+<ul>
+<li><strong>SRS：激光把能量耦合给电子等离子体波</strong></li>
+<li><strong>SBS：激光把能量耦合给离子声波</strong></li>
+</ul>
+<p>因此 SRS 主要涉及<strong>电子时间尺度</strong>，SBS 主要涉及更慢的<strong>离子时间尺度</strong>。</p>
+<p><strong>物理图像：三波耦合</strong></p>
+<p>设入射泵浦激光为 <span class="arithmatex">\((\omega _0 ,\mathbf{k}_0)\)</span> ，它在等离子体中产生一个微小的密度扰动。这个密度扰动相当于一个“动态光栅”，可以把入射激光散射成另一束电磁波 <span class="arithmatex">\((\omega _s ,\mathbf{k}_s)\)</span> 。散射光与原激光拍频，又会进一步驱动这个密度扰动。如果相位关系恰好匹配，就出现<strong>正反馈</strong>，</p>
+<p>密度扰动→激光散射增强→拍频驱动更强→密度扰动更大</p>
+<p>于是散射光和等离子体波都会指数增长。</p>
+<p>核心就是满足三波共振条件：</p>
+<div class="arithmatex">\[
+\omega _0 =\omega _s +\omega _p\\
+\mathbf{k}_0 =\mathbf{k}_s +\mathbf{k}_p
+\]</div>
+<h1 id="_1">等离子体密度梯度色散效应</h1>
+<h1 id="_2">展宽和压缩</h1>
+<p>对于一般纵向密度 <span class="arithmatex">\(n_e(z)\)</span> ，<strong>在静态、冷、无磁等离子体中，沿传播路径积分局部群速度的倒数即可。</strong>这里假设正入射、密度变化足够平缓</p>
+<p>设等离子体范围 <span class="arithmatex">\(z_1&lt;z&lt;z_2\)</span> ，电子等离子体频率</p>
+<div class="arithmatex">\[
+\omega_p^2(z)= \frac{e^2 n_e(z)}{\varepsilon_0m_e}
+\]</div>
+<p>局部色散关系和群速度为</p>
+<div class="arithmatex">\[
+k(\omega,z) = \frac{1}{c}\sqrt{\omega^2-\omega_p^2(z)}\\
+v_g(\omega,z)= \left( \frac{\partial k}{\partial \omega} \right)^{-1}=c\sqrt{1-\frac{\omega_p^2(z)}{\omega^2}}
+\]</div>
+<p>从而频率 <span class="arithmatex">\(\omega\)</span> 对应的群延迟为</p>
+<div class="arithmatex">\[
+\tau (\omega) = \int_{z_1}^{z_2} \frac{\mathrm{d}z}{v_g(\omega,z)}=\frac{1}{c} \int_{z_1}^{z_2}\frac{\mathrm{d}z}{\sqrt{1-\omega_p^2(z)/\omega^2}} = \frac{1}{c}\int_{z_1}^{z_2} \left[ 1-\frac{n_e(z)}{n_c(\omega)} \right]^{-1/2}  \mathrm{d}z
+\]</div>
+<p>其中临界密度随频率变化，不能对所有频率都取同一个 <span class="arithmatex">\(n_c\)</span> 。</p>
+<p>若考虑一个中心频率为 <span class="arithmatex">\(\omega _0\)</span> 的脉冲，则相对于中心频率的延迟为</p>
+<div class="arithmatex">\[
+\Delta \tau (\omega;\omega _0) = \frac{1}{c} \int_{z_1}^{z_2}\left[ \frac{1}{\sqrt{1-\omega_p^2(z)/\omega ^2}}-\frac{1}{\sqrt{1-\omega_p^2(z)/\omega_0 ^2}} \right] \mathrm{d}z
+\]</div>
+<p>显见</p>
+<div class="arithmatex">\[
+\omega &gt;\omega _0 \Longrightarrow \Delta \tau &lt;0
+\]</div>
+<p>即高频延迟更小。</p>
+<h1 id="_3">附录</h1>
+<h2 id="1_1">1. 傅里叶脉宽极限</h2>
+<p><strong>傅里叶极限脉宽（Fourier-transform-limited pulse duration）是：在给定光谱振幅的条件下，各频率分量的相对相位最合适时，脉冲能够达到的最短持续时间。</strong> 对应的脉冲称为变换极限脉冲，简称 TL 脉冲。</p>
+<p>把激光电场写成频率分量的叠加</p>
+<div class="arithmatex">\[
+E(t)=\frac{1}{2\pi} \int _{-\infty}^{\infty} A(\omega ) \mathrm{e}^{\mathrm{i}\phi(\omega)} \mathrm{e}^{-\mathrm{i}\omega t}
+\]</div>
+<p>其中 <span class="arithmatex">\(A(\omega)\)</span> 决定包含哪些频率、各有多强； <span class="arithmatex">\(\phi(\omega)\)</span>  决定这些频率如何在时间上叠加。<strong>带宽提供形成短脉冲的可能，谱相位决定这种可能是否实现。</strong></p>
+<p>当谱相位只有常数项和线性项时，</p>
+<div class="arithmatex">\[
+\phi (\omega ) = \phi _0 +t_0 (\omega -\omega _0)
+\]</div>
+<p>常数项只改变整体相位，线性项只平移脉冲到达时间，均不展宽包络。此时各频率的群延迟</p>
+<div class="arithmatex">\[
+\tau _g(\omega ) = \frac{\mathrm{d}\phi}{\mathrm{d}\omega} = t_0
+\]</div>
+<p>相同，可以集中形成变换极限脉冲。二阶及更高阶谱相位通常会使不同频率错开到达，导致啁啾、展宽或脉冲结构畸变。</p>
+<p>对于最常见的<strong>高斯脉冲</strong>，时间带宽积满足</p>
+<div class="arithmatex">\[
+\Delta t_{\mathrm{FWHM}} \Delta \nu _{}
+\]</div>
+<h2 id="2">2. 谱相位</h2>
+<h3 id="21">2.1 频谱和谱相位</h3>
+<p>设一个脉冲的频域电场写为</p>
+<div class="arithmatex">\[
+\tilde{E} (\omega ) = |\tilde{E} (\omega )|\mathrm{e}^{\mathrm{i}\phi(\omega)}
+\]</div>
+<p>其中 <span class="arithmatex">\(|\tilde E(\omega)|\)</span> 是频谱振幅， <span class="arithmatex">\(|\tilde E(\omega)|^2\)</span> 称为频谱强度； <span class="arithmatex">\(\phi(\omega)\)</span> 就是谱相位。</p>
+<p>时间域电场由逆傅里叶变换得到</p>
+<div class="arithmatex">\[
+E(t) = \frac{1}{2\pi} \int |\tilde{E} (\omega )|\mathrm{e}^{\mathrm{i}\phi(\omega)}\mathrm{e}^{-\mathrm{i}\omega t} \mathrm{d}\omega
+\]</div>
+<p>可以说，频谱强度决定“有哪些频率、每种频率有多少”，谱相位决定“这些频率在时间域怎样叠加”。</p>
+<p>两个脉冲可以具有完全相同的频谱强度，却因为谱相位不同而具有不同的脉冲宽度、峰值强度、时间波形、前后沿结构和啁啾等。</p>
+<h3 id="22">2.2 谱相位的泰勒展开</h3>
+<p>在中心频率 <span class="arithmatex">\(\omega_0\)</span> 附近，把谱相位展开</p>
+<div class="arithmatex">\[
+\phi (\omega) = \phi _0 +\phi _1(\omega -\omega _0)+\frac{1}{2}\phi _2(\omega -\omega _0)^2+\frac{1}{6}\phi _3(\omega -\omega _0)^3+\cdots
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+\phi_n =\frac{\mathrm{d}\phi}{\mathrm{d}\omega ^n}\Big|_{\omega_0} 
+\]</div>
+<p>不同阶数具有完全不同的物理意义：</p>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>名称</th>
+<th>单位</th>
+<th>主要作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\phi_0\)</span></td>
+<td>常数谱相位</td>
+<td>rad</td>
+<td>改变载波包络相位，不改变包络</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\phi_1\)</span></td>
+<td>群延迟GD</td>
+<td>s</td>
+<td>整个脉冲在时间轴上平移</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\phi_2\)</span></td>
+<td>GDD</td>
+<td>s²</td>
+<td>产生线性啁啾和脉冲展宽/压缩</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\phi_3\)</span></td>
+<td>TOD</td>
+<td>s³</td>
+<td>产生非对称波形和非线性啁啾</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\phi_4\)</span></td>
+<td>FOD</td>
+<td>s⁴</td>
+<td>更复杂的高阶时域畸变</td>
+</tr>
+</tbody>
+</table>
+<p>GDD 通常写成 <span class="arithmatex">\(\mathrm{fs}^2,\;\mathrm{as}^2\)</span> 。</p>
+<h3 id="23">2.3 群延迟</h3>
+<p>群延迟定义为</p>
+<div class="arithmatex">\[
+\tau _g(\omega ) = \frac{\mathrm{d}\phi(\omega)}{\mathrm{d}\omega}
+\]</div>
+<p>它表示频率 <span class="arithmatex">\(\omega\)</span>​ 附近的波包分量经历了多大的时间延迟。例如</p>
+<div class="arithmatex">\[
+\phi(\omega)=\omega t_0
+\]</div>
+<p>对应</p>
+<div class="arithmatex">\[
+\tau_g(\omega)=t_0
+\]</div>
+<p>代入逆傅里叶变换</p>
+<div class="arithmatex">\[
+E(t) = \int \tilde E_0(\omega) e^{i\omega t_0}e^{-i\omega t} \,\mathrm d\omega = E_0(t-t_0)
+\]</div>
+<p>所以线性谱相位只把脉冲整体延迟 <span class="arithmatex">\(t_0\)</span> ，不改变脉冲宽度。</p>
+<h3 id="24-gdd">2.4 群延迟色散GDD</h3>
+<p>群延迟色散定义为</p>
+<div class="arithmatex">\[
+\mathrm{GDD}(\omega) = \frac{\mathrm{d}\tau _g}{\mathrm{d}\omega} = \frac{\mathrm{d}^2\phi}{\mathrm{d}\omega ^2} 
+\]</div>
+<p>在中心频率附近，常用常数</p>
+<div class="arithmatex">\[
+\boxed{ \phi_2 = \left. \frac{\mathrm d^2\phi}{\mathrm d\omega^2} \right|_{\omega_0} }
+\]</div>
+<p>表示元件或传播过程的 GDD。</p>
+<p>如果只保留到二阶，谱相位可以写为</p>
+<div class="arithmatex">\[
+\phi(\omega)=\phi _0+\phi _1\Omega +\frac{1}{2}\phi _2\Omega ^2,\qquad \Omega =\omega−\omega_0
+\]</div>
+<p>则群延迟为</p>
+<div class="arithmatex">\[
+\boxed{ \tau_g(\omega) = \phi_1+\phi_2\Omega }
+\]</div>
+<p>这说明 GDD 是“群延迟随频率变化的斜率”。</p>
+<ul>
+<li><span class="arithmatex">\(\phi_2&gt;0\)</span> ：高频分量延迟更大；</li>
+<li><span class="arithmatex">\(\phi_2&lt;0\)</span>​ ：高频分量延迟更小。</li>
+</ul>
+<h3 id="25-gdd">2.5 正负GDD与频率到达顺序</h3>
+<p>正GDD <span class="arithmatex">\(\phi_2&gt;0\)</span> ，此时<span class="arithmatex">\(\mathrm{d}\tau_g/\mathrm{d}\omega&gt;0\)</span> ，所以频率越高，群延迟越大，低频先到、高频后到，时间域中通常表现为正啁啾</p>
+<div class="arithmatex">\[
+\frac{\mathrm d\omega_{\rm inst}}{\mathrm dt}&gt;0
+\]</div>
+<p>即脉冲从低频扫向高频。负GDD则反之。不过需要注意：严格的正负啁啾约定还依赖于使用的傅里叶变换符号。</p>
+<h3 id="26">2.6 “群延迟色散”和“群速度色散”有什么区别</h3>
+<p>这两个经常被混用，但严格来说不是同一个量。介质传播常数为</p>
+<div class="arithmatex">\[
+k(\omega)=\frac{n(\omega)\omega}{c}
+\]</div>
+<p>将其展开</p>
+<div class="arithmatex">\[
+k(\omega) = k_0+\beta_1\Omega+\frac12\beta_2\Omega^2 +\frac16\beta_3\Omega^3+\cdots
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+\beta_1 = \frac{\mathrm dk}{\mathrm d\omega} = \frac{1}{v_g},\qquad \boxed{ \beta_2 = \frac{\mathrm d^2k}{\mathrm d\omega^2} }
+\]</div>
+<p>称为群速度色散，GVD。它的单位是 <span class="arithmatex">\(\mathrm{s^2/m}\)</span> 或常用的 <span class="arithmatex">\(\mathrm{fs^2/mm}\)</span> ，脉冲通过长度<span class="arithmatex">\(L\)</span>​ 的均匀介质后，传播谱相位</p>
+<div class="arithmatex">\[
+\phi_{\rm prop}(\omega)=k(\omega)L
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+\tau_g(\omega) = L\frac{\mathrm dk}{\mathrm d\omega}
+\]</div>
+<p>而总 GDD 为</p>
+<div class="arithmatex">\[
+\boxed{ \mathrm{GDD} = L\beta_2 }
+\]</div>
+<p>因此：GVD <span class="arithmatex">\(\beta_2\)</span> 是介质单位长度的二阶色散；GDD <span class="arithmatex">\(\phi_2\)</span> 是经过整个元件后累计的二阶色散。对于非均匀介质，应写成</p>
+<div class="arithmatex">\[
+\boxed{ \mathrm{GDD} = \int \beta_2(z)\,\mathrm dz }
+\]</div>
+<h3 id="gdd">群速度、群延迟与 GDD 的区别</h3>
+<p>三者的层次是：</p>
+<h4 id="_4">群速度</h4>
+<div class="arithmatex">\[
+v_g(\omega) = \left(\frac{\mathrm dk}{\mathrm d\omega}\right)^{-1}
+\]</div>
+<p>表示某一窄带波包在介质中的传播速度。</p>
+<h4 id="_5">群延迟</h4>
+<div class="arithmatex">\[
+\tau_g(\omega) = L\frac{\mathrm dk}{\mathrm d\omega} = \frac{L}{v_g(\omega)}
+\]</div>
+<p>表示该频率附近的波包通过长度 LL 所需的时间。</p>
+<h4 id="_6">群延迟色散</h4>
+<div class="arithmatex">\[
+\mathrm{GDD} = \frac{\mathrm d\tau_g}{\mathrm d\omega}
+\]</div>
+<p>表示不同频率的群延迟差异有多大。</p>
+<p>可以概括为： <span class="arithmatex">\(v_g\)</span> 刻画传播有多快\boxed{ v_g：传播有多快 }τg：传播后晚到了多少\boxed{ \tau_g：传播后晚到了多少 }GDD：不同频率晚到的程度相差多少\boxed{ \mathrm{GDD}：不同频率晚到的程度相差多少 }</p>
+<p>真正导致脉冲展宽、压缩和啁啾变化的不是共同群延迟，而是群延迟对频率的变化，即 GDD 及更高阶色散。</p>
+<h3 id="gdd_1">为什么 GDD 会使脉冲展宽</h3>
+<p>假设最初是傅里叶极限脉冲，各频率分量在同一时刻相干叠加。</p>
+<p>如果通过一个具有 GDD 的
+$$
+\tau_g(\omega) = \tau_0+\phi_2(\omega-\omega_0)
+$$
+那么不同频率到达不同时间：
+$$
+\Delta\tau_g \simeq \phi_2\Delta\omega
+$$
+于是原本集中在一起的频率成分沿时间方向散开，脉冲展宽。</p>
+<p>对于傅里叶极限高斯脉冲，加入 GDD 后，强度 FWHM 满足
+$$
+\boxed{ \tau = \tau_{\rm TL} \sqrt{ 1+ \left( \frac{4\ln2\,\phi_2}{\tau_{\rm TL}^2} \right)^2 } }
+$$
+其中 <span class="arithmatex">\(\tau_{\rm TL}\)</span> 是傅里叶极限强度 FWHM。</p>
+<p>可见对原本无啁啾的脉冲，无论</p>
+<p><span class="arithmatex">\(\phi_2&gt;0\)</span>还是ϕ2&lt;0,\phi_2&gt;0 \quad\text{还是}\quad \phi_2&lt;0,</p>
+<p>只要 ϕ2≠0\phi_2\neq0，都会展宽。正负号只决定频率排列顺序，而脉宽只与 ϕ22\phi_2^2 有关。</p>
+<h3 id="gdd_2">为什么 GDD 也能压缩脉冲</h3>
+<p>如果输入脉冲本来已经具有 GDD：</p>
+<p>ϕ2,in≠0,\phi_{2,\rm in}\neq0,</p>
+<p>再通过另一个色散元件，总二阶谱相位为</p>
+<p>ϕ2,tot=ϕ2,in+ϕ2,element\boxed{ \phi_{2,\rm tot} = \phi_{2,\rm in} + \phi_{2,\rm element} }</p>
+<p>若两者异号：</p>
+<p>ϕ2,element≈−ϕ2,in,\phi_{2,\rm element} \approx-\phi_{2,\rm in},</p>
+<p>则</p>
+<p>ϕ2,tot≈0,\phi_{2,\rm tot}\approx0,</p>
+<p>不同频率重新在时间域重合，脉冲压缩至接近傅里叶极限。</p>
+<p>所以同一种介质究竟使脉冲展宽还是压缩，不能只看介质 GDD 的符号，还要看输入脉冲已有的谱相位。</p>
+<p>例如：</p>
+<ul>
+<li>傅里叶极限脉冲 + 负 GDD → 展宽并产生负啁啾；</li>
+<li>正啁啾脉冲 + 适量负 GDD → 压缩；</li>
+<li>正啁啾脉冲 + 过量负 GDD → 先压缩，随后重新展宽为负啁啾。</li>
+</ul>
+<h3 id="_7">瞬时频率与谱相位不是同一个相位</h3>
+<p>频域中有谱相位</p>
+<p>ϕ(ω).\phi(\omega).</p>
+<p>时间域电场也可以写成
+$$
+E(t)=A(t)e^{-i\omega_0t+i\varphi(t)}
+$$
+这里 φ(t)\varphi(t) 是时间相位。按照这个符号约定，瞬时频率为</p>
+<p>ωinst(t)=ω0−dφdt\boxed{ \omega_{\rm inst}(t) = \omega_0-\frac{\mathrm d\varphi}{\mathrm dt} }</p>
+<p>谱相位和时间相位互相关联，但不能简单地把</p>
+<p>dϕdω\frac{\mathrm d\phi}{\mathrm d\omega}</p>
+<p>称为瞬时频率。正确对应是：</p>
+<ul>
+<li>谱相位的一阶导数 → 各频率的群延迟；</li>
+<li>时间相位的一阶导数 → 各时刻的瞬时频率。</li>
+</ul>
+<p>对于强啁啾、单调频率扫描的脉冲，可以近似建立</p>
+<p>t≃τg(ω)t\simeq\tau_g(\omega)</p>
+<p>的对应关系：群延迟曲线告诉我们每个频率主要出现在哪个时刻。</p>
+<h3 id="_8">等离子体中的这些量</h3>
+<p>对于均匀无碰撞等离子体，</p>
+<p>k(ω)=1cω2−ωp2.k(\omega) = \frac{1}{c} \sqrt{\omega^2-\omega_p^2}.</p>
+<p>传播长度 LL 后的谱相位为</p>
+<p>ϕpl(ω)=Lcω2−ωp2\boxed{ \phi_{\rm pl}(\omega) = \frac{L}{c}\sqrt{\omega^2-\omega_p^2} }</p>
+<p>群延迟为</p>
+<p>τg(ω)=dϕpldω=Lcωω2−ωp2\boxed{ \tau_g(\omega) = \frac{\mathrm d\phi_{\rm pl}}{\mathrm d\omega} = \frac{L}{c} \frac{\omega}{\sqrt{\omega^2-\omega_p^2}} }</p>
+<p>GDD 为</p>
+<p>GDDpl=d2ϕpldω2=−Lωp2c(ω2−ωp2)3/2&lt;0\boxed{ \mathrm{GDD}<em>{\rm pl} = \frac{\mathrm d^2\phi</em>{\rm pl}}{\mathrm d\omega^2} = -\frac{L\omega_p^2} {c(\omega^2-\omega_p^2)^{3/2}} &lt;0 }</p>
+<p>在稀薄等离子体中，</p>
+<p>ωp≪ω,\omega_p\ll\omega,</p>
+<p>有</p>
+<p>ϕpl(ω)≃Lωc−Lωp22cω,\phi_{\rm pl}(\omega) \simeq \frac{L\omega}{c} -\frac{L\omega_p^2}{2c\omega},τg(ω)≃Lc+Lωp22cω2,\tau_g(\omega) \simeq \frac{L}{c} + \frac{L\omega_p^2}{2c\omega^2},GDDpl≃−Lωp2cω3\boxed{ \mathrm{GDD}_{\rm pl} \simeq -\frac{L\omega_p^2}{c\omega^3} }</p>
+<p>因此等离子体中：</p>
+<ul>
+<li>低频附加群延迟较大；</li>
+<li>高频附加群延迟较小；</li>
+<li>GDD 为负；</li>
+<li>可以补偿正啁啾。</li>
+</ul>
+<p>这正是本文 Fig. 4 的时间压缩机制。</p>
+<h3 id="gdd_3">GDD 与高阶色散的边界</h3>
+<p>只用 GDD 描述脉冲，意味着假设群延迟曲线近似为直线：</p>
+<p>τg(ω)≃ϕ1+ϕ2(ω−ω0).\tau_g(\omega) \simeq \phi_1+\phi_2(\omega-\omega_0).</p>
+<p>但一般情况下还有</p>
+<p>τg(ω)=ϕ1+ϕ2Ω+12ϕ3Ω2+16ϕ4Ω3+⋯\tau_g(\omega) = \phi_1 +\phi_2\Omega +\frac12\phi_3\Omega^2 +\frac16\phi_4\Omega^3+\cdots</p>
+<p>如果带宽很宽，或者频率接近等离子体截止频率，群延迟明显偏离直线，就不能只讨论一个 GDD。</p>
+<p>例如等离子体精确群延迟</p>
+<p>τg(ω)=Lcωω2−ωp2\tau_g(\omega) = \frac{L}{c} \frac{\omega}{\sqrt{\omega^2-\omega_p^2}}</p>
+<p>在 ω→ωp+\omega\rightarrow\omega_p^+ 时迅速发散。因此：</p>
+<ul>
+<li>高频和低频之间不是简单的线性延迟差；</li>
+<li>一个常数 GDD 无法完全补偿；</li>
+<li>即使二阶项抵消，高阶谱相位仍会留下旁瓣和非对称波形。</li>
+</ul>
+<p>这也是你之前的“接近临界密度反射”方案与本文稀薄等离子体方案的关键区别：本文主要处在可以用负 GDD 描述的弱色散区；你的模型必须进一步考虑完整的 τg(ω)\tau_g(\omega)、不同频率的反射位置和反射相位。</p>
+<h3 id="_9">最后压缩成一条逻辑链</h3>
+<p>E~(ω)=∣E~(ω)∣eiϕ(ω)\tilde E(\omega) = |\tilde E(\omega)|e^{i\phi(\omega)}⇓\Downarrowτg(ω)=dϕdω\tau_g(\omega) = \frac{\mathrm d\phi}{\mathrm d\omega}</p>
+<p>告诉我们不同频率主要在什么时刻到达；</p>
+<p>⇓\DownarrowGDD=dτgdω=d2ϕdω2\mathrm{GDD} = \frac{\mathrm d\tau_g}{\mathrm d\omega} = \frac{\mathrm d^2\phi}{\mathrm d\omega^2}</p>
+<p>告诉我们群延迟随频率怎样变化；</p>
+<p>⇓\Downarrow</p>
+<p>若不同频率被拉开，脉冲展宽；若外加 GDD 抵消输入谱相位曲率，脉冲压缩。</p>
+<p>最简洁地区分就是：</p>
+<p>ϕ(ω)：相位本身\boxed{\phi(\omega)：相位本身}τg(ω)：相位斜率\boxed{\tau_g(\omega)：相位斜率}GDD(ω)：相位曲率、群延迟斜率\boxed{\mathrm{GDD}(\omega)：相位曲率、群延迟斜率}β2：单位传播长度上的GDD\boxed{\beta_2：单位传播长度上的GDD}</p>
+<blockquote>
+<p>谱相位是基本量。输入脉冲已有谱相位，等离子体传播再附加一部分谱相位；总谱相位直接相加。群延迟、GDD 等量则由总谱相位求导得到。</p>
+</blockquote>
+<p>（由于求导是线性算符，所以各阶衍生量事实上也直接相加）</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
