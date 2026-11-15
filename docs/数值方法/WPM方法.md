@@ -9,12 +9,15 @@
 在均匀、无自由电荷、无外加电流的线性非磁化介质中，Maxwell方程写为
 
 
+
 $$
 \nabla \times \vec{E} = -\mu _0 \frac{\partial \vec{H}}{\partial t}, \quad \nabla \times \vec{H} =\frac{\partial \vec{D}}{\partial t}
 $$
 
 
+
 首先考虑无色散介质，即
+
 
 
 $$
@@ -22,7 +25,9 @@ $$
 $$
 
 
+
 考虑到均匀介质中
+
 
 
 $$
@@ -30,12 +35,15 @@ $$
 $$
 
 
+
 所以波动方程可以写为
+
 
 
 $$
 \nabla ^2 \vec{E}-\mu _0 \varepsilon \frac{\partial ^2 \vec{E}}{\partial t^2 }=0  \quad\text{or}\quad  \nabla ^2 \vec{E}-\frac{n^2}{c^2} \frac{\partial ^2 \vec{E}}{\partial t^2 }=0 
 $$
+
 
 
 在均匀介质中，每个笛卡尔电场分量都满足这个方程，所以可以用标量 $E$ 为代表推导传播公式，它可以是任意一个分量。
@@ -45,12 +53,15 @@ $$
 采用时间约定
 
 
+
 $$
 E(x,z,t)=\mathrm{Re} [u(x,z;\omega)e^{-i \omega t}]
 $$
 
 
+
 其中 $u$ 是完整的单频复振幅，将以上带入波动方程，得到
+
 
 
 $$
@@ -58,12 +69,15 @@ $$
 $$
 
 
+
 定义 $k_0 = \omega /c$ ，在二维 $x-z$ 情况下，上式改写为
+
 
 
 $$
 \frac{\partial ^2 u}{\partial x^2 }+\frac{\partial ^2 u}{\partial z^2 }+n^2 k_0 ^2 u =0 \tag{1}
 $$
+
 
 
 这就是2D单频情况下要解的Helmholtz方程（当说二维时，本质上是说一切物理量不随着 $y$ 方向变化）。到此为止没有引入近轴近似或者缓变假设等，但所基于的**介质确实是均匀的**。
@@ -73,12 +87,15 @@ $$
 做Fourier变换的动机是：导数会在Fourier空间写为乘法，所以可以简化偏微分方程。定义横向Fourier变换
 
 
+
 $$
 \hat{u}(k_x,z) = \int _{-\infty}^{\infty} u(x,z)e^{-ik_xx}\mathrm{d}x
 $$
 
 
+
 其逆变换为
+
 
 
 $$
@@ -86,9 +103,11 @@ u(x,z)=\int _{-\infty}^{\infty} \hat{u}(k_x,z) e^{ik_x x}\mathrm{d}k_x \tag{2}
 $$
 
 
+
 对于(2)式，其物理含义是：一个横向光场，可以表示为许多 $e^{ik_xx}$ 分量的叠加，每个 $k_x$ 对应一种横向振荡速度，对于 $u(x,z)$ 来说，也对应一种传播倾角。
 
 导数的Fourier变换，当然有
+
 
 
 $$
@@ -96,20 +115,23 @@ $$
 $$
 
 
+
  $\mathcal{F}_x$ 不改变 $z$ 导数。因此，(1)式的Fourier变换为
+
 
 
 $$
 -k_x ^2 \hat{u} +\frac{\partial ^2 \hat{u}}{\partial z^2}+ n^2 k_0 ^2 \hat{u}=0 
 $$
 
-
 即
+
 
 
 $$
 \frac{\partial ^2 \hat{u}}{\partial z^2}+ \left( n^2 k_0 ^2 -k_x^2\right)\hat{u}=0 \tag{4}
 $$
+
 
 
 此时，原来的二维偏微分方程，改写为了对每一个 $k_x$ ，各自求解一个关于 $z$ 的常系数二阶微分方程。
@@ -119,12 +141,15 @@ $$
 定义纵向波数
 
 
+
 $$
 k_z(k_x;\omega) = \sqrt{n^2 k_0 ^2 -k_x ^2}\tag{5}
 $$
 
 
+
 则(4)式改写为
+
 
 
 $$
@@ -132,12 +157,15 @@ $$
 $$
 
 
+
 它的一般解为
+
 
 
 $$
 \hat {u}(k_x ,z) = a(k_x)e^{ik_zz} +b(k_x)e^{-ik_zz} \tag{6}
 $$
+
 
 
 两个分量分别代表沿着 $+z$ 方向和 $-z$ 方向传播的波，这是因为：如果补上时间因子，则第一项的相位就是 $k_zz -\omega t$ ，它的相速度为正。这里其实也揭示一个重要事实
@@ -149,12 +177,15 @@ $$
 设所研究区域中只有沿 $+z$ 传播的场，即 $b(k_x) =0$ ，则
 
 
+
 $$
 \hat {u}(k_x ,z) = a(k_x)e^{ik_zz} 
 $$
 
 
+
 传播到 $z+\Delta z$ 后，则
+
 
 
 $$
@@ -162,7 +193,9 @@ $$
 $$
 
 
+
 因此
+
 
 
 $$
@@ -170,7 +203,9 @@ $$
 $$
 
 
+
 定义传播函数
+
 
 
 $$
@@ -178,7 +213,9 @@ H(k_x;\Delta z,\omega ) = \exp \left[ i\Delta z\sqrt{nk_0^2 -k_x^2} \right] \tag
 $$
 
 
+
 于是
+
 
 
 $$
@@ -190,12 +227,15 @@ $$
 对(7)式做逆变换
 
 
+
 $$
 u(x,z+\Delta z)=\frac{1}{2\pi}\int _{-\infty}^{\infty}\hat{u}(k_x,z)e^{ik_z\Delta z}e^{ik_xx}\mathrm{d}k_x
 $$
 
 
+
 其中
+
 
 
 $$
@@ -203,12 +243,15 @@ $$
 $$
 
 
+
 所以
+
 
 
 $$
 \boxed{u(x,z+\Delta z)=\mathcal{F}^{-1}_x\left[ e^{i\Delta z \sqrt{n^2 k_0^2-k_x^2}}\mathcal{F}_x[u(x,z)] \right]}\tag{9}
 $$
+
 
 
 这就是基本传播形式。
