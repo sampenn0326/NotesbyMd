@@ -1,70 +1,50 @@
-每次运行
+# NotesbyMd 跨设备工作流
 
-```CMD
+使用 **Typora + Git + GitHub** 管理 Markdown 笔记。
+
+- Typora：编辑笔记
+- Git：版本管理与同步
+- GitHub：云端仓库
+- GitHub Pages：自动发布网站
+
+## 1. 开始编辑前
+
+在 PowerShell 中执行：
+
+```
+cd D:\ResearchNote\NotesbyMd
+git pull
+```
+
+## 2. 编辑笔记
+
+使用 Typora 打开 `NotesbyMd` 文件夹，正常编辑 Markdown。
+
+图片应保存在仓库内部，确保 Git 可以同步。
+
+## 3. 编辑完成后
+
+```
 git add .
-git commit -m "更新笔记"
+git commit -m "Update notes"
 git push
 ```
 
-GitHub Actions 都会自动重新构建并更新网站。
+## 4. 跨设备同步规则
 
-也就是，一般工作流为
+- 在当前电脑编辑完成后，必须先 `git push`。
+- 换另一台电脑时，编辑前先执行 `git pull`。
+- 避免多台电脑同时修改同一文件。
+- Push 后 GitHub Pages 自动更新网站。
 
-```CMD
-Typora 写 Markdown
-        ↓
-保存
-        ↓
-git add .
-git commit -m "更新"
-git push
-        ↓
-GitHub 自动更新网站（约30秒~2分钟）
-```
+## 5. 常用命令
 
+| 命令                           | 功能             |
+| ------------------------------ | ---------------- |
+| `git pull`                     | 拉取远程更新     |
+| `git status`                   | 查看文件修改状态 |
+| `git add .`                    | 添加所有修改     |
+| `git commit -m "Update notes"` | 提交本地版本     |
+| `git push`                     | 推送到 GitHub    |
 
-
-**全流程**
-
-1.打开`cmd`，运行`E:`切换到E盘，以`cd MarkDown`打开目录。
-
-2.激活环境(若需要本地预览)
-
-```cmd
-.venv\Scripts\activate.bat
-```
-
-本地预览
-
-```cmd
-mkdocs serve
-```
-
-3.上传更新
-
-```cmd
-git add .
-git commit -m "更新笔记"
-git push
-```
-
-
-
-其它
-
-
-
-查看修改了哪些文件`git status`
-
-查看提交历史`git log --oneline`
-
-
-
-
-
-
-
-
-
-
-
+**核心原则：编辑前 Pull，编辑后 Push。**

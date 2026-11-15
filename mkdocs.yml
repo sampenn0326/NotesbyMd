@@ -17,18 +17,22 @@ theme:
 
 nav:
   - 首页: index.md
-  - 离子加速: 
-      - 笔记
-      - 文献
+  - 激光与等离子体相互作用:                                     #一级导航
+      - 快速手册: LaserPlasma/基本手册.md           #二级导航
+      - 激光在等离子体中的传播和反射: 
+      - SRS&SBS: 激光等离子体相互作用/SRS&SBS.md
+      - 激光与物质相互作用: 离子加速/激光与物质相互作用.md
+      - 离子加速: 离子加速/离子加速[笔记].md
+      - 等离子体光学: 离子加速/等离子体光学.md
+  - 数值方法: 
+      - MEEP: 数值方法/MEEP使用.md
+      - WPM方法: 数值方法/WPM方法.md
+      - WarpX:
+        - FieldSolver: 数值方法/FieldSolver.md
   - Codes:
       - Jupyter: Codes/Jupyter.md                                 #AA:BB/CC.md AA为网站显示的导航栏，BB/CC.md为本地文件路径，以docs为根目录
       - C++: Codes/C++.md
       - Input: Codes/Input.md
-  - 激光与等离子体相互作用:                                     #一级导航
-      - 快速手册: LaserPlasma/基本手册.md           #二级导航
-      - 激光与物质相互作用: 离子加速/激光与物质相互作用.md
-      - 离子加速: 离子加速/离子加速[笔记].md
-      - 等离子体光学: 离子加速/等离子体光学.md
 
 
 # ======================================
