@@ -7,81 +7,139 @@
 ### 1.1 均匀介质中的时域波动方程
 
 在均匀、无自由电荷、无外加电流的线性非磁化介质中，Maxwell方程写为
+
+
 $$
 \nabla \times \vec{E} = -\mu _0 \frac{\partial \vec{H}}{\partial t}, \quad \nabla \times \vec{H} =\frac{\partial \vec{D}}{\partial t}
 $$
+
+
 首先考虑无色散介质，即
+
+
 $$
 \vec{D} =\varepsilon \vec{E},\quad \varepsilon = \varepsilon _0 n^2
 $$
+
+
 考虑到均匀介质中
+
+
 $$
 \nabla \cdot \vec{D}=0,\quad \nabla \cdot \vec{E}=0
 $$
+
+
 所以波动方程可以写为
+
+
 $$
 \nabla ^2 \vec{E}-\mu _0 \varepsilon \frac{\partial ^2 \vec{E}}{\partial t^2 }=0  \quad\text{or}\quad  \nabla ^2 \vec{E}-\frac{n^2}{c^2} \frac{\partial ^2 \vec{E}}{\partial t^2 }=0 
 $$
+
+
 在均匀介质中，每个笛卡尔电场分量都满足这个方程，所以可以用标量 $E$ 为代表推导传播公式，它可以是任意一个分量。
 
 ### 1.2 固定频率的Helmholtz方程
 
 采用时间约定
+
+
 $$
 E(x,z,t)=\mathrm{Re} [u(x,z;\omega)e^{-i \omega t}]
 $$
+
+
 其中 $u$ 是完整的单频复振幅，将以上带入波动方程，得到
+
+
 $$
 \nabla ^2 u +\frac{n^2 \omega ^2}{c^2}u=0
 $$
+
+
 定义 $k_0 = \omega /c$ ，在二维 $x-z$ 情况下，上式改写为
+
+
 $$
 \frac{\partial ^2 u}{\partial x^2 }+\frac{\partial ^2 u}{\partial z^2 }+n^2 k_0 ^2 u =0 \tag{1}
 $$
+
+
 这就是2D单频情况下要解的Helmholtz方程（当说二维时，本质上是说一切物理量不随着 $y$ 方向变化）。到此为止没有引入近轴近似或者缓变假设等，但所基于的**介质确实是均匀的**。
 
 ### 1.3 对横向 $x$ 做Fourier变换
 
 做Fourier变换的动机是：导数会在Fourier空间写为乘法，所以可以简化偏微分方程。定义横向Fourier变换
+
+
 $$
 \hat{u}(k_x,z) = \int _{-\infty}^{\infty} u(x,z)e^{-ik_xx}\mathrm{d}x
 $$
+
+
 其逆变换为
+
+
 $$
 u(x,z)=\int _{-\infty}^{\infty} \hat{u}(k_x,z) e^{ik_x x}\mathrm{d}k_x \tag{2}
 $$
+
+
 对于(2)式，其物理含义是：一个横向光场，可以表示为许多 $e^{ik_xx}$ 分量的叠加，每个 $k_x$ 对应一种横向振荡速度，对于 $u(x,z)$ 来说，也对应一种传播倾角。
 
 导数的Fourier变换，当然有
+
+
 $$
 \mathcal{F} _x \left[ \frac{\partial u}{\partial x} \right] = ik_x \hat{u},\qquad \mathcal{F} _x \left[ \frac{\partial^2 u}{\partial x^2} \right] = -k_x^2 \hat{u}\tag{3}
 $$
+
+
  $\mathcal{F}_x$ 不改变 $z$ 导数。因此，(1)式的Fourier变换为
 
--
+
 $$
 -k_x ^2 \hat{u} +\frac{\partial ^2 \hat{u}}{\partial z^2}+ n^2 k_0 ^2 \hat{u}=0 
 $$
+
+
 即
+
+
 $$
 \frac{\partial ^2 \hat{u}}{\partial z^2}+ \left( n^2 k_0 ^2 -k_x^2\right)\hat{u}=0 \tag{4}
 $$
+
+
 此时，原来的二维偏微分方程，改写为了对每一个 $k_x$ ，各自求解一个关于 $z$ 的常系数二阶微分方程。
 
 ### 1.4 求解每个角谱分量的纵向演化
 
 定义纵向波数
+
+
 $$
 k_z(k_x;\omega) = \sqrt{n^2 k_0 ^2 -k_x ^2}\tag{5}
 $$
+
+
 则(4)式改写为
+
+
 $$
 \frac{\partial ^2 \hat{u}}{\partial z^2}+k_z^2  \hat{u}=0
 $$
+
+
 它的一般解为
+
+
 $$
 \hat {u}(k_x ,z) = a(k_x)e^{ik_zz} +b(k_x)e^{-ik_zz} \tag{6}
 $$
+
+
 两个分量分别代表沿着 $+z$ 方向和 $-z$ 方向传播的波，这是因为：如果补上时间因子，则第一项的相位就是 $k_zz -\omega t$ ，它的相速度为正。这里其实也揭示一个重要事实
 
 > Helmholtz方程本身同时包含正向波和反向波，当使用基本传播公式时，需要额外指定正向传播的条件。
@@ -89,22 +147,40 @@ $$
 ### 1.5 施加单向条件，得到传播因子
 
 设所研究区域中只有沿 $+z$ 传播的场，即 $b(k_x) =0$ ，则
+
+
 $$
 \hat {u}(k_x ,z) = a(k_x)e^{ik_zz} 
 $$
+
+
 传播到 $z+\Delta z$ 后，则
+
+
 $$
 \hat{u} (k_x ,z+\Delta z) = a(k_x)e^{ik_z (z+\Delta z)} = a(k_x)e^{ik_zz}e^{ik_z\Delta z}
 $$
+
+
 因此
+
+
 $$
 \hat{u}(k_x ,z+\Delta z)=\hat{u}(k_x,z)e^{ik_z \Delta z} \tag{7}
 $$
+
+
 定义传播函数
+
+
 $$
 H(k_x;\Delta z,\omega ) = \exp \left[ i\Delta z\sqrt{nk_0^2 -k_x^2} \right] \tag{8}
 $$
+
+
 于是
+
+
 $$
 \hat {u}(z+\Delta z)=H \hat{u}(z)
 $$
@@ -112,17 +188,29 @@ $$
 ### 1.6 逆Fourier变换，回到位置空间
 
 对(7)式做逆变换
+
+
 $$
 u(x,z+\Delta z)=\frac{1}{2\pi}\int _{-\infty}^{\infty}\hat{u}(k_x,z)e^{ik_z\Delta z}e^{ik_xx}\mathrm{d}k_x
 $$
+
+
 其中
+
+
 $$
 \hat{u}(k_x,z)=\mathcal{F}_x[u(x,z)]
 $$
+
+
 所以
+
+
 $$
 \boxed{u(x,z+\Delta z)=\mathcal{F}^{-1}_x\left[ e^{i\Delta z \sqrt{n^2 k_0^2-k_x^2}}\mathcal{F}_x[u(x,z)] \right]}\tag{9}
 $$
+
+
 这就是基本传播形式。
 
 再次概括基本过程就是：(1)将横向光场分解为不同倾角的平面波；(2)让每个平面波累积各自的传播相位；(3)将所有分量相干叠加，得到新平面的光场。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
@@ -136,53 +224,93 @@ $$
 ### 2.1 式中的平方根色散关系
 
 在均匀、无损介质中，波矢 $|\vec{k}| = nk_0 $ ，二维情况下
+
+
 $$
 \vec{k}=(k_x,k_y),\qquad k_x ^2 +k_y^2 =n^2 k_0^2 
 $$
+
+
 此时
+
+
 $$
 k_z = \sqrt{n^2 k_0^2-k_x^2}
 $$
+
+
 若平面波与 $+z$ 轴的夹角是 $\theta$ ，则
+
+
 $$
 k_x =k_0 n \sin \theta, \quad k_z =k_0n \cos \theta 
 $$
+
+
 此时传播因子也可以写成
+
+
 $$
 H= e^{ink_0\cos \theta  \Delta z}
 $$
+
+
 不同倾角的平面波，在两个固定 $z$ 平面之间获得不同的相位增量，重新叠加后，横向强度分布就可能发生变化。
 
 ### 2.2 传播分量、倏逝分量
 
 一般取 $n$ 为正实数，则如果 $|k_x| <nk_0$，则 $k_z$ 为实数，$H=e^{ik_z \Delta z}$ 对应能够沿 $+z$ 传播的平面波；当 $|k_x| >nk_0$ ，令 $\alpha =\sqrt{k_x^2 -n^2 k_0^2}$ ，则物理解应该选
+
+
 $$
 k_z=i \alpha
 $$
+
+
 因此 $H = e^{i(i\alpha)}\Delta z = e^{-\alpha \Delta z}$ ，它随传播距离衰减，是倏逝分量。对于复折射率
+
+
 $$
 \tilde{n}=n+i\kappa
 $$
+
+
 同样要选取符合被动介质衰减条件的分支。
 
 ### 2.3 Fresnel传播公式
 
 基本公式保留了完整平方根，若传播角度小，即 $|k_x|/nk_0\ll 1$，可以展开
+
+
 $$
 k_z= nk_0 \sqrt{1-k_x^2/(n^2 k_0^2)}\approx nk_0 -\frac{k_x^2}{2nk_0}
 $$
+
+
 此时
+
+
 $$
 H \approx e^{ink_0}\exp\left[ -i \frac{k_x^2}{2nk_0}\Delta z \right]
 $$
+
+
 其中 $\exp[ink_0]$ 是所有横向分量共有的载波相位。定义去掉改载波的场
+
+
 $$
 A(x,z)=u(x,z)e^{-ink_0z}
 $$
+
+
 就得到该场的演化
+
+
 $$
 A(x,z+\Delta z)= \mathcal{F}_x^{-1}[e^{-ik_x^2 \Delta z/(2nk_0)}\mathcal{F}_x[A(x,z)]]
 $$
+
+
 这就是近轴Fresnel传播的频域公式。
 
 
