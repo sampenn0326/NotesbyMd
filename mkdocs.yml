@@ -28,6 +28,7 @@ nav:
       - WPM方法: 数值方法/WPM方法.md
       - WarpX:
         - FieldSolver: 数值方法/FieldSolver.md
+        - RZ: 数值方法/RZ坐标.md
   - Codes:
       - Jupyter: Codes/Jupyter.md                                 #AA:BB/CC.md AA为网站显示的导航栏，BB/CC.md为本地文件路径，以docs为根目录
       - C++: Codes/C++.md
