@@ -1,0 +1,176 @@
+/* Material for MkDocs — deep red academic theme.
+   Put in docs/stylesheets/pku-red.css and load it LAST in extra_css.
+   Main color is an approximate PKU-inspired red, #8c0000.
+   Uses installed system fonts; no external font download required. */
+
+:root,
+[data-md-color-scheme="default"] {
+  --note-red: #8c0000;
+  --note-heading: #790000;
+  --note-soft: #faf1f1;
+  --note-border: #e7d5d5;
+  --md-primary-fg-color: #8c0000;
+  --md-primary-fg-color--light: #ab3030;
+  --md-primary-fg-color--dark: #640000;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+  --md-accent-fg-color: #b22525;
+  --md-accent-fg-color--transparent: #8c000014;
+  --md-typeset-a-color: #8c0000;
+  --md-text-font: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --md-code-font: Consolas, "Cascadia Code", monospace;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: #292929;
+  --md-default-fg-color--light: #626262;
+  --md-code-bg-color: #f6f6f7;
+}
+
+/* Preserve readability when an existing site offers dark mode. */
+[data-md-color-scheme="slate"] {
+  --note-red: #f0a2a2;
+  --note-heading: #f0b1b1;
+  --note-soft: #ffffff06;
+  --note-border: #ffffff24;
+  --md-primary-fg-color: #790000;
+  --md-primary-fg-color--light: #a12c2c;
+  --md-primary-fg-color--dark: #590000;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+  --md-accent-fg-color: #f2b0b0;
+  --md-accent-fg-color--transparent: #f0a2a21a;
+  --md-typeset-a-color: #f0a2a2;
+}
+
+.md-header {
+  box-shadow: 0 2px 8px #00000015;
+}
+
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.85;
+}
+
+.md-typeset h1 {
+  margin-bottom: 1em;
+  padding-bottom: 0.45em;
+  border-bottom: 2px solid var(--note-red);
+  color: var(--note-heading);
+  font-size: 1.9em;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.md-typeset h2 {
+  margin-top: 1.8em;
+  padding: 0.25em 0.65em;
+  border-left: 4px solid var(--note-red);
+  background: var(--note-soft);
+  color: var(--note-heading);
+  font-size: 1.4em;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.md-typeset h3 {
+  margin-top: 1.5em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--note-border);
+  color: var(--note-heading);
+  font-size: 1.15em;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.md-typeset h4 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.md-typeset blockquote {
+  padding: 0.2em 1em;
+  border-left: 3px solid var(--note-red);
+  background: var(--note-soft);
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset table:not([class]) {
+  border-color: var(--note-border);
+  border-radius: 4px;
+  font-size: 0.76rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--note-soft);
+  color: var(--note-heading);
+  font-weight: 700;
+}
+
+.md-typeset pre > code {
+  border: 1px solid var(--note-border);
+  border-radius: 5px;
+  line-height: 1.65;
+}
+
+.md-typeset hr {
+  border-bottom-color: var(--note-border);
+}
+
+.md-typeset .md-button {
+  border-radius: 4px;
+}
+
+.md-typeset .md-button--primary {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .md-typeset h1 {
+    font-size: 1.65em;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.25em;
+  }
+}
+
+@media print {
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    color: #292929;
+    background: transparent;
+    break-after: avoid;
+  }
+}
+
+/* 表格整体居中，单元格文字保持左对齐 */
+.md-typeset .md-typeset__table {
+  display: block;
+  overflow-x: auto;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  text-align: center;
+}

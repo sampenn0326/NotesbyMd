@@ -2,7 +2,7 @@
 # 网站基本信息
 # ======================================
 
-site_name: SamPenn KnowledgeBase
+site_name: SamPenn
 
 # ======================================
 # 主题
@@ -24,11 +24,11 @@ nav:
       - 离子加速: 离子加速/离子加速[笔记].md
       - 等离子体光学: 离子加速/等离子体光学.md
   - 数值方法: 
-      - MEEP: 数值方法/MEEP使用.md
-      - WPM方法: 数值方法/WPM方法.md
       - WarpX:
         - FieldSolver: 数值方法/FieldSolver.md
         - RZ: 数值方法/RZ坐标.md
+      - MEEP: 数值方法/MEEP使用.md
+      - WPM方法: 数值方法/WPM方法.md
   - Codes:
       - Jupyter: Codes/Jupyter.md                                 #AA:BB/CC.md AA为网站显示的导航栏，BB/CC.md为本地文件路径，以docs为根目录
       - C++: Codes/C++.md
@@ -64,3 +64,4 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/pku-red.css

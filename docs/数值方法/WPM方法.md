@@ -360,7 +360,115 @@ $$
 
 
 
+## 3. WPM的RZ形式
 
+从Maxwell方程组到 RZ WPM 形式，有两处物理近似：**一是把矢量电磁场近似为一个标量振幅，二是在纵向只保留前向传播。** 在这两步之间，冷等离子体的线性电流响应给出 \(-\omega_p^2/c^2\) 项。
+
+### 3.1 麦克斯韦方程 + 冷电子响应
+
+设离子固定，背景电子密度 \(n_e(r,z)\) 已知。做线性化，电子速度 \(\mathbf v_e\) 满足
+
+
+$$
+m_e\partial_t\mathbf v_e=-e\mathbf E, \qquad \mathbf J=-en_e\mathbf v_e
+$$
+
+
+由于背景密度不随时间变，
+
+
+$$
+\partial_t\mathbf J =\frac{n_e e^2}{m_e}\mathbf E =\varepsilon_0\omega_p^2(r,z)\mathbf E, \qquad \omega_p^2(r,z)=\frac{n_e(r,z)e^2}{\varepsilon_0m_e}
+$$
+
+
+再用法拉第定律和安培–麦克斯韦定律，
+
+
+$$
+\nabla\times\mathbf E=-\partial_t\mathbf B, \qquad \nabla\times\mathbf B=\mu_0\mathbf J+\frac{1}{c^2}\partial_t\mathbf E
+$$
+
+
+对第一式取旋度，代入第二式和电子电流响应，得到
+
+
+$$
+\nabla\times\nabla\times\mathbf E +\frac{1}{c^2}\partial_t^2\mathbf E +\frac{\omega_p^2(r,z)}{c^2}\mathbf E=0
+$$
+
+
+这一步仍然是矢量方程。取时间约定 \(e^{-i\omega t}\)，就有
+
+
+$$
+\nabla\times\nabla\times\mathbf E_\omega =\underbrace{\frac{\omega^2-\omega_p^2(r,z)}{c^2}}_{k^2\varepsilon_r(r,z,\omega)} \mathbf E_\omega, \qquad \varepsilon_r=1-\frac{\omega_p^2}{\omega^2}
+$$
+
+
+对给定频率，密度越高，局部折射率越低。如果密度从轴向外升高，轴心折射率较高，则通道具有聚焦作用。
+
+### 3.2 从矢量方程到 RZ 标量方程
+
+用恒等式 \(\nabla\times\nabla\times\mathbf E=\nabla(\nabla\cdot\mathbf E)-\nabla^2\mathbf E\)，可把频域方程写成
+
+
+$$
+\big(\nabla^2+k^2\varepsilon_r\big)\mathbf E_\omega =\nabla(\nabla\cdot\mathbf E_\omega)
+$$
+
+
+这里容易跳过一步。高斯定律在线性介质形式下给出 \(\nabla\cdot(\varepsilon_r\mathbf E_\omega)=0\)。在非均匀等离子体中，\(\varepsilon_r\) 随空间变化，因此一般仍有
+
+
+$$
+\nabla\cdot\mathbf E_\omega =-\frac{\nabla\varepsilon_r\cdot\mathbf E_\omega}{\varepsilon_r}
+$$
+
+
+（在 \(\varepsilon_r\ne 0\) 的区域）。视参数条件有时可省略矢量方程右侧这一项。进一步，一些情况下可以用 \(U_\omega(r,z)\) 表示主横向偏振的标量振幅， 例如，线偏振光束可以具有圆对称的振幅分布，但电场偏振仍沿固定的笛卡尔方向。
+
+对这个标量振幅取 \(\partial_\phi U_\omega=0\)，便得到
+
+
+$$
+\boxed{ \left[ \partial_z^2 +\frac{1}{r}\partial_r(r\partial_r) +k^2-\frac{\omega_p^2(r,z)}{c^2} \right]U_\omega=0} 
+$$
+
+
+这里的 \(r^{-1}\partial_r(r\partial_r)\) 就是圆形光束的径向衍射算符。
+
+### 3.3 从二阶波动方程到前向模态传播
+
+把密度沿 \(z\) 分层，每层内保留完整的径向密度分布。对第 \(j\) 层定义
+
+
+$$
+ Q_j=\frac{1}{r}\partial_r(r\partial_r) -\frac{\omega_{p,j}^2(r)}{c^2}
+$$
+
+
+如果某个径向场型 \(\phi_m\) 满足 \(Q_j\phi_m=\lambda_m\phi_m\)，那么把 \(U_\omega=a_m(z)\phi_m(r)\) 代入上式，就只剩下
+
+
+$$
+a_m''+(k^2+\lambda_m)a_m=0
+$$
+
+
+平方根在这一步出现。 对传播模态，二阶方程给出沿 \(+z\) 和 \(-z\) 的两支解 \(e^{\pm i k_{z,m}z}\)，其中 \(k_{z,m}=\sqrt{k^2+\lambda_m}\)。脚本保留 \(+z\) 支。若 \(k^2+\lambda_m<0\)，则取 \(\operatorname{Im}k_{z,m}>0\)，使该模态向下游衰减。
+
+再写成 \(U_\omega=e^{ikz}u_\omega\)，剥离真空传播相位，代码中每个模态在层内走过距离 \(d\) 的更新就变成
+
+
+$$
+\boxed{ a_{m,\mathrm{out}}^{(u)} =a_{m,\mathrm{in}}^{(u)} \exp\!\left[i\left(\sqrt{k^2+\lambda_m}-k\right)d\right] }
+$$
+
+
+**层内**，这个指数是离散标量方程对应模态的传播解，所以均匀平台可以一次推进。**换层时**，代码把上一层出口的横向场投影到下一层的本征基底，继续前向推进。这一步只传递横向场，没有同时匹配 \(U_\omega\) 和 \(\partial_z U_\omega\) 来求反射。因此，保留完整平方根改善的是**层内的纵向色散关系**，界面反射仍由单向近似省略。
+
+最后，静态等离子体允许各频率独立传播。求解器算出每个频率的 \(u_\omega(r,z)\)，Notebook 再乘上含啁啾的入射谱 \(S_\eta(\omega)\)，按 \(e^{-i(\omega-\omega_0)(t-z/c)}\) 相干叠加。这就把麦克斯韦方程中的**电子电流响应**，一路连到了时空图中的**飞行焦点强度峰**。
 
 
 
