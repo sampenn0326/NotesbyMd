@@ -1,0 +1,1500 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../%E6%BF%80%E5%85%89%E5%9F%BA%E7%A1%80%E5%92%8C%E6%8A%80%E6%9C%AF/%E9%A3%9E%E8%A1%8C%E7%84%A6%E7%82%B9/">
+      
+      
+        <link rel="next" href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E6%BF%80%E5%85%89%E4%B8%8E%E7%89%A9%E8%B4%A8%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>SRS&SBS - SamPenn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pku-red.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#raman" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SamPenn" class="md-header__button md-logo" aria-label="SamPenn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SamPenn
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SRS&SBS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SamPenn" class="md-nav__button md-logo" aria-label="SamPenn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SamPenn
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光基础和技术
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    激光基础和技术
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BF%80%E5%85%89%E5%9F%BA%E7%A1%80%E5%92%8C%E6%8A%80%E6%9C%AF/%E5%B8%B8%E8%A7%81%E5%85%89%E6%9D%9F%E5%BD%A2%E5%BC%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常见光束
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BF%80%E5%85%89%E5%9F%BA%E7%A1%80%E5%92%8C%E6%8A%80%E6%9C%AF/%E8%B6%85%E7%9F%AD%E8%84%89%E5%86%B2%E7%9A%84%E6%97%B6%E5%9F%9F%E9%A2%91%E5%9F%9F%E8%A1%A8%E5%BE%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超短脉冲的时域频域表征
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BF%80%E5%85%89%E5%9F%BA%E7%A1%80%E5%92%8C%E6%8A%80%E6%9C%AF/%E9%A3%9E%E8%A1%8C%E7%84%A6%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    飞行焦点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与等离子体相互作用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    激光与等离子体相互作用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaserPlasma/基本手册.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SRS&SBS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E6%BF%80%E5%85%89%E4%B8%8E%E7%89%A9%E8%B4%A8%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与物质相互作用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F%5B%E7%AC%94%E8%AE%B0%5D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离子加速
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E5%85%89%E5%AD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等离子体光学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数值方法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数值方法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WarpX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WarpX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/FieldSolver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FieldSolver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/RZ%E5%9D%90%E6%A0%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RZ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/MEEP%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MEEP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/WPM%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WPM方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Jupyter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jupyter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/C%2B%2B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="raman">受激Raman散射</h1>
+<h1 id="_1">前向拉曼放大</h1>
+<p>从 Maxwell–电子流体方程到三波耦合、线性时空增益与泵浦耗尽。以 Lei 等，<em>Phys. Rev. Lett.</em> <strong>134</strong>, 255001 (2025) 及其补充材料为主线。全文采用 SI 单位。 <span class="arithmatex">\(z\)</span> 为传播方向。</p>
+<h2 id="1">1. 模型、变量和近似</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(e&gt;0\)</span>、<span class="arithmatex">\(m_e\)</span></td>
+<td style="text-align: center;">元电荷绝对值、电子质量</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(n_b\)</span>、<span class="arithmatex">\(\eta=\delta n/n_b\)</span></td>
+<td style="text-align: center;">均匀背景电子密度、相对密度扰动</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\omega_p^2=n_b e^2/(\epsilon_0m_e)\)</span></td>
+<td style="text-align: center;">电子等离子体频率平方</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(a=eA_y/(m_ec)\)</span></td>
+<td style="text-align: center;">归一化横向矢势，此处 <span class="arithmatex">\(a\)</span> 为实场</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(E_x\)</span></td>
+<td style="text-align: center;">纵向电子流体速度、纵向静电场</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(v_T^2=k_BT_e/m_e\)</span></td>
+<td style="text-align: center;">一维电子热速平方，采用 Bohm–Gross 闭合</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(0,1,2\)</span></td>
+<td style="text-align: center;">泵浦、Stokes 种子、电子等离子体波（EPW）</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(v_j=\partial\omega_j/\partial k_j\)</span></td>
+<td style="text-align: center;">带符号群速度，后向分支 <span class="arithmatex">\(v_1&lt;0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>假设无外磁场、光束<strong>共线</strong>且线偏振，离子在所考察的电子波时间尺度上近似固定。保留最低阶的非线性耦合。电子纵向运动在推导中线性化，但保留横向运动产生的二阶有质动力。采用<strong>弱相对论极限</strong> <span class="arithmatex">\( |a|\ll1 \)</span>。单支 Stokes 模型随后还要作载波选择和慢变包络近似。电子温度只通过压力闭合进入，Landau 阻尼需要单独建模。</p>
+<h2 id="2">2. 从电子运动推到光–密度双向耦合</h2>
+<h3 id="21">2.1 横向正则动量和电流</h3>
+<p>设激光沿 <span class="arithmatex">\(x\)</span> 传播，沿 <span class="arithmatex">\(y\)</span> 偏振。场只依赖 <span class="arithmatex">\(x,t\)</span>，因此 <span class="arithmatex">\(y\)</span> 是循环坐标，电子横向正则动量 <span class="arithmatex">\(p_y-eA_y\)</span> 守恒。取电子在场到来前横向静止，于是 <span class="arithmatex">\(p_y=eA_y\)</span>，弱相对论下 <span class="arithmatex">\(v_y\simeq ca\)</span>。这给出</p>
+<div class="arithmatex">\[
+J_y=-e n_e v_y\simeq-\frac{e^2n_b}{m_e}(1+\eta)A_y
+\]</div>
+<p>取横向失势 <span class="arithmatex">\(A_y(x,t)\)</span> ，于是</p>
+<div class="arithmatex">\[
+E_y =- \partial _t A_y,\quad B_z =\partial _x A_y
+\]</div>
+<p>考虑Ampere方程的 <span class="arithmatex">\(y\)</span> 分量，得到  </p>
+<div class="arithmatex">\[
+\nabla \times \vec{B} =\mu _0\varepsilon _0\frac{\partial \vec{E}}{\partial t}+\mu _0 \vec{J}\quad \to\quad -\partial _x B_z =\mu _0 J_y +\frac{1}{c^2} \partial _tE_y
+\]</div>
+<p>带入、整理得到（把背景密度 <span class="arithmatex">\(n_b\)</span> 的贡献归到左侧，且以 <span class="arithmatex">\(a\)</span> 为变量）</p>
+<div class="arithmatex">\[
+\boxed{(\partial_t^2-c^2\partial_x^2+\omega_p^2)a
+=-\omega_p^2\eta a} \tag{1}
+\]</div>
+<p>左边给出普通冷等离子体光学色散（取 <span class="arithmatex">\(\eta\)</span>=0 带入平面波就得到色散关系 <span class="arithmatex">\(\omega ^2 =c^2 k^2 +\omega _p^2\)</span> ）；右边是密度扰动对横向电流的调制，也是频率混合的来源。</p>
+<h3 id="22-poisson">2.2 纵向有质动力、连续性和 Poisson 方程</h3>
+<p>对于 <span class="arithmatex">\(A_y(x,t)\)</span>，有 <span class="arithmatex">\(B_z=\partial_x A_y\)</span>，所以</p>
+<div class="arithmatex">\[
+-\frac{e}{m_e}v_yB_z=-c^2a\,\partial_xa
+=-\frac{c^2}{2}\partial_xa^2 
+\]</div>
+<p>这是纵向洛伦兹力的磁场项 <span class="arithmatex">\((\vec{v}\times \vec{B})_x = v_y B_z\)</span> ，把这个力放入纵向动量方程，再联立连续性和 Poisson 方程</p>
+<div class="arithmatex">\[
+\partial_t u=-\frac{e}{m_e}E_x-3v_T^2\partial_x\eta
+-\frac{c^2}{2}\partial_x a^2,\qquad
+\partial_t\eta=-\partial_x u,\qquad
+\partial_xE_x=-\frac{en_b}{\epsilon_0}\eta
+\]</div>
+<p>其中 <span class="arithmatex">\(v_T\)</span> 相关项来自电子热压梯度产生的纵向加速度，即流体动量方程的压力项</p>
+<div class="arithmatex">\[
+-\frac{1}{m_e n_e} \partial _x p_e \approx- \frac{1}{m_e n_b} \partial _x (\delta p_e) = 3v_T^2 \partial \eta \qquad \left( \delta p_e =3k_B T_e  \delta n_e,\;v_T^2 =k_BT_e/m_e \right)
+\]</div>
+<p>其中采用了一维绝热闭合。对连续性方程再取一次时间导数，得到</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\partial_t^2\eta
+&amp;=-\partial_x\partial_tu\\
+&amp;=\frac{e}{m_e}\partial_xE_x+3v_T^2\partial_x^2\eta
++\frac{c^2}{2}\partial_x^2a^2
+\end{aligned}
+\]</div>
+<p>（带入Poisson方程）消去 <span class="arithmatex">\(E_x\)</span> 后，</p>
+<div class="arithmatex">\[
+\boxed{(\partial_t^2-3v_T^2\partial_x^2+\omega_p^2)\eta
+=\frac{c^2}{2}\partial_x^2a^2} \tag{2}
+\]</div>
+<p>式 (2) 表示光场拍频驱动电子密度波，式 (1) 表示密度波将泵浦散射到种子。两条方程形成闭合反馈。</p>
+<h2 id="3">3. 共振匹配与慢变包络</h2>
+<h3 id="31">3.1 载波约定与频率选择</h3>
+<p>令 <span class="arithmatex">\(\theta_j=k_jx-\omega_jt\)</span>，用峰值复包络表示实场（记得0，1，2分别标记泵浦、种子和电子等离子体波EPW）</p>
+<div class="arithmatex">\[
+a=\tfrac12(a_0e^{i\theta_0}+a_1e^{i\theta_1}+\mathrm{c.c.}),\qquad
+\eta=\tfrac12(Ne^{i\theta_2}+\mathrm{c.c.})   \tag{a}
+\]</div>
+<p>取泵浦 <span class="arithmatex">\(k_0&gt;0\)</span>，种子波数 <span class="arithmatex">\(k_1\)</span> 带符号。<span class="arithmatex">\(a^2\)</span> 中 <span class="arithmatex">\(e^{i(\theta_0-\theta_1)}\)</span> 的系数是 <span class="arithmatex">\(a_0a_1^*/2\)</span>，两种乘积排列都必须计入。<span class="arithmatex">\(\eta a\)</span> 中 <span class="arithmatex">\(e^{i(\theta_1+\theta_2)}\)</span> 的系数是 <span class="arithmatex">\(Na_1/4\)</span>，<span class="arithmatex">\(e^{i(\theta_0-\theta_2)}\)</span> 的系数是 <span class="arithmatex">\(N^*a_0/4\)</span>。这三个因子决定耦合系数的归一化。</p>
+<p>差频驱动与 EPW 载波匹配，同时 EPW 散射泵浦生成 Stokes 光</p>
+<div class="arithmatex">\[
+\omega_0=\omega_1+\omega_2,\qquad k_0=k_1+k_2 \tag{3}
+\]</div>
+<p>若用三个独立参考载波，定义 <span class="arithmatex">\(\Psi=\theta_0-\theta_1-\theta_2\)</span>。泵浦方程的右端乘 <span class="arithmatex">\(e^{-i\Psi}\)</span>，种子和电子波方程的右端乘 <span class="arithmatex">\(e^{i\Psi}\)</span>。不同文献若把失谐吸收进电子波包络，相位指数会移到导数项里。</p>
+<h3 id="32">3.2 展开波动算符</h3>
+<p>对任一包络 <span class="arithmatex">\(f\)</span>，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+(\partial_t^2-c^2\partial_x^2+\omega_p^2)(fe^{i\theta})
+=e^{i\theta}\big[&amp;
+(-\omega^2+c^2k^2+\omega_p^2)f\\
+&amp;-2i\omega(\partial_t+v_g\partial_x)f\\
+&amp;+(\partial_t^2-c^2\partial_x^2)f\big]
+\end{aligned} \tag{b}
+\]</div>
+<p>其中 <span class="arithmatex">\(v_g=c^2k/\omega\)</span>。选取满足色散关系的载波，第一项消去。包络变化尺度远长于光学周期和波长时，最后一项相对一阶导数项可略。EPW 算符同理，只需将 <span class="arithmatex">\(c^2\)</span> 换为 <span class="arithmatex">\(3v_T^2\)</span> （即查看方程1、2左侧算符对一般形式包络的作用），所以</p>
+<div class="arithmatex">\[
+\omega_{0,1}^2=\omega_p^2+c^2 k_{0,1}^2,\quad
+\omega_2^2=\omega_p^2+3v_T^2 k_2^2,\quad
+v_2=\frac{3v_T^2 k_2}{\omega_2}
+\]</div>
+<p>上式中前两个式子是从”选取满足色散关系的载波“而得来，而 <span class="arithmatex">\(v_2\)</span> 则是把 <span class="arithmatex">\(v_g\)</span> 中的 <span class="arithmatex">\(c^2\)</span> 替换而得到的电子等离子体波群速度 电子波的相速度 <span class="arithmatex">\(v_{\phi,2}=\omega_2/k_2\)</span> 可很大，即使冷极限的群速度 <span class="arithmatex">\(v_2\)</span> 为零。</p>
+<h3 id="33">3.3 三波方程和对称归一化</h3>
+<p>设 <span class="arithmatex">\(D_j=\partial_t+v_j\partial_x\)</span>。精确共振意味着 <span class="arithmatex">\(\theta _0 =\theta _1 +\theta _2\)</span> 。下面在精确共振条件下、在缓变包络近似下，将预设解的形式(a)带入(1)(2)式，得到
+$$
+(1)LHS&amp;=-ie^{i\theta _0}\omega _0D_0 a_0 -ie^{i\theta _1}\omega _1 D_1 a_1 +c.c. \
+(1)RHS&amp;=-\frac{\omega _p^2}{4} \left[Na_0e^{i(\theta_2+\theta_0)}+Na_0^<em>e^{i(\theta_2-\theta_0)}
++Na_1e^{i(\theta_2+\theta_1)}
++Na_1^</em>e^{i(\theta<em>2-\theta_1)} \right]klzzwxh:00</em>2
+&amp;-\frac{\omega<em>p^2}{4}\left[ N^*a_0e^{i(\the</em>a<em>0-\t</em>eta<em>2)}
++N^*a_0^*e^{-i(\theta_2+</em>theta_0)}
++N^<em>a_1e^{i(\theta_1-\theta_2)}
++N^</em>a_1^<em>e^{-i(\theta_2+\theta_1)} \right]
+$$
+比较三个谐波的系数，例如左侧 <span class="arithmatex">\(\exp[i\theta_0]\)</span> 项对应右侧 <span class="arithmatex">\(\exp[i(\theta _2 +\theta _1)]\)</span> ，系数相等得到
+$$
+-i \omega _0 D_0 a_0 =-\frac{\omega _p ^2}{4}Na_1
+$$
+同理处理，则有
+$$
+D_0 a_0=-iC_0 Na_1,\qquad
+D_1 a_1=-iC_1 N^</em>a_0,\qquad
+D_2 N=-iH a_0a_1^*,
+$$</p>
+<div class="arithmatex">\[
+C_j=\frac{\omega_p^2}{4\omega_j}\ (j=0,1),\qquad
+H=\frac{c^2k_2^2}{4\omega_2}
+\]</div>
+<p>例如 EPW 的正频方程是 <span class="arithmatex">\(-i\omega_2D_2N=-c^2k_2^2 a_0a_1^*/4\)</span>。取 <span class="arithmatex">\(N=-iq\)</span>，再定义</p>
+<div class="arithmatex">\[
+P=a_0,\qquad S=\sqrt{\omega_1/\omega_0}\,a_1,\qquad
+B=\sqrt{C_0/H}\,q,\qquad \kappa=\sqrt{C_1H}
+\]</div>
+<p>则（P为pump，S为stokes seed，B表示纵向电子密度波）</p>
+<div class="arithmatex">\[
+\boxed{
+D_0 P=-\kappa S B,\qquad
+D_1 S=+\kappa P B^*,\qquad
+D_2 B=+\kappa P S^* 
+} \tag{4}
+\]</div>
+<p>这里的 <span class="arithmatex">\(P,S,B\)</span>​ 是便于检查守恒律的归一化包络。式 (4) 可以看成一个<strong>由电子密度波闭合的反馈回路</strong>。把三行按物理过程重排，更直观</p>
+<p>$$
+\begin{aligned} D_2 B &amp;=+\kappa P S^* &amp;&amp;\text{泵浦与种子拍频，激发电子密度波},\ D_1 S &amp;=+\kappa P B^* &amp;&amp;\text{密度波散射泵浦，把新光叠加到种子上},\ D_0 P &amp;=-\kappa S B &amp;&amp;\text{种子与密度波共同作用，使泵浦耗尽} \end{aligned}
+$$
+<strong>密度波是一道运动的光栅</strong>。设一束弱种子刚进入泵浦，起初 <span class="arithmatex">\(B=0\)</span>。第一步是 <span class="arithmatex">\(PS^*\)</span> 驱动电子密度波。密度波形成后，就像一道<strong>运动的折射率光栅</strong>，从泵浦散射出与种子同频、同波数的光。若散射光与原种子同相，两者的<strong>场振幅</strong>相加。更强的种子又产生更强的拍频，进一步加深光栅。所以，小信号阶段的图像是 <strong>种子增强 → 密度波增强 → 泵浦向种子的散射增强</strong>。即使一开始没有密度波，只要有种子，回路就能启动。</p>
+<h2 id="4-manleyrowe">4. Manley–Rowe 关系与能量流向</h2>
+<p>将式 (4) 乘对应包络的共轭后取实部。定义 <span class="arithmatex">\(Q=2\kappa\operatorname{Re}(P^*SB)\)</span>，得到</p>
+<div class="arithmatex">\[
+D_0|P|^2=-Q,\qquad D_1|S|^2=Q,\qquad D_2|B|^2=Q \tag{c}
+\]</div>
+<p>可以从上式得到作用量守恒和能量守恒。可以直接用每支线性波的周期平均能量密度 <span class="arithmatex">\(\mathcal E_j\)</span> 来验证，波作用量密度定义为
+$$
+\mathcal{J} _j =\frac{\mathcal{E}_j}{\omega _j}
+$$
+回顾由横向矢势  <span class="arithmatex">\(A_j\)</span> 表达的复场和速度
+$$
+\tilde E_y = i\omega_j A_y,\quad \tilde {B}_z=ik_j A_j,\quad \tilde{v}<em>y= \frac{e}{m_e} A_j
+$$
+对于横向电磁波，总能量是电场磁场能和跟随的横向电子振荡动能之和，分别算平均能量
+$$
+\begin{aligned}
+\mathcal E_E
+&amp;=\frac{\epsilon_0}{2}\langle E_y^2\rangle
+=\frac{\epsilon_0}{4}\omega_j^2|A_j|^2,\[3pt]
+\mathcal E_B
+&amp;=\frac{1}{2\mu_0}\langle B_z^2\rangle
+=\frac{\epsilon_0}{4}c^2k_j^2|A_j|^2,\[3pt]
+\mathcal E</em>{\rm kin}
+&amp;=\frac{n<strong>m_e}{2}\langle v_y</strong>\rangle
+=\frac{n_be^2}{4m_e}|A_j|^2
+=\frac{\epsilon_0}{4}\omega_p^2|A_j|^2
+\end{aligned}
+$$
+用上色散关系相加得到
+$$
+\begin{aligned}
+\mathcal E_j
+&amp;=\frac{\epsilon_0|A_j|^2}{4}
+\left(\omega_j^2+c^2k_j^2+\omega_p^2\right)\
+&amp;=\frac{\epsilon_0}{2}\omega_j^2|A_j|^2
+=\frac{n_bm_ec^2}{2\omega_p^2}\,\omega_j^2|a_j|^2
+\end{aligned}
+$$
+这里还含有一个直观的关系：<strong>磁场能加电子振荡动能，恰好等于电场能</strong>。真空中电子动能项为零，磁场能和电场能各占一半。在冷等离子体中，磁场能的占比下降，电子振荡动能补足这一部分。最后除以 <span class="arithmatex">\(\omega_j\)</span>，就得到前面用到的光波作用量密度 <span class="arithmatex">\(\mathcal J_j\propto\omega_j|a_j|^2\)</span>​。这就解释了为什么取 <span class="arithmatex">\(P=a_0\)</span>，同时给种子乘一个频率因子 <span class="arithmatex">\(S=\sqrt{\omega_1/\omega_0}\,a_1\)</span>。令
+$$
+K=\frac{n_bm_ec^2\omega_0}{2\omega_p^2}
+$$
+便有 <span class="arithmatex">\(\mathcal J_0=K|P|^2\)</span>、<span class="arithmatex">\(\mathcal J_1=K|S|^2\)</span>。总之这种归一化选取使得 <span class="arithmatex">\(|P|^2\)</span> 等项正比于波的作用量密度。</p>
+<p>同一个交换项 <span class="arithmatex">\(Q\)</span>​ 使泵浦每减少一份作用量，种子和电子等离子体波（EPW）的作用量<strong>各增加一份</strong>
+$$
+\begin{aligned} \partial_t(I_0+I_1)+\partial_x(v_0I_0+v_1I_1)&amp;=0,\ \partial_t(I_0+I_2)+\partial_x(v_0I_0+v_2I_2)&amp;=0\
+\left( \frac{\partial I}{\partial t} +\nabla \cdot(\vec{v}I) =0 \right)\end{aligned}
+$$
+其中记 <span class="arithmatex">\(I_0=|P|^2, I_1 =|S|^2,I_2 =|B|^2\)</span> ，这就是 Manley–Rowe 关系。</p>
+<p>整体能量守恒来自按 <span class="arithmatex">\(\omega_j\)</span> 对三式加权后相加，因为 <span class="arithmatex">\(-\omega_0+\omega_1+\omega_2=0\)</span>。对有限空间区域，积分时还要保留边界通量。具体而言就是由(c)式得到
+$$
+\begin{aligned} \partial_t\mathcal E_0+\partial_x(v_0\mathcal E_0)&amp;=-K\omega_0Q,\ \partial_t\mathcal E_1+\partial_x(v_1\mathcal E_1)&amp;=+K\omega_1Q,\ \partial_t\mathcal E_2+\partial_x(v_2\mathcal E_2)&amp;=+K\omega_2Q \end{aligned}
+$$
+这里沿用均匀背景下频率和群速度为常数的三波模型。三式相加时，右边变为
+$$
+KQ(-\omega_0+\omega_1+\omega_2)=0
+$$
+因为 Raman 共振要求 <span class="arithmatex">\(\omega_0=\omega_1+\omega_2\)</span>。于是
+$$
+\boxed{\partial_t(\mathcal E_0+\mathcal E_1+\mathcal E_2) +\partial_x(v_0\mathcal E_0+v_1\mathcal E_1+v_2\mathcal E_2)=0} 
+$$
+物理上，在某一处、某一小段时间 <span class="arithmatex">\(dt\)</span> 内，如果泵浦因耦合损失 <span class="arithmatex">\(KQ\,dt\)</span> 的作用量，种子和电子波就各获得 <span class="arithmatex">\(KQ\,dt\)</span> 的作用量。<strong>同样一份作用量，在不同频率下对应不同的能量。</strong> 泵浦损失的能量 <span class="arithmatex">\(KQ\,dt\,\omega_0\)</span>，恰好等于种子得到的 <span class="arithmatex">\(KQ\,dt\,\omega_1\)</span> 加上电子波得到的 <span class="arithmatex">\(KQ\,dt\,\omega_2\)</span>。因此，耦合只在三波之间转移能量。</p>
+<p>写相对相位 <span class="arithmatex">\(\phi=\arg P-\arg S-\arg B\)</span>，则 <span class="arithmatex">\(Q=2\kappa|PSB|\cos\phi\)</span>。<strong><span class="arithmatex">\(Q(x,t)\)</span> 是局部、瞬时的交换速率，可以随时间和位置变化。</strong> 三个方程在同一个 <span class="arithmatex">\((x,t)\)</span> 上使用同一个 <span class="arithmatex">\(Q\)</span>，所以无论它当时多大、是什么符号，守恒关系都逐点成立。</p>
+<p>具体来说，
+$$
+Q=2\kappa|P||S||B|\cos\phi,\qquad \phi=\arg P-\arg S-\arg B
+$$
+振幅和相位都在演化，所以 <span class="arithmatex">\(Q\)</span> 可以先变大、再减小，也可以变号。<span class="arithmatex">\(Q&gt;0\)</span> 时泵浦向种子和电子波供能，<span class="arithmatex">\(Q&lt;0\)</span> 时能量回传。对于理想、单支 Stokes、无损的三波转化，转入种子的能量为所耗尽泵浦能量的 <span class="arithmatex">\(\omega_1/\omega_0\)</span>。如果定义泵浦到种子的效率为 <span class="arithmatex">\((U_{1,\rm out}-U_{1,\rm in})/U_{0,\rm in}\)</span>，还需乘上泵浦耗尽分数。峰值强度则另外取决于脉宽、脉冲形状和横向光斑。</p>
+<h2 id="5">5. 线性阶段</h2>
+<h3 id="51">5.1 局域增长率</h3>
+<p>令 <span class="arithmatex">\(P=P_0\)</span> 为常数，并取其相位为零。这里是在线性增长推导里使用<strong>未耗尽泵浦近似</strong>。它的意思是：泵浦确实在损失能量，但在小信号阶段，这点损失占泵浦初始能量的比例很小，因此计算 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(B\)</span> 的驱动项时，可以用 <span class="arithmatex">\(P_0\)</span> 代替实际的 <span class="arithmatex">\(P(t)\)</span>。此外，在均匀时间增长问题中略去空间导数，得到</p>
+<div class="arithmatex">\[
+\dot S=gB^*,\qquad \dot B^*=gS,\qquad
+\ddot S=g^2 S,\qquad g=\kappa|P_0|
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+g=\frac{|a_0|c|k_2|\omega_p}{4\sqrt{\omega_1\omega_2}}
+\ \xrightarrow{\omega_2\simeq\omega_p}\
+\frac{|a_0|c|k_2|}{4}\sqrt{\frac{\omega_p}{\omega_1}} \tag{5}
+\]</div>
+<p>这是振幅增长率。单纯的均匀指数增长中，强度按 <span class="arithmatex">\(e^{2gt}\)</span> 增长。若用包络时间阻尼率 <span class="arithmatex">\(\nu_1,\nu_2\)</span> 并取精确共振，局域模满足</p>
+<div class="arithmatex">\[
+(s+\nu_1)(s+\nu_2)=g^2,\qquad
+s_+=-\frac{\nu_1+\nu_2}{2}+
+\sqrt{g^2+\frac{(\nu_1-\nu_2)^2}{4}}.
+\]</div>
+<p>因此有局域正增长的条件是 <span class="arithmatex">\(g^2&gt;\nu_1\nu_2\)</span>。对于无阻尼的纯频率失谐 <span class="arithmatex">\(\Delta=\omega_0-\omega_1-\omega_2\)</span>，将差频相位均分到两个包络，得到指数的实增长部分 <span class="arithmatex">\(\operatorname{Re}\sqrt{g^2-(\Delta/2)^2}\)</span>。这两个结果描述均匀、固定泵浦的局部问题。实际传播中还需考虑空间失谐、群速滑移和有限泵浦。</p>
+<h3 id="52">5.2 传播中的时空解</h3>
+<p>取冷极限 <span class="arithmatex">\(v_2=0\)</span>，用种子随动时间 <span class="arithmatex">\(\zeta=t-x/v_1\)</span> 和传播坐标 <span class="arithmatex">\(\tau=x/v_1\)</span>。坐标原点取在种子注入边界，<span class="arithmatex">\(\tau\)</span> 沿其传播方向增大。此时</p>
+<div class="arithmatex">\[
+D_1=\partial_\tau,\qquad D_2=\partial_\zeta,\qquad
+\partial_\tau S=g B^*,\quad \partial_\zeta B^*=gS 
+\]</div>
+<p>(这里算符变换可参见附录) 施加阶跃种子 <span class="arithmatex">\(S(0,\zeta)=S_{\rm in}\)</span>（这里参数依次为 <span class="arithmatex">\(\tau,\zeta\)</span>）和 <span class="arithmatex">\(B(\tau,0)=0\)</span>。消元并积分</p>
+<div class="arithmatex">\[
+S(\tau,\zeta)=S_{\rm in}
++g^2\int_0^\tau d\tau'\int_0^\zeta d\zeta'\,S(\tau',\zeta')
+\]</div>
+<p>迭代时每积分一次得到一个 <span class="arithmatex">\(1/m!\)</span>，所以</p>
+<div class="arithmatex">\[
+S(\tau,\zeta)=S_{\rm in}\sum_{m=0}^{\infty}
+\frac{(g^2\tau\zeta)^m}{(m!)^2}
+=S_{\rm in}I_0(2g\sqrt{\tau\zeta}) \tag{6}
+\]</div>
+<p>这里<span class="arithmatex">\(I_0\)</span> 是<strong>零阶第一类修正贝塞尔函数</strong>。用 Laplace 变换也可得到同一结果</p>
+<div class="arithmatex">\[
+\widehat S(\tau,s)=\frac{S_{\rm in}}{s}e^{g^2\tau/s}
+\]</div>
+<p>若改用一般因果种子 <span class="arithmatex">\(S_{\rm in}(\zeta)\)</span>，右边的 <span class="arithmatex">\(S_{\rm in}/s\)</span> 换成 <span class="arithmatex">\(\widehat S_{\rm in}(s)\)</span>，实际时域解相应成为卷积。大参数下 <span class="arithmatex">\(I_0(y)\sim e^y/\sqrt{2\pi y}\)</span>，因此图 2(b) 的增益指数含 <span class="arithmatex">\(\sqrt{\zeta\tau}\)</span>。式 (6) 的固定泵浦和阶跃种子是解析边界条件，有限高斯泵浦的放大区受两束光的重叠窗口约束。</p>
+<h2 id="6">6. 前向与后向的冷共振与算例</h2>
+<p>令 <span class="arithmatex">\(r=\omega_p/\omega_0\)</span>。在冷极限，</p>
+<div class="arithmatex">\[
+\omega_1=\omega_0(1-r),\quad
+\frac{ck_0}{\omega_0}=\sqrt{1-r^2},\quad
+\frac{ck_1}{\omega_0}=\pm\sqrt{1-2r}.
+\]</div>
+<p>前向取正，后向取负。两者的 Stokes 传播条件均为 <span class="arithmatex">\(r&lt;1/2\)</span>，相当于 <span class="arithmatex">\(\lambda_1&lt;2\lambda_0\)</span>。当 <span class="arithmatex">\(r\ll1\)</span>，前向的 <span class="arithmatex">\(ck_2\simeq\omega_p\)</span>，后向的 <span class="arithmatex">\(ck_2\simeq 2\omega_0\)</span>，由式 (5) 得</p>
+<div class="arithmatex">\[
+g_F\simeq\frac{|a_0|\omega_p}{4}\sqrt{\frac{\omega_p}{\omega_0}},
+\qquad
+g_B\simeq\frac{|a_0|}{2}\sqrt{\omega_p\omega_0}.
+\]</div>
+<p>取 Lei 正文的 <span class="arithmatex">\(\lambda_0=1.0\,\mu\mathrm m\)</span>、<span class="arithmatex">\(\lambda_1=1.8\,\mu\mathrm m\)</span>、<span class="arithmatex">\(a_0=0.0854\)</span>。以下采用由波长比反推的精确冷共振密度，论文用约 <span class="arithmatex">\(0.20n_{c,0}\)</span> 表示：</p>
+<div class="arithmatex">\[
+r=\frac49,\quad
+n_e/n_{c,0}=r^2\simeq0.19753,\quad
+n_e/n_{c,1}=0.64 .
+\]</div>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th style="text-align: right;">前向</th>
+<th style="text-align: right;">后向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(v_0/c\)</span></td>
+<td style="text-align: right;">0.896</td>
+<td style="text-align: right;">0.896</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(v_1/c\)</span></td>
+<td style="text-align: right;">+0.600</td>
+<td style="text-align: right;">−0.600</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(ck_2/\omega_0\)</span></td>
+<td style="text-align: right;">0.562</td>
+<td style="text-align: right;">1.229</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(v_{\phi,2}/c\)</span></td>
+<td style="text-align: right;">0.790</td>
+<td style="text-align: right;">0.362</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(g/\omega_0\)</span></td>
+<td style="text-align: right;">0.0107</td>
+<td style="text-align: right;">0.0235</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1/g\)</span></td>
+<td style="text-align: right;">约 49 fs</td>
+<td style="text-align: right;">约 23 fs</td>
+</tr>
+<tr>
+<td>泵浦相对种子滑移速度</td>
+<td style="text-align: right;"><span class="arithmatex">\(0.296c\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.496c\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>两个 <span class="arithmatex">\(1/g\)</span> 都是局域<strong>振幅</strong>时间尺度。用一个定长泵浦作几何估计，重叠时间约为其在等离子体中的空间长度 <span class="arithmatex">\(L_p\)</span> 除以 <span class="arithmatex">\(|v_0-v_1|\)</span>。如果输入的是泵浦在固定位置测得的时间宽度 <span class="arithmatex">\(T_p\)</span>，在忽略展宽的近似下 <span class="arithmatex">\(L_p\simeq v_0T_p\)</span>。这个算例中，前向局域增长率较低，但同样空间长度的泵浦对应约五倍的重叠时间。预测最终增益仍需沿特征线使用真实包络，特别是在泵浦开始耗尽后。</p>
+<h2 id="7">7. 非线性泵浦耗尽与自相似约化</h2>
+<h3 id="71">7.1 先用局域解理解能量回传</h3>
+<p>暂时忽略传播，令三波相位锁定为实包络。以初始泵浦 <span class="arithmatex">\(P_m&gt;0\)</span>、种子 <span class="arithmatex">\(S_i&gt;0\)</span>、<span class="arithmatex">\(B_i=0\)</span> 为例，有</p>
+<div class="arithmatex">\[
+P^2+B^2=P_m^2,\qquad S^2-B^2=S_i^2.
+\]</div>
+<p>可以令 <span class="arithmatex">\(P=P_m\cos\vartheta\)</span>，<span class="arithmatex">\(B=P_m\sin\vartheta\)</span>，则</p>
+<div class="arithmatex">\[
+\dot\vartheta=\kappa S,\qquad
+S^2=S_i^2+P_m^2\sin^2\vartheta.
+\]</div>
+<p>在 <span class="arithmatex">\(\vartheta=\pi/2\)</span>，泵浦振幅第一次到零，种子达到局域最大。其后 <span class="arithmatex">\(P\)</span> 变号，交换项 <span class="arithmatex">\(Q\)</span> 变号。这个局域解说明了能量回传的可能性。有限脉冲中，泵浦滑出种子、阻尼、失谐及传播都会改变这一过程。</p>
+<h3 id="72">7.2 随动坐标下的传播方程与边界</h3>
+<p>仍用 <span class="arithmatex">\((\zeta,\tau)\)</span>，保留泵浦耗尽，令 <span class="arithmatex">\(\mu=1-v_0/v_1\)</span>。冷 EPW 和相位锁定的实包络满足</p>
+<div class="arithmatex">\[
+\left(\mu\partial_\zeta+\frac{v_0}{v_1}\partial_\tau\right)P
+=-\kappa SB,\qquad
+\partial_\tau S=\kappa PB,\qquad
+\partial_\zeta B=\kappa PS . \tag{7}
+\]</div>
+<p>当泵浦随 <span class="arithmatex">\(\tau\)</span> 的变化项相对其随 <span class="arithmatex">\(\zeta\)</span> 的变化项小，即
+<span class="arithmatex">\(\left|(v_0/v_1)P_\tau\right|\ll|\mu P_\zeta|\)</span>，可做短种子约化。此时由第一和第三式直接得到</p>
+<div class="arithmatex">\[
+\partial_\zeta\left(P^2+\frac{B^2}{\mu}\right)=0. \tag{8}
+\]</div>
+<p>在此坐标中，<span class="arithmatex">\(\mu\)</span> 的符号至关重要。后向时 <span class="arithmatex">\(\mu&gt;0\)</span>，泵浦和冷 EPW 的特征线都朝 <span class="arithmatex">\(\zeta\)</span> 增大的方向。前向且 <span class="arithmatex">\(v_0&gt;v_1\)</span> 时 <span class="arithmatex">\(\mu&lt;0\)</span>，泵浦特征线朝 <span class="arithmatex">\(\zeta\)</span> 减小的方向，冷 EPW 则沿 <span class="arithmatex">\(\zeta\)</span> 增大演化。因而前向约化需要从不同侧施加泵浦入流与 EPW 初始条件。式 (8) 的前向减号是随动坐标里的通量关系，与实验室坐标的正作用量密度守恒相容。</p>
+<h3 id="73-sinegordon">7.3 后向的圆函数支与径向 sine–Gordon 形式</h3>
+<p>对 <span class="arithmatex">\(\mu&gt;0\)</span>，取式 (8) 的积分常数为固定的 <span class="arithmatex">\(P_m^2\)</span>，写成</p>
+<div class="arithmatex">\[
+P=P_m\cos(U/2),\qquad B=\sqrt{\mu}P_m\sin(U/2).
+\]</div>
+<p>由 EPW 方程得 <span class="arithmatex">\(S=\sqrt{\mu}\,U_\zeta/(2\kappa)\)</span>，代入种子方程：</p>
+<div class="arithmatex">\[
+U_{\zeta\tau}=\kappa^2P_m^2\sin U.
+\]</div>
+<p>若初值和边界适合自相似形式，令 <span class="arithmatex">\(\xi=2\kappa P_m\sqrt{\zeta\tau}\)</span>，取 <span class="arithmatex">\(U=U(\xi)\)</span>。由于</p>
+<div class="arithmatex">\[
+\xi_\zeta\xi_\tau=\kappa^2P_m^2,\qquad
+\xi_{\zeta\tau}=\frac{\kappa^2P_m^2}{\xi},
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+U''+\frac{U'}{\xi}=\sin U. \tag{9}
+\]</div>
+<p>对小 <span class="arithmatex">\(U\)</span> 线性化并要求 <span class="arithmatex">\(\xi=0\)</span> 正则，得 <span class="arithmatex">\(U\simeq U(0)I_0(\xi)\)</span>。在 <span class="arithmatex">\(U=\pi+w\)</span>、<span class="arithmatex">\(|w|\ll1\)</span> 附近，<span class="arithmatex">\(w''+w'/\xi=-w\)</span>，局部解是 <span class="arithmatex">\(J_0\)</span> 与 <span class="arithmatex">\(Y_0\)</span> 的线性组合。若在非零 <span class="arithmatex">\(\xi_*\)</span> 将两个分段近似接起来，要匹配 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(U'\)</span>。仅调一个 <span class="arithmatex">\(J_0\)</span> 系数通常只能保证一项。正文和 SI 的 Bessel 拼接可作为形状近似，数值积分完整非线性 ODE 更适合检查峰值和回传位置。</p>
+<p>在小 <span class="arithmatex">\(\xi\)</span> 区域，<span class="arithmatex">\(U'/\xi\simeq U(0)/2\)</span>，同时 <span class="arithmatex">\(\partial_\zeta\xi=2\kappa^2P_m^2\tau/\xi\)</span>，故 <span class="arithmatex">\(S\propto P_m^2\tau U(0)\)</span>，强度随传播坐标平方增长。这个计算展示了自相似早段平方标度的来源。其系数依赖有效种子面积、归一化和分支边界。</p>
+<h3 id="74-si">7.4 前向分支的符号检查与 SI 对照</h3>
+<p>对 <span class="arithmatex">\(\mu=-\alpha&lt;0\)</span>，若为检查局部方程，暂把式 (8) 的积分常数选作正的固定 <span class="arithmatex">\(P_m^2\)</span>，可写</p>
+<div class="arithmatex">\[
+P=P_m\cosh(U/2),\qquad B=\sqrt{\alpha}P_m\sinh(U/2).
+\]</div>
+<p>将其代回式 (7) 的短种子约化，得到 <span class="arithmatex">\(S=\sqrt{\alpha}\,U_\zeta/(2\kappa)\)</span>，以及</p>
+<div class="arithmatex">\[
+U_{\zeta\tau}=\kappa^2P_m^2\sinh U,\qquad
+U''+\frac{U'}{\xi}=\sinh U
+\]</div>
+<p>（最后一步仍假定相同的自相似形式）。这里固定正积分常数只是用于核查代数。实际前向问题的积分常数由两侧边界共同决定，可以随 <span class="arithmatex">\(\tau\)</span> 变化。固定正积分常数的实双曲函数支本身无法描述 <span class="arithmatex">\(P\)</span> 穿过零。</p>
+<p>SI I.C 先得到双曲形式，再用 <span class="arithmatex">\(\tilde\nu=i\tilde u\)</span> 写成正弦形式。作为标量 ODE 的复解析延拓，这一步成立。<strong>把延拓后的解解释为原前向三波方程中的物理包络，还要重新核对复共轭和入流边界。</strong> 检查方法很直接：将重建的 <span class="arithmatex">\(P,S,B\)</span> 代入原一阶方程，并核对式 (8) 中的模方与符号。在具有复共轭的方程组里，直接旋转变量到复轴并不保证继续满足同一物理方程。正文图 3 可作为作者自相似模型的结果阅读。对于前向有限脉冲的定量泵浦耗尽、首峰和回传位置，式 (7) 的全双曲系统及 PIC 是更直接的验证对象。</p>
+<h2 id="8">8. 超出理想三波模型的物理</h2>
+<h3 id="81">8.1 有限温度和动理学</h3>
+<p>温度首先通过 Bohm–Gross 项提高 <span class="arithmatex">\(\omega_2\)</span>，从而改动频率匹配。弱热修正下</p>
+<div class="arithmatex">\[
+\omega_2-\omega_p\simeq\frac{3k_2^2v_T^2}{2\omega_p}.
+\]</div>
+<p>固定密度和光频时，后向分支较大的 <span class="arithmatex">\(k_2\)</span> 使热频移更显著。电子在 <span class="arithmatex">\(v_x\simeq v_{\phi,2}\)</span> 附近能与 EPW 共振，Landau 阻尼取决于速度分布在该处的斜率。EPW 很强时，俘获、非线性频移和波破还可能改变饱和。SI 图 S8 以本算例前向 <span class="arithmatex">\(v_{\phi,2}\simeq0.79c\)</span> 和较低的背景电子速度作比较。用温度依赖的流体压力闭合可以描述热频移，速度分布及俘获则需动理学模型。</p>
+<h3 id="82">8.2 非均匀密度</h3>
+<p>若背景缓慢变化，给每个载波写局域相位
+<span class="arithmatex">\(\theta_j(x,t)=\int^x k_j(x')dx'-\omega_j t\)</span>。混频项的相位包含
+<span class="arithmatex">\(\int^x[k_0(x')-k_1(x')-k_2(x')]dx'\)</span>。也可选用由两束光直接确定的电子波拍频相位，然后把 <span class="arithmatex">\(\omega_0-\omega_1-\omega_2(x)\)</span> 放进 EPW 的失谐项。这两种写法需要一致地处理所选参考相位。SI 图 S9–S10 的梯度和波动算例说明，在有限重叠、有限带宽下，显著增益可以分布在共振位置附近的一段区域。用非均匀密度时，单个密度波动百分比无法确定积累的相位误差。</p>
+<h3 id="83-anti-stokes-srssbs">8.3 Anti-Stokes、有限带宽与 SRS/SBS 区分</h3>
+<p>密度波也可将泵浦散射到 <span class="arithmatex">\(\omega_0+\omega_2\)</span>、<span class="arithmatex">\(k_0+k_2\)</span> 附近。是否需要跟踪这个 anti-Stokes 分支，要检查它与电磁色散面之间的失谐，以及作用长度和带宽。低密度近前向传播时，光学色散曲线在相关频段较平坦，Stokes 与 anti-Stokes 都可能需要保留，形成多波耦合。Decker 等的前向散射理论从这里接上。SBS 则把纵向中介改成离子声波，低频响应和耦合参数需要从含离子运动的模型重新推导。</p>
+<h3 id="84">8.4 自压缩与增益分开诊断</h3>
+<p>冷等离子体的线性波数 <span class="arithmatex">\(k(\omega)=\sqrt{\omega^2-\omega_p^2}/c\)</span> 给出</p>
+<div class="arithmatex">\[
+k''(\omega)=-\frac{\omega_p^2}{c(\omega^2-\omega_p^2)^{3/2}}&lt;0.
+\]</div>
+<p>种子脱离泵浦后，强场诱导的折射率变化可使其积累自相位调制，随后由色散调整不同频率分量的相对到达时间。这个过程需要种子的强度与谱相位信息。正文图 4 的 1D 输出为 <span class="arithmatex">\(120\)</span> fs 到 <span class="arithmatex">\(9.19\)</span> fs，峰值强度由 <span class="arithmatex">\(10^{12}\)</span> 增至 <span class="arithmatex">\(8.9\times10^{16}\,\mathrm{W/cm^2}\)</span>。<span class="arithmatex">\(9.19\)</span> fs 对应约 1.5 个入射种子载波周期。SI 图 S4 的短种子在放大阶段先展宽，随后自压缩。分辨两段时，分别记录泵浦刚滑过种子时和真空出口处的种子能量、FWHM、峰值、光谱强度与光谱相位。多维模拟还要记录光斑随时间的变化。</p>
+<h2 id="9-si">9. 对照正文、SI 与经典文献</h2>
+<table>
+<thead>
+<tr>
+<th>阅读位置</th>
+<th>推导或检验</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SI I.A，式 (1)–(14)</td>
+<td>对照本文第 2–3 节，从实场展开逐项检查 <span class="arithmatex">\(1/2\)</span> 因子、复共轭和正负波数。</td>
+</tr>
+<tr>
+<td>SI I.B、图 S1 与正文图 2</td>
+<td>对照第 5–6 节，检查 Bessel 解、局域增长率和有限重叠窗口。</td>
+</tr>
+<tr>
+<td>SI I.C、图 S2–S3 与正文图 3</td>
+<td>对照第 7 节。先导出守恒式，再验证自相似重建解与一阶方程的相容性。</td>
+</tr>
+<tr>
+<td>正文图 4–6、SI 图 S4–S10</td>
+<td>对照第 8 节，区分能量增益、时间压缩、横向变化和动理学失稳。</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Z.-Y. Lei et al., <em>Towards the Generation of Petawatt Near-Infrared Few-Cycle Light Pulses via Forward Raman Amplification in Plasma</em>, PRL <strong>134</strong>, 255001 (2025)。<a href="https://doi.org/10.1103/cshj-jgz7">正文</a> · <a href="https://link.aps.org/supplemental/10.1103/cshj-jgz7">补充材料</a></li>
+<li>D. W. Forslund, J. M. Kindel, E. L. Lindman, <em>Theory of stimulated scattering processes in laser-irradiated plasmas</em>, Phys. Fluids <strong>18</strong>, 1002 (1975)。<a href="https://doi.org/10.1063/1.861248">DOI</a></li>
+<li>C. D. Decker, W. B. Mori, T. Katsouleas, D. E. Hinkel, <em>Spatial temporal theory of Raman forward scattering</em>, Phys. Plasmas <strong>3</strong>, 1360 (1996)。<a href="https://doi.org/10.1063/1.871728">DOI</a></li>
+<li>D. L. Fisher, T. Tajima, <em>Enhanced Raman forward scattering</em>, PRE <strong>53</strong>, 1844 (1996)。<a href="https://doi.org/10.1103/PhysRevE.53.1844">DOI</a></li>
+<li>V. M. Malkin, G. Shvets, N. J. Fisch, <em>Fast Compression of Laser Beams to Highly Overcritical Powers</em>, PRL <strong>82</strong>, 4448 (1999)。<a href="https://doi.org/10.1103/PhysRevLett.82.4448">DOI</a></li>
+<li>O. Shorokhov, A. Pukhov, I. Kostyukov, <em>Self-Compression of Laser Pulses in Plasma</em>, PRL <strong>91</strong>, 265002 (2003)。<a href="https://doi.org/10.1103/PhysRevLett.91.265002">DOI</a></li>
+</ol>
+<h2 id="_2">附录</h2>
+<p>把 <span class="arithmatex">\(S(x,t)\)</span> 写成同一个场在新坐标下的形式 <span class="arithmatex">\(\widetilde S(\zeta,\tau)\)</span>。算符变换就是对这个复合函数用<strong>链式法则</strong>。要特别留意每次求偏导时固定的是哪个变量。</p>
+<h3 id="1-x-t">1. 固定 <span class="arithmatex">\(x\)</span>，改变 <span class="arithmatex">\(t\)</span></h3>
+<p>由 <span class="arithmatex">\(\zeta=t-x/v_1\)</span>、<span class="arithmatex">\(\tau=x/v_1\)</span> 可见，固定 <span class="arithmatex">\(x\)</span> 时，<span class="arithmatex">\(t\)</span> 增加 <span class="arithmatex">\(dt\)</span>，<span class="arithmatex">\(\zeta\)</span> 就增加 <span class="arithmatex">\(dt\)</span>，而 <span class="arithmatex">\(\tau\)</span> 不变。因此</p>
+<div class="arithmatex">\[ \left.\partial_t\right|_x =\left.\partial_\zeta\right|_\tau. \]</div>
+<h3 id="2-t-x">2. 固定 <span class="arithmatex">\(t\)</span>，改变 <span class="arithmatex">\(x\)</span></h3>
+<p>固定 <span class="arithmatex">\(t\)</span> 时，<span class="arithmatex">\(x\)</span> 增加 <span class="arithmatex">\(dx\)</span>，<span class="arithmatex">\(\zeta\)</span> 减少 <span class="arithmatex">\(dx/v_1\)</span>，而 <span class="arithmatex">\(\tau\)</span> 增加 <span class="arithmatex">\(dx/v_1\)</span>。因此</p>
+<div class="arithmatex">\[ \left.\partial_x\right|_t =-\frac{1}{v_1}\left.\partial_\zeta\right|_\tau +\frac{1}{v_1}\left.\partial_\tau\right|_\zeta. \]</div>
+<h3 id="3_1">3. 代回两个传播算符</h3>
+<p>对种子，</p>
+<div class="arithmatex">\[ D_1=\partial_t+v_1\partial_x =\partial_\zeta+v_1\left(-\frac{1}{v_1}\partial_\zeta +\frac{1}{v_1}\partial_\tau\right) =\boxed{\partial_\tau}. \]</div>
+<p>直观上，<strong>沿种子群速度轨迹走</strong>意味着 <span class="arithmatex">\(dx=v_1dt\)</span>，所以 <span class="arithmatex">\(d\zeta=dt-dx/v_1=0\)</span>，而 <span class="arithmatex">\(d\tau=dt\)</span>。你始终跟着种子的同一个随动时间切片，看它沿传播方向如何增长。</p>
+<p>对电子波，冷等离子体近似下 <span class="arithmatex">\(v_2\simeq0\)</span>，所以</p>
+<div class="arithmatex">\[ D_2=\partial_t+v_2\partial_x\simeq\partial_t =\boxed{\partial_\zeta}. \]</div>
+<p>这对应<strong>停在固定位置 <span class="arithmatex">\(x\)</span></strong>，看电子波如何随时间建立。若保留 <span class="arithmatex">\(v_2\)</span>，则完整变换是</p>
+<div class="arithmatex">\[ D_2=\left(1-\frac{v_2}{v_1}\right)\partial_\zeta +\frac{v_2}{v_1}\partial_\tau. \]</div>
+<p>因此原方程变成 <span class="arithmatex">\(\partial_\tau S=gB^*\)</span>、<span class="arithmatex">\(\partial_\zeta B^*=gS\)</span>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

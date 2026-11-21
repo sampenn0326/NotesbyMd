@@ -1,0 +1,2274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E8%B6%85%E7%9F%AD%E8%84%89%E5%86%B2%E7%9A%84%E6%97%B6%E5%9F%9F%E9%A2%91%E5%9F%9F%E8%A1%A8%E5%BE%81/">
+      
+      
+        <link rel="next" href="../../%E6%BF%80%E5%85%89%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/SRS%26SBS/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>飞行焦点 - SamPenn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pku-red.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SamPenn" class="md-header__button md-logo" aria-label="SamPenn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SamPenn
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              飞行焦点
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SamPenn" class="md-nav__button md-logo" aria-label="SamPenn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SamPenn
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光基础和技术
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    激光基础和技术
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B8%B8%E8%A7%81%E5%85%89%E6%9D%9F%E5%BD%A2%E5%BC%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常见光束
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%B6%85%E7%9F%AD%E8%84%89%E5%86%B2%E7%9A%84%E6%97%B6%E5%9F%9F%E9%A2%91%E5%9F%9F%E8%A1%A8%E5%BE%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超短脉冲的时域频域表征
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    飞行焦点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与等离子体相互作用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    激光与等离子体相互作用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaserPlasma/基本手册.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BF%80%E5%85%89%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/SRS%26SBS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SRS&SBS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E6%BF%80%E5%85%89%E4%B8%8E%E7%89%A9%E8%B4%A8%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与物质相互作用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F%5B%E7%AC%94%E8%AE%B0%5D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离子加速
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E5%85%89%E5%AD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等离子体光学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数值方法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数值方法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WarpX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WarpX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/FieldSolver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FieldSolver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/RZ%E5%9D%90%E6%A0%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RZ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/MEEP%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MEEP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/WPM%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WPM方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Jupyter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jupyter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/C%2B%2B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1">1. 基本原理</h1>
+<p>色散型飞行焦点（Flying Focus, FF）的核心是<strong>把脉冲的不同频率聚焦到不同位置，再用啁啾安排这些频率到达的时间</strong>。这样，轴上最亮的位置就会沿着预设轨迹移动。即使激光始终向 <span class="arithmatex">\(+z\)</span> 传播，强度峰也可以向 <span class="arithmatex">\(-z\)</span> 。</p>
+<h1 id="2">2. 文献顺序解读</h1>
+<h2 id="21-pfc-ff">2.1 PFC FF</h2>
+<p>Sainte-Marie、Gobert 和 Quéré 在2017 年的论文里把他们的FF方案称为 <strong>CPLC</strong>，即带啁啾和纵向色差的脉冲。他们试图回答的是：<strong>一束超短脉冲在真空中沿 <span class="arithmatex">\(+z\)</span> 传播，能否通过进入焦区之前的光学调制，指定它在焦区内何时、何处最亮？</strong> 作者把这种现象称为 <strong>sliding focus</strong>。这是一篇理论与数值模拟论文。它已经给出了亚光速、超光速、负速度和纵向加速（指的是焦点具有加速度）的例子，也定量讨论了获得这些速度要损失多少峰值强度。<a href="https://doi.org/10.1364/OPTICA.4.001298">原文，<em>Optica</em> <strong>4</strong>, 1298–1304 (2017)</a></p>
+<h3 id="211-pfclc">2.1.1 PFC和LC</h3>
+<p>考虑一束沿 <span class="arithmatex">\(+z\)</span> 传播的准直宽带光，在聚焦元件前放一个探测平面。我们即可以在光束中心 <span class="arithmatex">\(r=0\)</span> 处、也可以在边缘 <span class="arithmatex">\(r=w_i\)</span> 处测电场。本文设想的激光构型是：<strong>中心频率的波前是平的，但在边缘测到的脉冲包络比中心晚。</strong>按 <span class="arithmatex">\(e^{+i\omega t}\)</span> 的约定，忽略这里不影响讨论的横向振幅因子，电场写为</p>
+<div class="arithmatex">\[
+E(r,t)=e^{i\omega_0t}A_0(t-\alpha r^2)
+\]</div>
+<p>其中需要区分两个不同的“前沿”：</p>
+<ul>
+<li>载波 <span class="arithmatex">\(e^{i\omega_0t}\)</span> 的等相位面——在同一时刻，中心和边缘的载波相位相同，中心频率波前是平的；</li>
+<li>包络 <span class="arithmatex">\(A_0(t-\alpha r^2)\)</span> 的峰——半径 <span class="arithmatex">\(r\)</span> 处包络的峰到达的时刻推迟了 <span class="arithmatex">\(\alpha r^2\)</span>，脉冲前沿呈抛物形。</li>
+</ul>
+<p>后者就是 <strong>pulse front curvature，脉冲前沿曲率，PFC</strong>。可以用一个时间尺度表征它</p>
+<div class="arithmatex">\[
+\tau_P=\alpha w_i^2
+\]</div>
+<p>如图取 <span class="arithmatex">\(\alpha=3\ \mathrm{fs/cm^2}\)</span>、<span class="arithmatex">\(w_i=5\ \mathrm{cm}\)</span>，所以 <span class="arithmatex">\(\tau_P=75\ \mathrm{fs}\)</span>。而每个横向位置的局部脉宽只有 <span class="arithmatex">\(\tau_F=25\ \mathrm{fs}\)</span>。也就是说，在 <span class="arithmatex">\(w_i\)</span> 看到包络峰时，已经比中心晚了约三个局部脉宽。</p>
+<p><strong>只在光轴上放一个探测器，仍然可以测到短脉冲；把整个光斑的光同时收进探测器，就会测到更宽的时间分布。</strong> 这正是图 1b 下方红、蓝两条曲线的区别。图 1c 中则是再加入时间啁啾，每个位置测到的局部脉冲本身也被拉长了。</p>
+<p><img src="D:\File\Wechat\xwechat_files\wxid_zlcy42xusxde22_1eba\temp\RWTemp\2026-11\9e20f478899dc29eb19741386f9343c8\8fc4f1cefcab893e43b2ea4c15966c5a.png" alt="8fc4f1cefcab893e43b2ea4c15966c5a" style="zoom: 50%;" /></p>
+<p>对上面的电场做时间傅里叶变换，包络延迟变成谱相位</p>
+<div class="arithmatex">\[
+\widetilde E(r,\omega) \propto \widetilde A_0(\delta\omega) \exp[-i\alpha\,\delta\omega\,r^2], \qquad \delta\omega=\omega-\omega_0
+\]</div>
+<p>这是PFC和LC的关键关系：<strong>固定 <span class="arithmatex">\(r\)</span> 去看，<span class="arithmatex">\(-\alpha r^2\delta\omega\)</span> 是对频率线性的相位，表示时间延迟；固定 <span class="arithmatex">\(\omega\)</span> 去看，它是对半径二次的相位，表示波前曲率。</strong> 同一个相位项，把时间测量和空间聚焦联系起来了。</p>
+<p>将它与球面波的近轴相位 <span class="arithmatex">\(-\omega r^2/[2cR(\omega)]\)</span> 对照，得到</p>
+<div class="arithmatex">\[
+\frac{1}{R(\omega)} =\frac{2c\alpha\,\delta\omega}{\omega}
+\]</div>
+<p>中心频率 <span class="arithmatex">\(\delta\omega=0\)</span> 的入射波前是平的。频率向红、蓝两侧偏离时，曲率分别取相反符号。即便下游用的是一个<strong>理想消色差聚焦元件</strong>，这些带着不同入射曲率的光也会落在不同的轴向位置（这个聚焦后的纵向色散就是PFC曲率自身带来的！）。以中心频率的束腰为 <span class="arithmatex">\(z=0\)</span>，利用<u>薄透镜曲率变换、近准直和窄相对带宽近似</u>，可得到原文式（1）</p>
+<div class="arithmatex">\[
+\boxed{ z_0(\omega)=\frac{2f^2c\alpha}{\omega_0}\,\delta\omega=(\alpha w_i^2)\left( \frac{\lambda _0f^2}{\pi w_i ^2} \right)\delta \omega =\tau_P z_r\,\delta\omega, \qquad z_r=\frac{\lambda_0f^2}{\pi w_i^2}} 
+\]</div>
+<blockquote>
+<p>用 <span class="arithmatex">\(L(\omega)\)</span> 表示<strong>从透镜量起</strong>的聚焦距离，把中心频率的焦点取为坐标原点，因此 <span class="arithmatex">\(z_f(\omega)\)</span> 是相对位移</p>
+<div class="arithmatex">\[
+z_f(\omega)=L(\omega)-L(\omega_0)=L(\omega)-f
+\]</div>
+<p>最后一个等号来自 <span class="arithmatex">\(\Omega=0\)</span> 时 <span class="arithmatex">\(1/R(\omega_0)=0\)</span>，即中心频率平行入射，聚焦在透镜后方 <span class="arithmatex">\(f\)</span> 处。</p>
+<p>至于一般非中心频率的 <span class="arithmatex">\(L(\omega )\)</span> 的计算，以 <span class="arithmatex">\(\alpha&gt;0\)</span>、<span class="arithmatex">\(\Omega&gt;0\)</span> 为例，此时 <span class="arithmatex">\(1/R(\omega)&gt;0\)</span>。按原文的曲率约定，这个频率的入射波前是<strong>发散</strong>的。把入射光线向后延长，它们交于透镜左侧、距离透镜 <span class="arithmatex">\(R(\omega)\)</span> 的一点。对薄透镜来说，这就相当于物距为 <span class="arithmatex">\(R(\omega)\)</span>，像距为 <span class="arithmatex">\(L(\omega)\)</span>。于是</p>
+<div class="arithmatex">\[
+\frac{1}{R(\omega)}+\frac{1}{L(\omega)}=\frac{1}{f}, \qquad L(\omega)=\frac{f}{1-f/R(\omega)}
+\]</div>
+<p>也可以直接看一条光线。在透镜处取高度 <span class="arithmatex">\(r&gt;0\)</span>，发散入射时它带有向外的斜率 <span class="arithmatex">\(r/R\)</span>。薄透镜给它一个向内的斜率改变量 <span class="arithmatex">\(-r/f\)</span>。传播距离 <span class="arithmatex">\(L\)</span> 后光线到达轴上，所以</p>
+<div class="arithmatex">\[
+0=r+L\left(\frac rR-\frac rf\right) \quad\Longrightarrow\quad \frac1L=\frac1f-\frac1R
+\]</div>
+<p>这也解释了符号：入射光本来就在向外张开，薄透镜要先抵消一部分发散，留下的会聚斜率较小，因此焦点比 <span class="arithmatex">\(f\)</span> 更远。 若 <span class="arithmatex">\(1/R&lt;0\)</span>，入射光已经在会聚，透镜再增加会聚，焦点就落在 <span class="arithmatex">\(f\)</span> 之前。</p>
+<p>用上面的像距减去 <span class="arithmatex">\(f\)</span>，得到薄透镜模型下的相对焦移</p>
+<div class="arithmatex">\[
+z_f(\omega) =\frac{f}{1-f/R(\omega)}-f =\frac{f^2/R(\omega)}{1-f/R(\omega)}
+\]</div>
+<p>现在再取两个近似：</p>
+<ol>
+<li><strong>近准直入射</strong>，即 <span class="arithmatex">\(|f/R|\ll1\)</span>。分母近似为 <span class="arithmatex">\(1\)</span>，所以 <span class="arithmatex">\(z_f\simeq f^2/R(\omega)\)</span> ；</li>
+<li><strong>窄相对带宽</strong>，即 <span class="arithmatex">\(|\Omega|=|\omega -\omega _0|\ll\omega_0\)</span>。将 <span class="arithmatex">\(1/R=2c\alpha\Omega/(\omega_0+\Omega)\)</span> 保留到 <span class="arithmatex">\(\Omega\)</span> 的一阶。</li>
+</ol>
+<p>因此</p>
+<div class="arithmatex">\[
+\boxed{ z_f(\omega)\simeq \frac{f^2}{R(\omega)} \simeq \frac{2f^2c\alpha}{\omega_0}\,\Omega }
+\]</div>
+<p>所以式中的 <strong><span class="arithmatex">\(f^2\)</span></strong> 来自薄透镜成像关系：在平行入射附近，一点点入射曲率 <span class="arithmatex">\(1/R\)</span> 会造成约 <span class="arithmatex">\(f^2/R\)</span> 的纵向焦移。再乘上入射曲率随频率变化的斜率 <span class="arithmatex">\(2c\alpha/\omega_0\)</span>，就是纵向色差的斜率 <span class="arithmatex">\(K\)</span>。对 <span class="arithmatex">\(\alpha&gt;0\)</span>，蓝端焦点在中心焦点下游，红端在上游。</p>
+</blockquote>
+<p>其中 <span class="arithmatex">\(z_r\)</span> 是单个中心频率高斯束的瑞利长度， <span class="arithmatex">\(K=dz_f/d\omega = \tau _P z_r \)</span> 就是<strong>纵向色差</strong>（LC）的斜率。PFC 和纵向色差 LC 描述的是同一时空耦合在聚焦前后的两种表现。</p>
+<h3 id="212-pfclc">2.1.2 PFC/LC决定焦点到达不同位置</h3>
+<p>在整个带宽 <span class="arithmatex">\(\Delta\omega\)</span> 内，不同频率的束腰覆盖一段轴向长度。纵向色差足够强时，其尺度为</p>
+<div class="arithmatex">\[
+z_{\rm er}\simeq \left|\frac{dz_0}{d\omega}\right|\Delta\omega =|\tau_P|z_r\Delta\omega, \qquad \frac{z_{\rm er}}{z_r}\simeq|\tau_P|\Delta\omega
+\]</div>
+<p>原文称 <span class="arithmatex">\(z_{\rm er}\)</span> 为 <strong>extended Rayleigh length</strong>。理解它时，可以做两个不同的测量</p>
+<ul>
+<li><strong>固定一种颜色，沿 <span class="arithmatex">\(z\)</span> 扫描。</strong> 看到的是一个普通高斯束，其焦区尺度仍为 <span class="arithmatex">\(z_r\)</span>。</li>
+<li><strong>固定轴上某个位置，测当地的光谱。</strong> 在这里聚焦的那一小段频率最强。探测器沿 <span class="arithmatex">\(z\)</span> 移动，测得的局部中心频率也随之变化。</li>
+</ul>
+<p>图 1d 正是第二种测量。横轴和纵轴表达了 <span class="arithmatex">\(z\)</span> 与频率的关联。强 PFC 下，固定 <span class="arithmatex">\(z\)</span> 处的局部强度谱近似为洛伦兹型，其中心和特征半宽分别为</p>
+<div class="arithmatex">\[
+\delta\omega_{\rm loc}(z)\simeq\frac{z}{\tau_Pz_r}, \qquad \delta\omega_{\rm half}\simeq\frac{1}{|\tau_P|}
+\]</div>
+<p>因此，延展焦区有明确的物理图像：<strong>每种颜色各自只在一小段轴向区域内聚得好，所有颜色的焦区排列起来，覆盖了更长的距离。</strong> 到这里我们已经知道“哪里由哪种颜色照亮”，但还不能从这张 <span class="arithmatex">\(z\)</span>–<span class="arithmatex">\(\omega\)</span> 图判断亮点向哪里运动。还缺频率的到达时间。</p>
+<h3 id="213">2.1.3 啁啾调控到焦时间，进一步推得焦点速度</h3>
+<p>已经得到</p>
+<div class="arithmatex">\[
+K\equiv\frac{dz_f}{d\omega}=\tau_Pz_r
+\]</div>
+<p>上式是<strong>空间关系</strong>：频率偏移 <span class="arithmatex">\(\delta\omega\)</span> 的光，聚焦在 <span class="arithmatex">\(z_f=K\delta\omega\)</span>。</p>
+<p>其次有<strong>时间关系</strong>：施加均匀的二次谱相位 <span class="arithmatex">\(-\beta\delta\omega^2/2\)</span> 后，在原文的符号约定下，该频段相对于中心频率的出发延迟为 <span class="arithmatex">\(\beta\delta\omega\)</span>。加上真空传播时间，它到达自身焦点的时刻为</p>
+<div class="arithmatex">\[
+t_f(\omega)=\underbrace{\frac{z_f(\omega)}{c}}_{\text{焦点远近带来的时间差}} +\underbrace{\beta\delta\omega}_{\text{啁啾带来的时间差}}
+\]</div>
+<p>把 <span class="arithmatex">\(\delta\omega=z_f/K\)</span> 代回</p>
+<div class="arithmatex">\[
+\boxed{ \frac{1}{v_f}=\frac{dt_f}{dz_f} =\frac{1}{c}+\frac{\beta}{K}, \qquad \frac{v_f}{c} =\left( 1+\frac{\omega_0 \beta}{2f^2 \alpha}\right)^{-1} }
+\]</div>
+<p>这就是原文式 (3)。其中 <span class="arithmatex">\(z/c\)</span> 是飞行时间，<span class="arithmatex">\(\beta z/K\)</span> 是预先施加的频率间延迟。反向飞行焦点的条件，就是下游频率的时间提前量超过它多走这段距离所需的时间。</p>
+<p>令 <span class="arithmatex">\(\beta_*=-K/c\)</span>。对原文的 <span class="arithmatex">\(K&gt;0\)</span>，速度区间为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">啁啾</th>
+<th style="text-align: center;">轴上强度峰的运动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\beta&gt;0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0&lt;v_f&lt;c\)</span>，从上游向下游扫，慢于光速</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\beta=0\)</span></td>
+<td style="text-align: center;">参考情形 <span class="arithmatex">\(v_f\simeq c\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\beta_*&lt;\beta&lt;0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(v_f&gt;c\)</span>，从上游向下游扫</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\beta=\beta_*\)</span></td>
+<td style="text-align: center;">理想模型中，各位置的峰值同时出现</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\beta&lt;\beta_*\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(v_f&lt;0\)</span>，从下游向上游扫</td>
+</tr>
+</tbody>
+</table>
+<p>这里的 <span class="arithmatex">\(v_f\)</span> 是焦区内<strong>各位置达到最大强度的时刻</strong>连成的轨迹斜率，<span class="arithmatex">\(v_f=(dt_{\rm peak}/dz)^{-1}\)</span>。超光速或反向的斜率来自局部强度峰依次形成，信号传播仍受 <span class="arithmatex">\(c\)</span> 限制。</p>
+<p>举例而言，若红蓝焦点相差 <span class="arithmatex">\(1\ \mathrm{mm}\)</span>，远处的蓝光需要多飞约 <span class="arithmatex">\(3.34\ \mathrm{ps}\)</span>。让蓝光提前约 <span class="arithmatex">\(6.67\ \mathrm{ps}\)</span> 出发，它就会比红光<strong>早</strong>约 <span class="arithmatex">\(3.34\ \mathrm{ps}\)</span> 到达远端焦点。于是亮点在接下来的 <span class="arithmatex">\(3.34\ \mathrm{ps}\)</span> 里从远端扫回近端，对应 <span class="arithmatex">\(v=-c\)</span>。这个例子只用真空光速就能解释负峰速。</p>
+<h3 id="214">2.1.4 从几何聚焦时间时序到真实强度分布</h3>
+<p>前面只是把各色的几何聚焦事件连起来。一个自然的问题是：<strong>真正探测到的是所有频率叠加后的 <span class="arithmatex">\(|E|^2\)</span>，这些事件为什么能代表实际强度峰？</strong> 毕竟所获得的 <span class="arithmatex">\(v_f\)</span> 直接来说是不同频率对应的焦点相连导致的移动速度，它何以可以直接表征轴上强度峰移动？</p>
+<p>把每个频率当成一个腰位在 <span class="arithmatex">\(z_f(\omega)\)</span> 的高斯束。原文式（4）–（5）的轴上复场可以写成</p>
+<div class="arithmatex">\[
+\widetilde E(z,\omega)= \frac{|\widetilde A_0(\delta\omega)|} {\sqrt{1+\left[(z-z_0(\omega))/z_r\right]^2}} \exp\!\left\{i\left[ \arctan\frac{z-z_0(\omega)}{z_r} -\frac{\beta}{2}\delta\omega^2-\frac{\omega z}{c} \right]\right\}
+\]</div>
+<p>分母给出该颜色离开自身束腰后的振幅衰减。指数里依次是 <strong>Gouy 相位、外加谱相位、真空传播相位</strong>。对 <span class="arithmatex">\(\omega\)</span> 做逆傅里叶变换，就得到真正的 <span class="arithmatex">\(E(z,t)\)</span>。在强啁啾、驻相估计中可以忽略 Gouy 相位对频率–时间映射的修正时，强度近似化成两个因子的乘积</p>
+<div class="arithmatex">\[
+\boxed{ I(z,t)\ \propto\ \underbrace{\left|\widetilde A_0\!\left(\frac{t-z/c}{\beta}\right)\right|^2} _{\text{整体啁啾脉冲，以 }c\text{ 前进}} \quad \underbrace{\frac{1}{1+\left[(t-z/v)/\tau_e\right]^2}} _{\text{焦区内的强度增强，中心以 }v\text{ 移动}}, \qquad |\tau_e|=\frac{|\beta|}{|\tau_P|} }
+\]</div>
+<p>这个式子给出了 <em>sliding</em> 的具体含义。想象跟着原始啁啾脉冲一起走，始终观察它的前沿、中部和后沿。随着整束光穿过焦区，<strong>最能聚焦的是包络中的不同时间片</strong>。前一时刻可能是前部最亮，后一时刻变成中部或后部最亮。最佳聚焦位置就在整个脉冲包络上滑动。</p>
+<p>整体啁啾脉冲的时间尺度约为 <span class="arithmatex">\(\tau_C\sim|\beta|\Delta\omega\)</span>，局部增强峰的尺度约为 <span class="arithmatex">\(|\tau_e|\)</span>。两者之比为</p>
+<div class="arithmatex">\[
+\frac{|\tau_e|}{\tau_C}\sim \frac{1}{|\tau_P|\Delta\omega}
+\]</div>
+<p>因此当 <span class="arithmatex">\(|\tau_P|\Delta\omega\gg1\)</span> 时，一个较窄的局部亮峰可以在宽包络内清楚地移动，其轨迹接近 <span class="arithmatex">\(t=z/v\)</span>。这也解释了为什么峰速可以为负或大于 <span class="arithmatex">\(c\)</span>：同一束有限能量的前向脉冲，在不同地方通过重新聚焦形成峰值。作者的 <span class="arithmatex">\(v=2c\)</span> 模拟还显示，离开延展焦区后，脉冲恢复到以 <span class="arithmatex">\(c\)</span> 传播，穿过整个系统没有留下对应于全程超光速传播的时间超前。</p>
+<h3 id="215">2.1.5 实际数值结果，以及调速的代价</h3>
+<p>原文数值模型采用高斯光谱，逐频计算具有不同腰位的高斯束复场，再对频率逆傅里叶变换。主要参数是 <span class="arithmatex">\(\lambda_0=800\ \mathrm{nm}\)</span>、傅里叶极限脉宽 <span class="arithmatex">\(\tau_F=25\ \mathrm{fs}\)</span>、<span class="arithmatex">\(w_i=5\ \mathrm{cm}\)</span>、<span class="arithmatex">\(f=1\ \mathrm m\)</span>、<span class="arithmatex">\(\alpha=3\ \mathrm{fs/cm^2}\)</span>。代入原文定义，单频瑞利长度 <span class="arithmatex">\(z_r\simeq0.102\ \mathrm{mm}\)</span>，边缘相对中心的延迟为 <span class="arithmatex">\(75\ \mathrm{fs}\)</span>。</p>
+<p><img alt="405986adffe21c5c7d42ccc929279c78" src="D:\File\Wechat\xwechat_files\wxid_zlcy42xusxde22_1eba\temp\RWTemp\2026-11\9e20f478899dc29eb19741386f9343c8\405986adffe21c5c7d42ccc929279c78.png" /></p>
+<p>图 3 上排的<strong>横轴是实验室时间 <span class="arithmatex">\(t\)</span>，纵轴是位置 <span class="arithmatex">\(z\)</span></strong>。因此亮带斜率直接对应 <span class="arithmatex">\(dz/dt\)</span>。下排列出同一个位置 <span class="arithmatex">\(z=0\)</span> 测到的时间波形。为了让这些波形都清晰可见，分别将纵坐标放大了不同倍数。把倍数除回来，就能看到调速的实际代价。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">图 3</th>
+<th style="text-align: center;">施加的谱相位</th>
+<th style="text-align: center;">原文报告的峰运动</th>
+<th style="text-align: center;"><span class="arithmatex">\(z=0\)</span> 峰值约占理想参考峰值的比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">a</td>
+<td style="text-align: center;"><span class="arithmatex">\(\beta=0\)</span>，保留 PFC</td>
+<td style="text-align: center;">向前，<span class="arithmatex">\(v=c\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1/7\approx14\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;"><span class="arithmatex">\(\beta=+12\,230\ \mathrm{fs^2}\)</span></td>
+<td style="text-align: center;">向前，<span class="arithmatex">\(v\simeq0.7c\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1/40=2.5\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">c</td>
+<td style="text-align: center;"><span class="arithmatex">\(\beta=-53\,420\ \mathrm{fs^2}\)</span></td>
+<td style="text-align: center;">向后，<span class="arithmatex">\(v\simeq-c\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1/175\approx0.57\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">三阶谱相位</td>
+<td style="text-align: center;">向前加速，约从 <span class="arithmatex">\(0.6c\)</span> 到 <span class="arithmatex">\(c\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1/37\approx2.7\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>参考峰值对应<strong>同能量、同光谱、无 PFC、无啁啾</strong>的理想聚焦脉冲。图 3a 已经损失约七倍，因为只加纵向色差，就已经将各频率的最佳焦点沿轴分散了。图 3c 的反向亮带清楚，但它对应的峰值仅为参考值的约 <span class="arithmatex">\(0.57\%\)</span>。对于关心激光–等离子体作用的应用，轨迹和绝对强度常常需要同时考虑。</p>
+<p><img alt="aabb92a550e395568ef802a9a7c028a1" src="D:\File\Wechat\xwechat_files\wxid_zlcy42xusxde22_1eba\temp\RWTemp\2026-11\9e20f478899dc29eb19741386f9343c8\aabb92a550e395568ef802a9a7c028a1.png" /></p>
+<p>图 4a 则还区分了两个层次：黑线是简单解析速度公式，红线是从合成后的数值强度峰得到的速度。两者总体趋势一致，但数值并非处处相等。例如把图 3c 的标称参数直接代入式（3），得到约 <span class="arithmatex">\(-0.91c\)</span>，论文对数值算例给出的速度是约 <span class="arithmatex">\(-c\)</span>。<strong>复现时，几何公式适合做预测曲线，最终峰速应从合成场检验。</strong></p>
+<p>图 4c 解释了为什么不能只追求大色差。在聚焦几何固定时，提高 <span class="arithmatex">\(|\alpha|\)</span> 能延长可控焦区；但要保持相同的目标 <span class="arithmatex">\(v\)</span>，<span class="arithmatex">\(\beta/\alpha\)</span> 基本固定，因而还要相应增大 <span class="arithmatex">\(|\beta|\)</span>。结果是可控距离增长，局部脉冲变宽，峰值强度进一步下降。对于尾场加速，论文提出了调节驱动峰速、缓解失相的可能性；本文计算的是线性光传播，等离子体尾场和电子增能没有在这篇工作中模拟。</p>
+<h3 id="215_1">2.1.5 从“选择一个速度”走向“设计一条轨迹”</h3>
+<p>二阶谱相位给出线性群延迟 <span class="arithmatex">\(\tau_{\rm in}(\omega)=\beta\delta\omega\)</span>。配合线性的 <span class="arithmatex">\(z_0(\omega)\)</span>，焦点以近似恒速运动。若群延迟随频率非线性变化，焦点速度就可以随位置改变。用<strong>群延迟</strong>写，既便于设计，也能避免不同傅里叶正负号约定引起混淆</p>
+<div class="arithmatex">\[
+t_0(\omega)=\frac{z_0(\omega)}{c}+\tau_{\rm in}(\omega), \qquad \boxed{ \frac{d\tau_{\rm in}}{d\omega} =\frac{dz_0}{d\omega} \left[\frac{1}{v_{\rm target}(z_0)}-\frac{1}{c}\right] }
+\]</div>
+<p>这个式子可以反过来用。先由光学系统得到 <span class="arithmatex">\(z_0(\omega)\)</span>，再指定希望的 <span class="arithmatex">\(v_{\rm target}(z)\)</span>，便能求出每种颜色应提前或推迟多少。图 3d 用三阶谱相位实现了一段加速。图 5 进一步采用振荡谱相位，在作者估计的 <span class="arithmatex">\(N\sim|\tau_P|\Delta\omega\approx60\)</span> 个可分辨频谱自由度下，得到约五次纵向加速与减速，速度在约 <span class="arithmatex">\(0.3c\)</span> 和 <span class="arithmatex">\(c\)</span> 之间变化。<strong>图 5 中亮点始终向前，变化的是速度大小。</strong> 后来 Li 2021 讨论的是另一件事：有限单频焦深与谱边缘怎样使强度峰真正改变运动方向。</p>
+<p>回到你的<strong>反射式等离子体 FF</strong>，这篇最值得保留的是它的建模层次。Sainte-Marie 等能够直接写出每个颜色的高斯复场；你的模型则要由 Helmholtz 求解得到每个颜色的复反射场。两者后半段的物理问题相同：<strong>先从单频场得到焦点映射 <span class="arithmatex">\(z_0(\omega)\)</span>，再结合谱相位得到到焦时刻，最后逐频相干合成 <span class="arithmatex">\(I(z,t)\)</span>，检查峰轨迹、局部脉宽和实际强度。</strong> 对反射系统尤其重要的一点是，等离子体内往返传播本身也贡献频率依赖延迟。因此，单频几何焦点曲线可以告诉我们“哪些颜色在哪里聚焦”，要预测它们以多快的速度依次亮起，还必须保留复反射场的相位。</p>
+<h3 id="21a">2.1.A 本文补充和复现</h3>
+<h3 id="5-2c">5. 图2(c)：负速度意味着聚焦事件按反向顺序发生</h3>
+<p>定义临界啁啾</p>
+<div class="arithmatex">\[ \boxed{ \beta_0=-\frac Kc =-\frac{2f^2\alpha}{\omega_0}. } \]</div>
+<p>对于 <span class="arithmatex">\(\alpha&gt;0\)</span>，速度区间为：</p>
+<table>
+<thead>
+<tr>
+<th>啁啾范围</th>
+<th>峰值运动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\beta&gt;0\)</span></td>
+<td><span class="arithmatex">\(0&lt;v&lt;c\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\beta=0\)</span></td>
+<td><span class="arithmatex">\(v=c\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\beta_0&lt;\beta&lt;0\)</span></td>
+<td><span class="arithmatex">\(v&gt;c\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\beta=\beta_0\)</span></td>
+<td>理想模型中各处同时达到峰值，形式上 <span class="arithmatex">\(v\to\infty\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\beta&lt;\beta_0\)</span></td>
+<td><span class="arithmatex">\(v&lt;0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>负速度时，下游频率被提前得足够多，以至于：</p>
+<p><strong>下游先亮，上游后亮。</strong></p>
+<p>所以强度峰从大 <span class="arithmatex">\(z\)</span> 向小 <span class="arithmatex">\(z\)</span> 移动。组成这个场的光仍然由入射端向前传播。</p>
+<p>另外，原文图2把低频焦点画在较大 <span class="arithmatex">\(z\)</span>、高频焦点画在较小 <span class="arithmatex">\(z\)</span>。这一排列对应 <span class="arithmatex">\(K&lt;0\)</span>，与图1(d)及后面正 <span class="arithmatex">\(\alpha\)</span> 数值算例的频率顺序相反。图2可以理解为另一种色差符号下的示意；做数值模型时应以式(1)及自己选定的 <span class="arithmatex">\(\alpha\)</span> 为准。</p>
+<hr />
+<p><strong>四、式(4)—(6)：完整频域模型，以及图1(d)为何呈现局部窄带</strong></p>
+<p>前面的速度推导把每个频率看成一个“在某处发生的聚焦事件”。实际每个频率都有有限焦深。</p>
+<p>论文用高斯光束把这一点补上。</p>
+<p>轴上频域电场为</p>
+<div class="arithmatex">\[ \boxed{ \widetilde E(z,\omega) = \frac{ |\widetilde A_0(\delta\omega)| }{ \sqrt{1+\left[(z-K\delta\omega)/z_r\right]^2} } e^{i\phi(z,\omega)}. } \tag{4} \]</div>
+<p>相位为</p>
+<div class="arithmatex">\[ \boxed{ \phi(z,\omega) = \arctan\!\left(\frac{z-K\delta\omega}{z_r}\right) -\frac{\beta}{2}\delta\omega^2 -\frac{\omega z}{c}. } \tag{5} \]</div>
+<p>三个相位项分别是：</p>
+<table>
+<thead>
+<tr>
+<th>相位项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\arctan[(z-K\delta\omega)/z_r]\)</span></td>
+<td>Gouy 相位</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-\beta\delta\omega^2/2\)</span></td>
+<td>外加啁啾</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-\omega z/c\)</span></td>
+<td>真空传播</td>
+</tr>
+</tbody>
+</table>
+<p>式(4)的分母表明：</p>
+<div class="arithmatex">\[ z=K\delta\omega \]</div>
+<p>时，该频率的轴上振幅最大；偏离自己的焦点后，轴上场逐渐减弱。</p>
+<h3 id="1_1">1. 固定位置只“挑选”一小段频率</h3>
+<p>在固定 <span class="arithmatex">\(z\)</span> 处，最容易聚焦的频率是</p>
+<div class="arithmatex">\[ \delta\omega_z=\frac zK. \]</div>
+<p>利用 <span class="arithmatex">\(K=\tau_Pz_r\)</span>，得到</p>
+<div class="arithmatex">\[ |\widetilde E(z,\omega)|^2 = \frac{ |\widetilde A_0(\delta\omega)|^2 }{ 1+\tau_P^2(\delta\omega-z/K)^2 }. \]</div>
+<p>当整体谱宽远大于局部聚焦选择的谱宽，即</p>
+<div class="arithmatex">\[ |\tau_P|\Delta\omega\gg1, \]</div>
+<p>可把分子在局部频段内视为常数：</p>
+<div class="arithmatex">\[ \boxed{ |\widetilde E(z,\omega)|^2 \simeq \frac{ |\widetilde A_0(z/K)|^2 }{ 1+\tau_P^2(\delta\omega-z/K)^2 }. } \tag{6} \]</div>
+<p>因此局部谱近似为 Lorentz 型，其：</p>
+<p>[ \boxed{ \omega_{\rm center}(z)=\omega_0+\frac zK, } ][ \boxed{ \text{角频率半高半宽}=\frac1{|\tau_P|}. } ]</p>
+<p>这就是图1(d)右侧蓝色局部谱比红色整体谱窄的原因。</p>
+<p>需要强调：这里不是发生了频率转换，而是不同位置对不同频率的聚焦增强程度不同。</p>
+<h3 id="2_1">2. 为什么纵向能流密度分布可以复制初始光谱？</h3>
+<p>对时间积分，利用 Parseval 关系，轴上 fluence 与频谱强度积分成正比：</p>
+<div class="arithmatex">\[ \mathcal F(z) \propto \int d\omega\,|\widetilde E(z,\omega)|^2. \]</div>
+<p>在上述近似下：</p>
+<div class="arithmatex">\[ \boxed{ \mathcal F(z)\propto |\widetilde A_0(z/K)|^2. } \]</div>
+<p>所以初始光谱形状被映射成纵向分布：</p>
+<ul>
+<li>高斯光谱，产生近似高斯的纵向包络；</li>
+<li>整形光谱，也可以进一步整形纵向 fluence。</li>
+</ul>
+<p>这比“焦区变长”更进一步：<strong>频谱成为纵向光场分布的设计变量。</strong></p>
+<hr />
+<p><strong>五、式(7)—(11)：为什么称为“滑动焦点”？</strong></p>
+<p>定义随光速运动的时间坐标：</p>
+<div class="arithmatex">\[ \boxed{t'=t-z/c.} \]</div>
+<p>强啁啾、忽略 Gouy 相位对驻相点的修正时：</p>
+<div class="arithmatex">\[ \delta\omega_s=\frac{t'}{\beta}. \]</div>
+<p>把它代入式(4)，得到</p>
+<div class="arithmatex">\[ E(z,t)\propto \frac{ |\widetilde A_0(t'/\beta)| }{ \sqrt{1+\left[(t-z/v)/\tau_e\right]^2} } e^{i\varphi(z,t)}, \]</div>
+<p>其中论文定义</p>
+<div class="arithmatex">\[ \tau_e=\frac{\beta}{\tau_P}. \]</div>
+<p>作为实际宽度，应取 <span class="arithmatex">\(|\tau_e|\)</span>。</p>
+<p>这个表达式包含两个振幅因子：</p>
+<p>[ p_1(z,t)=|\widetilde A_0((t-z/c)/\beta)|, ][ p_2(z,t)= \frac1{\sqrt{1+\left[(t-z/v)/\tau_e\right]^2}}. ]</p>
+<p><strong><span class="arithmatex">\(p_1\)</span> 是以 <span class="arithmatex">\(c\)</span> 传播的宽脉冲包络，<span class="arithmatex">\(p_2\)</span> 是以 <span class="arithmatex">\(v\)</span> 移动的聚焦增强窗口。</strong></p>
+<p>最终场是两者的乘积。</p>
+<p>这就是“滑动焦点”的数学含义：聚焦增强窗口沿着宽脉冲内部滑动，持续选出其中不同的时间部分。</p>
+<h3 id="1_2">1. 两个时间尺度</h3>
+<p>宽包络的尺度是</p>
+<div class="arithmatex">\[ \tau_C\sim|\beta|\Delta\omega, \]</div>
+<p>聚焦窗口的尺度是</p>
+<div class="arithmatex">\[ |\tau_e|=\frac{|\beta|}{|\tau_P|}. \]</div>
+<p>它们之比为</p>
+<div class="arithmatex">\[ \boxed{ \frac{\tau_C}{|\tau_e|} \sim|\tau_P|\Delta\omega. } \]</div>
+<p>因此，强 PFC/LC 使聚焦窗口比整个啁啾包络窄得多。</p>
+<p>这也是为什么一个很长的输入啁啾脉冲，可以在局部形成相对短的强度峰。</p>
+<h3 id="2-11-lorentz">2. 式(11)：移动的 Lorentz 型强度峰</h3>
+<p>若 <span class="arithmatex">\(p_1\)</span> 在窄窗口范围内变化很慢，可以在 <span class="arithmatex">\(t=z/v\)</span> 处评价它，得到</p>
+<div class="arithmatex">\[ \boxed{ I(z,t) \propto \frac{ |\widetilde A_0(z/K)|^2 }{ 1+\left[(t-z/v)/\tau_e\right]^2 }. } \tag{11} \]</div>
+<p>这个式子直接给出：</p>
+<p>[ \boxed{t_{\rm peak}(z)\simeq z/v,} ][ \boxed{\Delta t_{\rm FWHM}\simeq2|\beta/\tau_P|.} ]</p>
+<p>同时，峰值随 <span class="arithmatex">\(z\)</span> 的变化由初始光谱控制。</p>
+<p>但以上脉宽公式是渐近结果，<strong>不能把 <span class="arithmatex">\(\beta=0\)</span> 代进去，得出零脉宽。</strong> 式(7)—(11)本来就依赖强啁啾近似。</p>
+<h3 id="3-gouy">3. Gouy 相位为何不能总忽略？</h3>
+<p>如果保留式(5)的 Gouy 相位，驻相条件变为</p>
+<div class="arithmatex">\[ \boxed{ t= \frac zc+\beta\delta\omega + \frac{\tau_P}{ 1+\left[(z-K\delta\omega)/z_r\right]^2 }. } \]</div>
+<p>因此在弱啁啾区，频率与时间的关系不再严格是简单直线。这会影响波形、峰值位置及其速度。</p>
+<p>在每个频率自己的焦点处，最后一项等于常数 <span class="arithmatex">\(\tau_P\)</span>，主要表现为时间原点的偏移；但真实强度峰由有限带宽的相干叠加形成，仍需通过完整积分确认。</p>
+<hr />
+<p><strong>六、图3：四种峰值轨迹，以及强度代价</strong></p>
+<p>图3是理论的主要数值验证。</p>
+<p>共同参数为</p>
+<p>[ \lambda_0=800\ {\rm nm},\quad \tau_F=25\ {\rm fs},\quad w_i=5\ {\rm cm},\quad f=1\ {\rm m}, ][ \alpha=3\ {\rm fs/cm^2},\qquad \tau_P=75\ {\rm fs}. ]</p>
+<p>由这些参数可得</p>
+<p>[ w_0\simeq\frac{\lambda_0f}{\pi w_i} \simeq5.1\ \mu{\rm m}, ][ z_r\simeq0.102\ {\rm mm}, ][ \frac Kc=\frac{\tau_Pz_r}{c} \simeq2.65\times10^4\ {\rm fs^2}. ]</p>
+<p>所以速度公式可以直观写成</p>
+<div class="arithmatex">\[ \boxed{ \frac vc\simeq \frac1{1+\beta/(2.65\times10^4\ {\rm fs^2})}. } \]</div>
+<h3 id="3a-c">图3(a)：无啁啾，峰值仍以 <span class="arithmatex">\(c\)</span> 运动</h3>
+<p>这里</p>
+<div class="arithmatex">\[ \beta=0. \]</div>
+<p>上图亮带沿光速轨迹前进，但下方的局部时间波形具有明显不对称性。论文称其为半指数型轮廓。</p>
+<p>这说明：</p>
+<p><strong>无啁啾不等于无时间畸变；PFC/LC 本身就能改变焦区波形。</strong></p>
+<p>下方标注“<span class="arithmatex">\(\times7\)</span>”意味着为便于比较，把曲线乘了约7倍。因此实际峰值约为理想参考的</p>
+<div class="arithmatex">\[ \varepsilon\simeq1/7. \]</div>
+<h3 id="3b">图3(b)：亚光速峰值</h3>
+<p>这里</p>
+<div class="arithmatex">\[ \beta=12230\ {\rm fs^2}. \]</div>
+<p>代入公式：</p>
+<div class="arithmatex">\[ v\simeq0.684c, \]</div>
+<p>与数值给出的约 <span class="arithmatex">\(0.7c\)</span> 接近。</p>
+<p>下方标注“<span class="arithmatex">\(\times40\)</span>”说明实际峰值约为参考值的 <span class="arithmatex">\(1/40\)</span>。</p>
+<p>这体现了速度控制的代价：更长的局部持续时间、更低的峰值强度。</p>
+<h3 id="3c">图3(c)：负速度峰值</h3>
+<p>这里</p>
+<div class="arithmatex">\[ \beta=-53420\ {\rm fs^2}. \]</div>
+<p>公式预测</p>
+<div class="arithmatex">\[ v\simeq-0.99c, \]</div>
+<p>与图中的 <span class="arithmatex">\(-c\)</span> 接近。</p>
+<p>读图时，应沿时间轴从左向右看：亮斑从上方的大 <span class="arithmatex">\(z\)</span> 移向下方的小 <span class="arithmatex">\(z\)</span>。</p>
+<p>下方“<span class="arithmatex">\(\times175\)</span>”说明峰值强度约降为参考值的 <span class="arithmatex">\(1/175\)</span>。</p>
+<p>这不是一束光在焦区被反射回去了，而是不同位置的聚焦事件按反向顺序发生。</p>
+<h3 id="3d">图3(d)：轨迹弯曲，对应纵向加速</h3>
+<p>这里施加高阶谱相位，使亮带不再是直线。</p>
+<p>局部斜率</p>
+<div class="arithmatex">\[ \frac{dz_{\rm peak}}{dt} \]</div>
+<p>逐渐增大，对应峰值从约 <span class="arithmatex">\(0.6c\)</span> 加速到 <span class="arithmatex">\(c\)</span>。</p>
+<p>图3下方所有曲线都经过不同倍数的放大，因此不能直接用其显示高度比较真实强度。四种情况大致为：</p>
+<table>
+<thead>
+<tr>
+<th>图</th>
+<th>峰值运动</th>
+<th>峰值强度/理想参考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3(a)</td>
+<td><span class="arithmatex">\(c\)</span></td>
+<td><span class="arithmatex">\(1/7\)</span></td>
+</tr>
+<tr>
+<td>3(b)</td>
+<td><span class="arithmatex">\(0.7c\)</span></td>
+<td><span class="arithmatex">\(1/40\)</span></td>
+</tr>
+<tr>
+<td>3(c)</td>
+<td><span class="arithmatex">\(-c\)</span></td>
+<td><span class="arithmatex">\(1/175\)</span></td>
+</tr>
+<tr>
+<td>3(d)</td>
+<td>约 <span class="arithmatex">\(0.6c\to c\)</span></td>
+<td><span class="arithmatex">\(1/37\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>这些是图中倍率所对应的近似值。</p>
+<hr />
+<p><strong>七、式(12)：怎样从目标轨迹反推谱相位？</strong></p>
+<p>这一步对于你后续设计飞行焦点最有用。</p>
+<p>为避免论文中的符号歧义，明确把<strong>实际乘在频域场上的谱相位</strong>记为 <span class="arithmatex">\(\psi(\omega)\)</span>：</p>
+<div class="arithmatex">\[ \widetilde E\propto e^{i\psi(\omega)}e^{-i\omega z/c}. \]</div>
+<p>按照本文傅里叶约定，到达时间为</p>
+<div class="arithmatex">\[ t=\frac zc-\psi'(\omega). \]</div>
+<p>在焦点轨迹上：</p>
+<div class="arithmatex">\[ t_0(\omega) = \frac{K\delta\omega}{c}-\psi'(\omega). \]</div>
+<p>对频率求导：</p>
+<div class="arithmatex">\[ \frac{dt_0}{d\omega} = \frac Kc-\psi''(\omega). \]</div>
+<p>又因为</p>
+<div class="arithmatex">\[ \frac{dt_0}{d\omega} = \frac{dt_0}{dz_0}\frac{dz_0}{d\omega} = \frac K{v(z_0)}, \]</div>
+<p>所以</p>
+<div class="arithmatex">\[ \boxed{ \psi''(\omega) = K\left[\frac1c-\frac1{v(z_0)}\right], \qquad z_0=K\delta\omega. } \]</div>
+<p>对于二次谱相位</p>
+<div class="arithmatex">\[ \psi=-\beta\delta\omega^2/2, \]</div>
+<p>有 <span class="arithmatex">\(\psi''=-\beta\)</span>，恰好恢复</p>
+<div class="arithmatex">\[ \beta=K(1/v-1/c). \]</div>
+<p>论文式(12)写成相反顺序：</p>
+<div class="arithmatex">\[ \frac{\partial^2\phi}{\partial\omega^2} = K\left[\frac1{v(z)}-\frac1c\right]. \]</div>
+<p><strong>若把这里的 <span class="arithmatex">\(\phi\)</span> 当作前文 <span class="arithmatex">\(e^{i\phi}\)</span> 中的实际谱相位，符号便不一致。</strong> 它可以理解为采用了相反的相位参数约定。实际编程时，最好从上述驻相条件自行统一符号，而不要直接复制式(12)。</p>
+<h3 id="_1">更直接的设计方法</h3>
+<p>先给定目标速度 <span class="arithmatex">\(v(z)\)</span>，计算峰值到达时间：</p>
+<div class="arithmatex">\[ T(z)=T(0)+\int_0^z\frac{d\zeta}{v(\zeta)}. \]</div>
+<p>然后要求</p>
+<div class="arithmatex">\[ T(z)=\frac zc-\psi'(\omega_0+z/K), \]</div>
+<p>因此</p>
+<div class="arithmatex">\[ \boxed{ \psi'(\omega_0+z/K) = \frac zc-T(z). } \]</div>
+<p>再对频率积分，就得到所需谱相位。</p>
+<p>其中：</p>
+<ul>
+<li>谱相位常数不影响强度轨迹；</li>
+<li>谱相位的一次项只改变整体时间原点；</li>
+<li>二次及更高阶项决定速度和加速行为。</li>
+</ul>
+<h3 id="_2">为什么三次谱相位能产生加速？</h3>
+<p>例如设</p>
+<div class="arithmatex">\[ \psi(\omega)= -\frac{\beta_2}{2}\delta\omega^2 -\frac{\beta_3}{6}\delta\omega^3. \]</div>
+<p>则</p>
+<div class="arithmatex">\[ T(z) = \frac zc+\frac{\beta_2}{K}z +\frac{\beta_3}{2K^2}z^2, \]</div>
+<p>于是</p>
+<div class="arithmatex">\[ \boxed{ \frac1{v(z)} = \frac1c+\frac{\beta_2}{K} +\frac{\beta_3}{K^2}z. } \]</div>
+<p>所以三次谱相位使<strong>逆速度随位置线性变化</strong>。</p>
+<p>这并不等于恒定加速度。若要恒定加速度，应先规定 <span class="arithmatex">\(z(t)\)</span>，再反推所需谱相位。</p>
+<hr />
+<p><strong>八、图4：速度调节范围，与峰值强度的折中</strong></p>
+<h3 id="4a">图4(a)：为什么是双曲线？</h3>
+<p>固定 <span class="arithmatex">\(\alpha\)</span> 时：</p>
+<div class="arithmatex">\[ \frac vc=\frac1{1+c\beta/K}. \]</div>
+<p>因此速度随 <span class="arithmatex">\(\beta\)</span> 呈双曲线变化，并在</p>
+<div class="arithmatex">\[ \beta=-K/c \]</div>
+<p>处出现形式上的发散。</p>
+<p>黑线是解析预测，红线是数值模拟。总体接近，说明简单的“聚焦位置＋到达时间”模型抓住了主要物理机制。</p>
+<p>但在近发散区，用“速度”描述轨迹会非常敏感。此时直接研究</p>
+<div class="arithmatex">\[ \boxed{ \frac{dt_{\rm peak}}{dz} } \]</div>
+<p>通常更稳妥：它趋近于零，表示各处近乎同时达到峰值。</p>
+<h3 id="4b-varepsilon">图4(b)：纵轴 <span class="arithmatex">\(\varepsilon\)</span> 是保留比例</h3>
+<p>论文定义</p>
+<div class="arithmatex">\[ \boxed{ \varepsilon=\frac{I_M}{I_0}, } \]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(I_M\)</span>：CPLC 光束的最大强度；</li>
+<li><span class="arithmatex">\(I_0\)</span>：同能量、同光谱、没有时空耦合和啁啾的理想光束峰值。</li>
+</ul>
+<p>所以：</p>
+<ul>
+<li><span class="arithmatex">\(\varepsilon=1\)</span>：没有峰值损失；</li>
+<li><span class="arithmatex">\(\varepsilon=0.1\)</span>：保留十分之一；</li>
+<li><span class="arithmatex">\(\varepsilon=0.01\)</span>：保留百分之一。</li>
+</ul>
+<p>峰值降低来自两方面：</p>
+<ol>
+<li>各频率不再在同一位置同时聚焦；</li>
+<li>啁啾把不同频率分配到不同时间。</li>
+</ol>
+<p>能量被分散到更大的时空范围，因此峰值下降。</p>
+<p>图中也说明，只把速度从 <span class="arithmatex">\(c\)</span> 调整几个百分点，强度代价可能比实现 <span class="arithmatex">\(0.3c\)</span> 或负速度温和得多。</p>
+<h3 id="4c-alpha">图4(c)：增大 <span class="arithmatex">\(\alpha\)</span>，既延长控制距离，也加重代价</h3>
+<p>固定聚焦几何时：</p>
+<div class="arithmatex">\[ z_r^e\sim K\Delta\omega\propto\alpha. \]</div>
+<p>所以 <span class="arithmatex">\(\alpha\)</span> 越大，能控制速度的纵向区域越长。</p>
+<p>但若要求速度 <span class="arithmatex">\(v\)</span> 不变：</p>
+<div class="arithmatex">\[ \beta=K(1/v-1/c)\propto\alpha. \]</div>
+<p>这意味着增大 <span class="arithmatex">\(\alpha\)</span> 的同时，还需要增大啁啾，峰值强度会进一步下降。</p>
+<p>因此 <span class="arithmatex">\(\alpha\)</span> 的选择是一个折中：</p>
+<p>| 增大 <span class="arithmatex">\(|\alpha|\)</span> 的收益 | 相应代价 |
+|---|---|
+| 扩展焦区变长 | 各频率重合程度降低 |
+| 允许更复杂的轨迹设计 | 所需啁啾通常增大 |
+| 频率—位置映射更清晰 | 峰值强度下降、局部脉宽通常增加 |</p>
+<p>图中小 <span class="arithmatex">\(\alpha\)</span> 区域的点线还提醒：色差太弱时，清晰的频率—位置分离不成立，不能继续机械套用渐近公式。</p>
+<hr />
+<p><strong>九、图5：为什么能反复加速、减速？</strong></p>
+<p>图5把</p>
+<div class="arithmatex">\[ \alpha \]</div>
+<p>从 <span class="arithmatex">\(3\ {\rm fs/cm^2}\)</span> 增大到</p>
+<div class="arithmatex">\[ 30\ {\rm fs/cm^2}, \]</div>
+<p>因此</p>
+<div class="arithmatex">\[ \tau_P=750\ {\rm fs}. \]</div>
+<p>更强的频率—位置分离使其能够施加更复杂的谱相位，得到在 <span class="arithmatex">\(c\)</span> 与约 <span class="arithmatex">\(0.3c\)</span> 之间反复变化的峰值速度。</p>
+<p>图中亮带始终向右上方延伸：</p>
+<ul>
+<li>局部较陡处，速度较大；</li>
+<li>局部较平处，速度较小。</li>
+</ul>
+<p>这里没有出现负速度，只是正向运动中的交替加速、减速。</p>
+<p>论文提出一个定性的控制自由度估计：</p>
+<div class="arithmatex">\[ \boxed{ N\sim|\tau_P|\Delta\omega. } \]</div>
+<p>它可以从两个角度理解：</p>
+<div class="arithmatex">\[ N\sim \frac{\text{整体谱宽}}{\text{局部谱宽}} \sim \frac{\Delta\omega}{1/|\tau_P|}, \]</div>
+<p>也可以理解为</p>
+<div class="arithmatex">\[ N\sim \frac{\text{扩展焦区长度}}{\text{单频瑞利长度}}. \]</div>
+<p>论文图5取 <span class="arithmatex">\(N\approx60\)</span>，实现约5次明显的速度起伏。</p>
+<p>但 <span class="arithmatex">\(N\approx60\)</span> 并不意味着能任意设计60个独立、锐利的轨迹节点。每个位置仍接收有限带宽的光，相邻区域的响应会重叠。速度变化过快时，可能出现展宽、畸变或多个竞争峰值，必须用完整场计算检验。</p>
+<hr />
+<p><strong>十、为什么超光速和负速度不违反因果性？</strong></p>
+<p>式(7)的两个因子已经提供了直观解释：</p>
+<div class="arithmatex">\[ E\propto p_1(t-z/c)\,p_2(t-z/v). \]</div>
+<p>宽包络提供实际存在的光场，聚焦效应在其中选择出一个移动的高强度区域。</p>
+<p>因此，不同位置的强度峰，不必由前一个峰把信息传给后一个峰才形成。它们可以由预先安排好的不同频率分量分别形成。</p>
+<p>对于负速度：</p>
+<ul>
+<li>先在下游出现聚焦峰；</li>
+<li>后在上游出现聚焦峰；</li>
+<li>整体亮区看起来向后运动。</li>
+</ul>
+<p>这与电磁能量向后传播是两回事。</p>
+<p>此外，速度控制只发生在有限焦区内。论文描述的脉冲在远离焦区后，重新表现为通常以 <span class="arithmatex">\(c\)</span> 传播的宽包络。因此不能把局部异常峰值轨迹解释为整段传播获得了同样的超光速时间优势。</p>
+<hr />
+<p><strong>十一、对“飞行焦点261109”建模最直接的启示</strong></p>
+<p>这篇论文给出的基础模型，必须同时具备两项：</p>
+<div class="arithmatex">\[ \boxed{ \text{频率相关聚焦位置} + \text{频率相关到达时间}. } \]</div>
+<p>如果只给一个普通聚焦高斯脉冲加时间啁啾，却没有让焦点位置随频率变化，就缺少式(1)中的空间映射，不能据此得到这里的飞行焦点。</p>
+<p>对于聚焦前的输入面，本文机制可以概括为</p>
+<div class="arithmatex">\[ \widetilde E(r,\omega) \propto S(r)\widetilde A_0(\delta\omega) \exp\!\left[ -i\alpha\delta\omega r^2 -\frac{i\beta}{2}\delta\omega^2 +i\phi_{\rm focus}(r,\omega) \right]. \]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(-\alpha\delta\omega r^2\)</span>：建立频率相关波前曲率；</li>
+<li><span class="arithmatex">\(-\beta\delta\omega^2/2\)</span>：建立频率相关时间延迟；</li>
+<li><span class="arithmatex">\(\phi_{\rm focus}\)</span>：实际聚焦光学系统的相位。</li>
+</ul>
+<p>若数值边界直接设置在已经会聚的光束上，也可以直接构造各频率具有不同束腰位置的场；这时应避免重复施加同一聚焦过程。</p>
+<p>在引入等离子体前，最有价值的真空验证是：</p>
+<ol>
+<li>检查 <span class="arithmatex">\(z_0(\omega)\)</span> 是否符合 <span class="arithmatex">\(K\delta\omega\)</span>；</li>
+<li>检查轴上 <span class="arithmatex">\(I(z,t)\)</span> 的亮带是否符合目标轨迹；</li>
+<li>同时检查实际强度、局部脉宽和横向光斑，避免只看归一化亮带；</li>
+<li>在二维模型中，把定量结果与本文轴对称高斯模型区分开。</li>
+</ol>
+<p>最后一点尤其关系到你当前项目：<strong>本文证明的是线性传播中的峰值控制。它并没有证明同样的轨迹在等离子体反射、折射或非线性作用下仍然保持。</strong> 真空飞行焦点应先独立成立，再逐步加入介质，分析实际峰值轨迹如何偏离设计值。</p>
+<h2 id="_3">具体实现算例</h2>
+<h3 id="1-plasmalensprr2024">1. PlasmaLens（PRR2024）</h3>
+<p><strong>Li 等，Physical Review Research 6，013272（2024），《Spatiotemporal control of high-intensity laser pulses with a plasma lens》</strong>。</p>
+<h4 id="11">1.1 算例参数</h4>
+<h5 id="111-pic">1.1.1 PIC计算域与数值参数</h5>
+<p>原文使用 <strong>OSIRIS 的准三维（quasi-3D）PIC＋移动窗口</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">项目</th>
+<th style="text-align: center;">原文设置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">几何</td>
+<td style="text-align: center;">柱坐标 <span class="arithmatex">\(r\)</span>-<span class="arithmatex">\(z\)</span>，方位角方向展开</td>
+</tr>
+<tr>
+<td style="text-align: center;">方位角模态</td>
+<td style="text-align: center;">2 个模态</td>
+</tr>
+<tr>
+<td style="text-align: center;">径向范围</td>
+<td style="text-align: center;"><span class="arithmatex">\(240\,\mu\mathrm m\)</span>，即径向域 <span class="arithmatex">\(0\le r\le240\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">径向网格数</td>
+<td style="text-align: center;">600</td>
+</tr>
+<tr>
+<td style="text-align: center;">径向步长</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.4\,\mu\mathrm m\)</span>，由上述参数得到</td>
+</tr>
+<tr>
+<td style="text-align: center;">纵向移动窗口长度</td>
+<td style="text-align: center;">随啁啾调整，最小 <span class="arithmatex">\(80\,\mu\mathrm m\)</span>，最大 <span class="arithmatex">\(240\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">纵向网格数</td>
+<td style="text-align: center;">3200–9600</td>
+</tr>
+<tr>
+<td style="text-align: center;">纵向步长</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(25\,\mathrm{nm}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">波长分辨率</td>
+<td style="text-align: center;">最短波长约 30 个网格点</td>
+</tr>
+<tr>
+<td style="text-align: center;">时间步长</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.083\,\mathrm{fs}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">总模拟时间</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(6\,\mathrm{ps}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">电磁场求解器</td>
+<td style="text-align: center;">dual solver，有限差分算符使用 16 个系数</td>
+</tr>
+<tr>
+<td style="text-align: center;">电子宏粒子数</td>
+<td style="text-align: center;">每单元 32 个</td>
+</tr>
+<tr>
+<td style="text-align: center;">离子</td>
+<td style="text-align: center;">固定不动</td>
+</tr>
+<tr>
+<td style="text-align: center;">边界条件</td>
+<td style="text-align: center;">场与粒子均使用开放边界</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="arithmatex">\(80\text{–}240\,\mu\mathrm m\)</span> 是随脉冲移动的窗口长度，不是激光经过的总纵向距离。</strong>等离子体本身长 <span class="arithmatex">\(610\,\mu\mathrm m\)</span>，入口至标称焦点约 <span class="arithmatex">\(1.01\,\mathrm{mm}\)</span>。</p>
+<p>原文没有给出各个 <span class="arithmatex">\(\eta\)</span> 与具体窗口长度的一一对应表。</p>
+<h5 id="112">1.1.2 等离子体范围和密度分布</h5>
+<p>理论模型定义</p>
+<div class="arithmatex">\[
+0\le z\le L_p,\qquad L_p=0.61\,\mathrm{mm}=610\,\mu\mathrm m.
+\]</div>
+<p>该纵向区域之外为真空。PIC 模拟在入口和出口各设置 <strong><span class="arithmatex">\(10\,\mu\mathrm m\)</span> 密度坡道</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">参数</th>
+<th style="text-align: center;">数值或说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">轴上密度 <span class="arithmatex">\(n_0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0\times10^{18}\,\mathrm{cm^{-3}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">轴上归一化密度</td>
+<td style="text-align: center;"><span class="arithmatex">\(n_0/n_{\rm cr}\approx5.7\times10^{-4}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">通道 matched radius <span class="arithmatex">\(w_m\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(12.5\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">透镜长度 <span class="arithmatex">\(L_p\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(610\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">入口、出口坡道长度</td>
+<td style="text-align: center;">各 <span class="arithmatex">\(10\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">坡道具体函数</td>
+<td style="text-align: center;"><strong>未说明</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">坡道包含在 <span class="arithmatex">\(610\,\mu\mathrm m\)</span> 内，还是附加在两端</td>
+<td style="text-align: center;"><strong>未明确说明</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">物理通道的径向截断、截断后的密度</td>
+<td style="text-align: center;"><strong>未明确说明</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">电子初始温度、动量分布</td>
+<td style="text-align: center;"><strong>未明确说明</strong></td>
+</tr>
+</tbody>
+</table>
+<p>径向密度是<strong>轴上低、向外二次增加</strong>：</p>
+<div class="arithmatex">\[
+\boxed{
+ n_e(r)=n_0+\frac12n_2r^2
+}
+\]</div>
+<p>密度曲率通过 matched radius 确定：</p>
+<div class="arithmatex">\[
+w_m=\left(\frac{8c^2}{\omega_{p2}^2}\right)^{1/4},
+\qquad
+\omega_{p2}^2=\frac{e^2n_2}{m_e\varepsilon_0}
+\]</div>
+<p>因此，由原文参数推算：</p>
+<div class="arithmatex">\[
+n_2\approx9.254\times10^{33}\,\mathrm{m^{-5}}
+\]</div>
+<p>若 <span class="arithmatex">\(r\)</span> 用 <span class="arithmatex">\(\mu\mathrm m\)</span>、密度用 <span class="arithmatex">\(\mathrm{cm^{-3}}\)</span>，可写为</p>
+<div class="arithmatex">\[
+\boxed{
+n_e(r)\approx
+10^{18}
++
+4.627\times10^{15}
+\left(\frac{r}{\mu\mathrm m}\right)^2
+\quad\mathrm{cm^{-3}}
+}
+\]</div>
+<p>部分位置的推算值</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">径向位置</th>
+<th style="text-align: center;">密度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(r=0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.00\times10^{18}\,\mathrm{cm^{-3}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(r=12.5\,\mu\mathrm m\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.72\times10^{18}\,\mathrm{cm^{-3}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(r=60\,\mu\mathrm m\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.77\times10^{19}\,\mathrm{cm^{-3}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(r=240\,\mu\mathrm m\)</span></td>
+<td style="text-align: center;">若抛物线延伸至此，为 <span class="arithmatex">\(2.68\times10^{20}\,\mathrm{cm^{-3}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="arithmatex">\(w_m=12.5\,\mu\mathrm m\)</span> 是通道的匹配光斑半径，不是等离子体通道边缘。</strong></p>
+<h5 id="113">1.1.3 入射激光</h5>
+<p><strong>基本参数</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">参数</th>
+<th style="text-align: center;">原文设置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">中心波长 <span class="arithmatex">\(\lambda_0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(800\,\mathrm{nm}( \omega_0=2.4\times10^{15}\,\mathrm{rad/s})\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">偏振；横向模式</td>
+<td style="text-align: center;">LP；基模Gaussian，<span class="arithmatex">\(q=\ell=0\)</span>，无轨道角动量</td>
+</tr>
+<tr>
+<td style="text-align: center;">透镜入口光斑半径 <span class="arithmatex">\(w_I\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(60\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">入口波前曲率半径 <span class="arithmatex">\(R_I\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\infty\)</span>，即平面波前</td>
+</tr>
+<tr>
+<td style="text-align: center;">入射方向</td>
+<td style="text-align: center;">沿 <span class="arithmatex">\(+z\)</span>，正入射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>基本形式</strong></p>
+<p>入口频域复场为</p>
+<div class="arithmatex">\[
+\boxed{
+\widetilde E(r,0,\omega)
+\propto
+A_I(\omega)
+\exp\left(-\frac{r^2}{w_I^2}\right)
+e^{i\phi_I(\omega)}
+}
+\]</div>
+<p>其中 <span class="arithmatex">\(A_I(\omega)\)</span> 输入的是四阶 super-Gaussian <strong>频域振幅谱</strong>
+$$
+\boxed{
+A_I(\omega)=
+\exp\left{
+-\left[\frac{\tau(\omega-\omega_0)}{2}\right]^4
+\right},
+\qquad \tau=21\,\mathrm{fs}
+}
+$$</p>
+<p>二次<strong>频域相位谱</strong></p>
+<div class="arithmatex">\[
+\boxed{
+\phi_I(\omega)
+=
+\frac12\phi_2(\omega-\omega_0)^2,
+\qquad
+\phi_2=\frac{\eta\tau^2}{2} =220.5\,\eta\ \mathrm{fs^2}
+}
+\]</div>
+<p>由于</p>
+<div class="arithmatex">\[
+E\propto e^{-r^2/w_I^2},
+\qquad
+I\propto e^{-2r^2/w_I^2}
+\]</div>
+<p>所以 <span class="arithmatex">\(60\,\mu\mathrm m\)</span> 是 <strong><span class="arithmatex">\(1/e\)</span> 电场半径，也就是 <span class="arithmatex">\(1/e^2\)</span> 强度半径</strong>。频域强度谱为 <span class="arithmatex">\(|A_I|^2\)</span>，所以其 FWHM
+$$
+\Delta\omega
+=
+\frac4\tau
+\left(\frac{\ln2}{2}\right)^{1/4} \qquad  \left(\Delta\omega=1.4\times10^{14}\,\mathrm{rad/s},
+\qquad
+\Delta\omega/\omega_0\approx0.061 \right)
+$$</p>
+<p><strong>改动参数</strong></p>
+<p>文中有改变或扫描的是强度 <span class="arithmatex">\(a_I\)</span> 和频域相位谱参数 <span class="arithmatex">\(\eta\)</span> 
+$$
+a_I=\frac{eE_I}{m_ec\omega_0}
+$$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(a_I\)</span></th>
+<th style="text-align: center;">入射峰值强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(2.2\times10^{16}\,\mathrm{W/cm^2}\)</span>，按原文比例推算</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">原文给出 <span class="arithmatex">\(5.4\times10^{17}\,\mathrm{W/cm^2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">原文约 <span class="arithmatex">\(2\times10^{18}\,\mathrm{W/cm^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>不同图使用</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">图</th>
+<th style="text-align: center;">设置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Fig. 2</td>
+<td style="text-align: center;"><span class="arithmatex">\(a_I=0.5,\ \eta=-5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Fig. 3</td>
+<td style="text-align: center;"><span class="arithmatex">\(a_I=0.5\)</span>，改变啁啾以改变焦点速度</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fig. 5</td>
+<td style="text-align: center;">比较 <span class="arithmatex">\(a_I=0.1,\ 0.5,\ 1.0\)</span>，以及 <span class="arithmatex">\(\eta=-4,-8,-12\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>原文发现：较短脉冲时 <span class="arithmatex">\(a_I=0.5\)</span> 的结果较接近线性模型；较长脉冲或 <span class="arithmatex">\(a_I=1\)</span> 时，等离子体反馈会使脉冲后部明显畸变。</p>
+<p>实际时域场需要通过</p>
+<div class="arithmatex">\[
+E_{\rm env}(\xi)
+\propto
+\int A_I(\omega)e^{i\phi_I(\omega)}
+e^{-i(\omega-\omega_0)\xi}\,d\omega,
+\qquad
+\xi=t-z/c
+\]</div>
+<p>得到。</p>
+<p>以下是按<strong>原文上述频谱和相位数值 Fourier 合成</strong>得到的输入强度 FWHM，<strong>不是原文直接列出的表值</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(\eta\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\phi_2\)</span>（<span class="arithmatex">\(\mathrm{fs^2}\)</span>）</th>
+<th style="text-align: center;">输入强度 FWHM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(29.4\,\mathrm{fs}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">441</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(41.0\,\mathrm{fs}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">−4</td>
+<td style="text-align: center;">−882</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(107\,\mathrm{fs}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">−5</td>
+<td style="text-align: center;">−1102.5</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(144\,\mathrm{fs}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">−8</td>
+<td style="text-align: center;">−1764</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(246\,\mathrm{fs}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">−12</td>
+<td style="text-align: center;">−2646</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(378\,\mathrm{fs}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>因此，Fig. 2 的 <span class="arithmatex">\(\eta=-5\)</span> 输入脉冲，按该定义约为 <strong>144 fs 强度 FWHM</strong>，而不是 21 fs。</p>
+<h5 id="114">1.1.4 聚焦结果和特征尺度</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">项目</th>
+<th style="text-align: center;">原文 Table I 或正文值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">中心频率焦点距透镜出口 <span class="arithmatex">\(f_l(\omega_0)\)</span></td>
+<td style="text-align: center;">约 <span class="arithmatex">\(0.4\,\mathrm{mm}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">中心频率焦点全局位置</td>
+<td style="text-align: center;"><span class="arithmatex">\(z=L_p+f_l\approx1.01\,\mathrm{mm}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">聚焦半径 <span class="arithmatex">\(w_f\)</span></td>
+<td style="text-align: center;">约 <span class="arithmatex">\(3.1\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">色差形成的纵向焦区长度 <span class="arithmatex">\(L_f\)</span></td>
+<td style="text-align: center;">约 <span class="arithmatex">\(77\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(f/\#\)</span></td>
+<td style="text-align: center;">约 6.1</td>
+</tr>
+<tr>
+<td style="text-align: center;">从透镜入口到标称焦点的传播时间</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(3.4\,\mathrm{ps}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(a_I=0.5\)</span> 时聚焦峰值强度</td>
+<td style="text-align: center;">约 <span class="arithmatex">\(2.0\times10^{20}\,\mathrm{W/cm^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">理论部分</h2>
+<p>PRR2024的厚透镜解析估计，所得最重要的是<strong>透镜出口的两个单频量</strong>：光斑半径 <span class="arithmatex">\(w_l(\omega)\)</span> 和波前曲率半径 <span class="arithmatex">\(R_l(\omega)\)</span>。对于本文参数，把 Table I 代入原文的理想近轴通道模型，在中心频率得到</p>
+<div class="arithmatex">\[
+\boxed{w_l=32.79\,\mu\mathrm m,\qquad R_l=-401.6\,\mu\mathrm m}
+\]</div>
+<p>这两个量共同决定镜后焦点。<span class="arithmatex">\(w_l\)</span> 告诉我们光束离开透镜时已经收窄了多少，负的 <span class="arithmatex">\(R_l\)</span> 告诉我们它离开时还在会聚。下面从 Maxwell 方程推到这两个量，再接到镜后焦距和焦斑。</p>
+<h3 id="1-maxwell">1.从 Maxwell 方程到冷等离子体介电函数</h3>
+<p>记 <span class="arithmatex">\(n_e(r,z)\)</span> 为预先形成的背景电子密度。<strong>第一个近似是冷、无碰撞、线性响应</strong>。取离子在光学时间尺度上固定，电子动量方程保留一阶电场驱动，电流也只保留一阶项</p>
+<div class="arithmatex">\[
+m_e\partial_t\mathbf v_e=-e\mathbf E, \qquad \mathbf J=-e n_e(r,z)\mathbf v_e
+\]</div>
+<div class="arithmatex">\[
+ \partial_t\mathbf J=\varepsilon_0\omega_p^2(r,z)\mathbf E, \qquad \omega_p^2(r,z)=\frac{n_e(r,z)e^2}{\varepsilon_0m_e}
+\]</div>
+<p>这里 <span class="arithmatex">\(n_e\)</span> 是给定的空间函数。光场可以驱动线性电流，模型中的背景密度和电子质量保持固定。论文的解析部分采用这个线性模型，后面的 PIC 才用来检查强场下的等离子体响应。</p>
+<p>采用 <span class="arithmatex">\(e^{-i\omega t}\)</span> 约定，由 <span class="arithmatex">\(\mathbf J_\omega=-i\omega\mathbf P_\omega\)</span> 得到</p>
+<div class="arithmatex">\[
+\mathbf P_\omega=-\varepsilon_0\frac{\omega_p^2}{\omega^2}\mathbf E_\omega, \qquad \boxed{\varepsilon_r(r,z,\omega)=1-\frac{\omega_p^2(r,z)}{\omega^2}}
+\]</div>
+<p>把它代入频域法拉第定律和安培–Maxwell 定律，消去磁场</p>
+<div class="arithmatex">\[
+\nabla\times\nabla\times\mathbf E_\omega =k^2\varepsilon_r\,\mathbf E_\omega, \qquad k=\frac{\omega}{c}
+\]</div>
+<p>到这里仍是矢量方程。在传播区域，折射率 <span class="arithmatex">\(n_{\rm opt}=\sqrt{\varepsilon_r}\)</span>。因此电子密度从轴向外增加时，折射率从轴向外下降，光线向轴心偏折。</p>
+<h3 id="2_2">2. 两步波动近似：标量化与近轴化</h3>
+<p><strong>第二个近似是标量化。</strong> 利用</p>
+<div class="arithmatex">\[
+\nabla\times\nabla\times\mathbf E_\omega = \nabla(\nabla\cdot\mathbf E_\omega)-\nabla^2\mathbf E_\omega
+\]</div>
+<p>矢量方程可写成</p>
+<div class="arithmatex">\[
+(\nabla^2+k^2\varepsilon_r)\mathbf E_\omega =\nabla(\nabla\cdot\mathbf E_\omega)
+\]</div>
+<p>由于介电函数随空间变化，高斯定律给的是 <span class="arithmatex">\(\nabla\cdot(\varepsilon_r\mathbf E_\omega)=0\)</span>。所以右侧一般有贡献。论文的光束模型省略这类矢量耦合，用 <span class="arithmatex">\(U_\omega\)</span> 表示主横向偏振的标量场</p>
+<div class="arithmatex">\[
+\left[ \partial_z^2+\nabla_\perp^2+k^2-\frac{\omega_p^2}{c^2} \right]U_\omega=0
+\]</div>
+<p>对本文的高斯基模，<strong>标量振幅</strong>具有轴对称性，<span class="arithmatex">\(\nabla_\perp^2=\partial_r^2+r^{-1}\partial_r\)</span>。</p>
+<p><strong>第三个近似是前向近轴传播。</strong> 写 <span class="arithmatex">\(U_\omega=e^{ikz}u_\omega\)</span>，先把沿 <span class="arithmatex">\(+z\)</span> 的真空载波提出去</p>
+<div class="arithmatex">\[
+\partial_z^2u_\omega +2ik\,\partial_z u_\omega +\nabla_\perp^2u_\omega -\frac{\omega_p^2}{c^2}u_\omega=0
+\]</div>
+<p>若横向波数远小于 <span class="arithmatex">\(k\)</span>，介质引入的纵向波数偏移也相对较小，<span class="arithmatex">\(u_\omega\)</span> 沿 <span class="arithmatex">\(z\)</span> 缓慢变化。保留一阶纵向导数，省略 <span class="arithmatex">\(\partial_z^2u_\omega\)</span>，得到</p>
+<div class="arithmatex">\[
+\boxed{ i\partial_z u_\omega = -\frac{1}{2k}\nabla_\perp^2u_\omega +\frac{\omega_p^2(r,z)}{2kc^2}u_\omega }
+\]</div>
+<p>这一步与 WPM 的区别在于：<strong>原文解析式使用近轴展开，WPM 在每层内保留纵向波数的完整平方根。</strong> 两边都采用前向标量传播。解析式还把镜内通道视为沿 <span class="arithmatex">\(z\)</span> 均匀，因此可以直接写闭式解。</p>
+<h3 id="3-wz-rz">3.抛物线分布为什么能解析求出 <span class="arithmatex">\(w(z)\)</span> 和 <span class="arithmatex">\(R(z)\)</span></h3>
+<p>原文 Eq. (4) 在 <span class="arithmatex">\(0&lt;z&lt;L_p\)</span> 采用</p>
+<div class="arithmatex">\[
+n_e(r)=n_0+\frac12 n_2r^2, \qquad \omega_p^2(r)=\omega_{p0}^2+\frac12\omega_{p2}^2r^2
+\]</div>
+<p>其中 <span class="arithmatex">\(\omega_{p0}^2=e^2n_0/(\varepsilon_0m_e)\)</span>，<span class="arithmatex">\(\omega_{p2}^2=e^2n_2/(\varepsilon_0m_e)\)</span>。按论文的定义，</p>
+<div class="arithmatex">\[
+w_m=\left(\frac{8c^2}{\omega_{p2}^2}\right)^{1/4}, \qquad Z_m(\omega)=\frac{k w_m^2}{2}
+\]</div>
+<p>于是近轴方程可整理成</p>
+<div class="arithmatex">\[
+i\partial_z u_\omega = -\frac{\nabla_\perp^2u_\omega}{2k} +\left[ \underbrace{\frac{\omega_{p0}^2}{2kc^2}}_{\text{截面共同相位}} + \underbrace{\frac{k r^2}{2Z_m^2}}_{\text{径向聚焦}} \right]u_\omega
+\]</div>
+<p>这两个密度参数的作用不同。<strong>在这个近轴模型里，<span class="arithmatex">\(n_0\)</span> 给单频光束增加一个截面共同相位；<span class="arithmatex">\(n_2\)</span> 决定横向聚焦。</strong> 算 <span class="arithmatex">\(w,R\)</span> 时共同相位可以提出去，计算宽带脉冲的群延迟时则要保留它对 <span class="arithmatex">\(\omega\)</span> 的依赖。</p>
+<p>对于高斯基模，写成</p>
+<div class="arithmatex">\[
+u_\omega(r,z)=A(z)e^{i\varphi(z)} \exp\!\left[ -\frac{r^2}{w^2(z)} +i\frac{k r^2}{2R(z)} \right]
+\]</div>
+<p>这里 <span class="arithmatex">\(w\)</span> 是 <strong><span class="arithmatex">\(1/e^2\)</span> 强度半径</strong>，<span class="arithmatex">\(R\)</span> 由横向相位的二次系数定义。按这个相位约定，<span class="arithmatex">\(R&lt;0\)</span> 表示会聚，<span class="arithmatex">\(R&gt;0\)</span> 表示发散，<span class="arithmatex">\(1/R=0\)</span> 表示平面波前。把高斯形式代入近轴方程，分别比较 <span class="arithmatex">\(r^2\)</span> 项的实部和虚部，可得</p>
+<div class="arithmatex">\[
+\boxed{ \frac1R=\frac{w'}{w}, \qquad w''+\frac{w}{Z_m^2}=\frac{4}{k^2w^3} } \tag{a}
+\]</div>
+<p>右侧的 <span class="arithmatex">\(4/(k^2w^3)\)</span> 是衍射，左侧的 <span class="arithmatex">\(w/Z_m^2\)</span> 来自通道聚焦。令 <span class="arithmatex">\(w''=0\)</span>，两项平衡时恰有 <span class="arithmatex">\(w=w_m\)</span>。这给了 <span class="arithmatex">\(w_m\)</span> 一个直接的物理定义：<strong>平波前高斯束以 <span class="arithmatex">\(w_m\)</span> 入射时，束宽在均匀通道里保持恒定。</strong> 本文 <span class="arithmatex">\(w_I=60\,\mu\mathrm m\)</span> 明显大于 <span class="arithmatex">\(w_m=12.5\,\mu\mathrm m\)</span>，所以入口附近是通道聚焦占优。</p>
+<p><strong>本文解析预估的关键，可以说就是把高斯形式带入了 <span class="arithmatex">\(u\)</span> 的近轴方程，这么做的依据是什么：</strong></p>
+<p><strong>对于抛物线通道的近轴方程，高斯是一类在传播中保持自身形式的解。</strong> 入射场已经是高斯，传播只需更新它的束宽、波前曲率和整体复振幅。这一点可以直接从方程看出来。</p>
+<p><u>A. 把束宽和曲率合并成一个复系数</u></p>
+<p>固定一个频率 <span class="arithmatex">\(\omega\)</span>，写</p>
+<div class="arithmatex">\[
+u(r,z)=C(z)e^{-a(z)r^2}, \qquad a(z)=\frac{1}{w^2(z)}-i\frac{k}{2R(z)}
+\]</div>
+<p>于是 <span class="arithmatex">\(\operatorname{Re}a\)</span> 控制束宽，<span class="arithmatex">\(\operatorname{Im}a\)</span> 控制二次波前相位，<span class="arithmatex">\(C(z)\)</span> 包含轴上振幅和整体相位。对于平波前的高斯入射，初值就是 <span class="arithmatex">\(a(0)=1/w_I^2\)</span>。</p>
+<p><u>B.方程的每一项都只产生 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(r^2u\)</span></u></p>
+<p>先看左边。沿 <span class="arithmatex">\(z\)</span> 推进这个高斯，得到</p>
+<div class="arithmatex">\[
+\partial_z u =\left(\frac{C'}{C}-a'r^2\right)u
+\]</div>
+<p>也就是说，<strong>改变高斯的参数，在方程里表现为一个常数项和一个 <span class="arithmatex">\(r^2\)</span> 项</strong>。再看右边的两种物理作用。</p>
+<p>在二维横截面上，高斯的径向拉普拉斯是</p>
+<div class="arithmatex">\[
+\nabla_\perp^2u =\left(\partial_r^2+\frac1r\partial_r\right)u =\big(-4a+4a^2r^2\big)u
+\]</div>
+<p>衍射也只产生常数项和 <span class="arithmatex">\(r^2\)</span> 项。而抛物线密度产生的近轴折射势本身就是 <span class="arithmatex">\(V_0+kr^2/(2Z_m^2)\)</span>，乘到高斯上仍是同样的两项。因此代入近轴方程后，只需逐项匹配</p>
+<div class="arithmatex">\[
+i\left(\frac{C'}{C}-a'r^2\right) = \underbrace{\frac{2a}{k}+V_0}_{\text{常数项}} + \underbrace{\left(-\frac{2a^2}{k}+\frac{k}{2Z_m^2}\right)r^2}_{\text{二次项}}
+\]</div>
+<p>匹配得到</p>
+<div class="arithmatex">\[
+i\frac{C'}{C}=\frac{2a}{k}+V_0, \qquad i a'=\frac{2a^2}{k}-\frac{k}{2Z_m^2}
+\]</div>
+<p>只要 <span class="arithmatex">\(C(z)\)</span> 和 <span class="arithmatex">\(a(z)\)</span> 满足这两个方程，代回去就能在<strong>每一个 <span class="arithmatex">\(r\)</span></strong> 上满足原来的近轴方程。把 <span class="arithmatex">\(a\)</span> 拆回实部和虚部，就得到我们前面用的 <span class="arithmatex">\(w(z)\)</span> 和 <span class="arithmatex">\(R(z)\)</span> 演化方程。也由此看出，<strong>轴上均匀密度项 <span class="arithmatex">\(V_0\)</span> 只进入 <span class="arithmatex">\(C\)</span> 的方程，径向密度曲率才直接进入 <span class="arithmatex">\(a\)</span> 的方程</strong>。</p>
+<p><u>C.这种做法成立的条件</u></p>
+<p>关键是<strong>高斯入射、近轴方程和二次折射势</strong>这三者配合。如果密度还含有 <span class="arithmatex">\(r^4\)</span> 项，右边就会出现 <span class="arithmatex">\(r^4u\)</span>，只更新 <span class="arithmatex">\(C,w,R\)</span> 已经无法吸收它，光斑形状会偏离高斯。类似地，保留近轴推导中省略的 <span class="arithmatex">\(\partial_z^2u\)</span> 时，对 <span class="arithmatex">\(e^{-a(z)r^2}\)</span> 连续求两次 <span class="arithmatex">\(z\)</span> 导数，通常也会产生 <span class="arithmatex">\(r^4u\)</span>。</p>
+<p>所以，<strong>对原文的理想近轴抛物线通道，高斯形式在模型内部是精确保持的</strong>。通道很厚也可以这样求，因为束宽和曲率可以在镜内变化得很大。正是这个性质，让原文能把整个径向场的传播化成几个参数的演化，并在出口直接读出 <span class="arithmatex">\(w_l\)</span> 和 <span class="arithmatex">\(R_l\)</span>。</p>
+<h3 id="4">4. 原文的镜内解与出口预测</h3>
+<p>原论文的(5)(6)(7)(8)(9)式，其实是在说通道内的任意阶LG激光的分布都可求，只要是抛物型的等离子体径向分布，其依据和上文推导的基模是相同的。</p>
+<p>沿用上文解释部分的记号，且设 <span class="arithmatex">\(Z_I=kw_I^2/2\)</span>，<span class="arithmatex">\(\theta=z/Z_m\)</span> ，可以从”高斯光束带入近轴方程“进一步求得真正的通道内光束参数。</p>
+<p>这一步的关键是：<strong>高斯参数 <span class="arithmatex">\(a(z)\)</span> 的非线性方程，可以通过一个变量替换化成简谐振子方程。</strong> 源自入口曲率的项和源自衍射的项，恰好是同一个复函数的实部和虚部。束宽由这个复函数的模决定，所以最后是<strong>两个平方相加</strong>。</p>
+<p><u>A.把高斯参数方程化成简谐振子</u></p>
+<p>单频高斯场写成 <span class="arithmatex">\(u=C(z)e^{-a(z)r^2}\)</span>，其中</p>
+<div class="arithmatex">\[
+a(z)=\frac{1}{w^2(z)}-i\frac{k}{2R(z)}
+\]</div>
+<p>代入抛物线通道的近轴方程后，已经得到</p>
+<p>$$
+i a'=\frac{2a^2}{k}-\frac{k}{2Z_m^2}
+$$
+现在引入一个辅助复函数 <span class="arithmatex">\(F(z)\)</span>，令</p>
+<div class="arithmatex">\[
+a(z)=-\frac{ik}{2}\frac{F'(z)}{F(z)}
+\]</div>
+<p>为什么这样换？因为求导时会出现 <span class="arithmatex">\((F'/F)^2\)</span>，正好可以和右边的 <span class="arithmatex">\(a^2\)</span> 抵消。具体代入就是</p>
+<div class="arithmatex">\[
+\frac{k}{2} \left[\frac{F''}{F}-\left(\frac{F'}{F}\right)^2\right] = -\frac{k}{2}\left(\frac{F'}{F}\right)^2 -\frac{k}{2Z_m^2}
+\]</div>
+<p>两边的平方项消掉，剩下</p>
+<div class="arithmatex">\[
+\boxed{F''+\frac{F}{Z_m^2}=0}
+\]</div>
+<p>所以原式里的 <span class="arithmatex">\(\sin(z/Z_m)\)</span> 和 <span class="arithmatex">\(\cos(z/Z_m)\)</span>，就来自这个简谐振子方程。</p>
+<p><u>B.入口束宽与曲率如何变成初始条件</u></p>
+<p>取 <span class="arithmatex">\(F(0)=1\)</span>。（ <span class="arithmatex">\(F\)</span> 作为辅助变量本该由 <span class="arithmatex">\(a\)</span> 的初值确定其初值，但由于定义的是 <span class="arithmatex">\(a\propto F'/F\)</span> ，所以更改任意倍数不影响 <span class="arithmatex">\(a\)</span> ，这里就利用了这个自由度）入口的高斯参数为</p>
+<div class="arithmatex">\[
+a(0)=\frac{1}{w_I^2}-i\frac{k}{2R_I}
+\]</div>
+<p>由变量替换反推，得到</p>
+<div class="arithmatex">\[
+F'(0)=\frac{2i}{k}a(0) =\underbrace{\frac1{R_I}}_{\text{入口波前曲率}} +i\underbrace{\frac1{Z_I}}_{\text{有限束宽的衍射尺度}}, \qquad Z_I=\frac{k w_I^2}{2}
+\]</div>
+<p>解简谐振子方程（两个初值条件，注意 $\sin ,\; \cos $ 项的系数设为复数），记 <span class="arithmatex">\(\theta=z/Z_m\)</span>，有</p>
+<p>$$
+F(z)= \underbrace{\cos\theta+\frac{Z_m}{R_I}\sin\theta}<em>{\operatorname{Re}F} +i\underbrace{\frac{Z_m}{Z_I}\sin\theta}</em>{\operatorname{Im}F}
+$$
+这已经给出了原公式里两个括号的来源。还剩一步：为什么束宽等于 <span class="arithmatex">\(w_I|F|\)</span>？</p>
+<p><u>C.从 <span class="arithmatex">\(F\)</span> 读出束宽</u></p>
+<p>把 <span class="arithmatex">\(F\)</span> 写成 <span class="arithmatex">\(\rho e^{i\psi}\)</span>，其中 <span class="arithmatex">\(\rho=|F|\)</span>。代回 <span class="arithmatex">\(a=-ikF'/(2F)\)</span> </p>
+<div class="arithmatex">\[
+ a=\frac{k}{2}\psi'-i\frac{k}{2}\frac{\rho'}{\rho}
+\]</div>
+<p>比较实部和虚部，分别得到</p>
+<div class="arithmatex">\[
+\frac1{w^2}=\frac{k}{2}\psi', \qquad \frac1R=\frac{\rho'}{\rho}
+\]</div>
+<p>再把 <span class="arithmatex">\(F=\rho e^{i\psi}\)</span> 代入振子方程取虚部，得到</p>
+<div class="arithmatex">\[
+(\rho^2\psi')'=0
+\]</div>
+<p>因此 <span class="arithmatex">\(\rho^2\psi'\)</span> 沿 <span class="arithmatex">\(z\)</span> 恒定。入口处 <span class="arithmatex">\(\rho(0)=1\)</span> 且 <span class="arithmatex">\(\psi'(0)=2/(kw_I^2)\)</span>，所以</p>
+<div class="arithmatex">\[
+\frac{1}{w^2(z)}=\frac{1}{w_I^2\rho^2(z)} \quad\Longrightarrow\quad \boxed{\frac{w^2(z)}{w_I^2}=|F(z)|^2} \tag{*}
+\]</div>
+<p><u>D.平面波前为什么只去掉其中一项？</u></p>
+<p><strong>平面波前表示入口曲率为零，即 <span class="arithmatex">\(1/R_I=0\)</span>。</strong> 它只消去 <span class="arithmatex">\(F'(0)\)</span> 的实部。由于光斑横向宽度 <span class="arithmatex">\(w_I\)</span> 有限，<span class="arithmatex">\(1/Z_I=2/(kw_I^2)\)</span> 仍然非零，衍射项自然保留</p>
+<div class="arithmatex">\[
+\frac{w^2(z)}{w_I^2} =\cos^2\theta+\left(\frac{Z_m}{Z_I}\right)^2\sin^2\theta
+\]</div>
+<p>最直观的检验是取 <span class="arithmatex">\(\theta=\pi/2\)</span>。这时余弦项降到零，剩下的束宽是 <span class="arithmatex">\(w_I Z_m/Z_I=w_m^2/w_I\)</span>。即使入口波前完全平坦，有限束宽带来的衍射也会给镜内聚焦留下一个有限的最小光斑。</p>
+<p>在(*)式中把上面求出的 <span class="arithmatex">\(F\)</span> 取模平方，就正好得到</p>
+<div class="arithmatex">\[
+\boxed{ \frac{w^2(z)}{w_I^2} = \left(\cos\theta+\frac{Z_m}{R_I}\sin\theta\right)^2 +\left(\frac{Z_m}{Z_I}\sin\theta\right)^2 } 
+\]</div>
+<p>这个形式把入口条件分得很清楚。第一项含初始波前曲率 <span class="arithmatex">\(R_I\)</span>，第二项保留有限入口束宽的衍射。对本文的平面入射波前，<span class="arithmatex">\(1/R_I=0\)</span>，于是</p>
+<div class="arithmatex">\[
+w^2(z)=w_I^2\cos^2\theta+ \frac{w_m^4}{w_I^2}\sin^2\theta, \tag{A}
+\]</div>
+<div class="arithmatex">\[
+\frac{1}{R(z)} =\frac{1}{2w^2(z)}\frac{d w^2(z)}{dz} = \frac{\big(w_m^4/w_I^2-w_I^2\big)\sin\theta\cos\theta} {Z_m w^2(z)} \tag{B}
+\]</div>
+<p>这里需要解释 <span class="arithmatex">\(1/R(z)\)</span> 的由来。可以说它来自于(a)式，(a)来源于”高斯光束形式带入近轴方程“。为了解释后者，后面用 <span class="arithmatex">\(C(z), a(z)\)</span> 符号进行了细致分析，所以可以用 <span class="arithmatex">\(a,C\)</span> 解释：记</p>
+<div class="arithmatex">\[
+a=\alpha -i \beta , \quad \alpha =\frac{1}{w^2},\quad \beta =\frac{k}{2R}
+\]</div>
+<p>于是 <span class="arithmatex">\(ia'=\beta'+i\alpha'\)</span>，而 <span class="arithmatex">\(a^2=\alpha^2-\beta^2-2i\alpha\beta\)</span>。上文 <span class="arithmatex">\(r^2\)</span> 项系数给出的是</p>
+<div class="arithmatex">\[
+ia'=  \frac{2a^2}{k}- \frac{k}{2Z_m^2}
+\]</div>
+<p>比较虚部和实部，得到</p>
+<div class="arithmatex">\[
+\begin{aligned} \text{虚部：}\quad &amp;\alpha'=-\frac{4}{k}\alpha\beta,\\ \text{实部：}\quad &amp;\beta'=\frac{2}{k}(\alpha^2-\beta^2)-\frac{k}{2Z_m^2} \end{aligned} 
+\]</div>
+<p><strong>虚部给出束宽与曲率的关系。</strong> 代入 <span class="arithmatex">\(\alpha=1/w^2\)</span>、<span class="arithmatex">\(\beta=k/(2R)\)</span></p>
+<div class="arithmatex">\[
+-\frac{2w'}{w^3}=-\frac{2}{Rw^2} \quad\Longrightarrow\quad \boxed{\frac1R=\frac{w'}w}
+\]</div>
+<p><strong>实部给出曲率的演化。</strong> 先写成 <span class="arithmatex">\(1/R\)</span> 的形式</p>
+<div class="arithmatex">\[
+\left(\frac1R\right)' = \frac{4}{k^2w^4} -\frac1{R^2} -\frac1{Z_m^2}
+\]</div>
+<p>再用刚得到的 <span class="arithmatex">\(1/R=w'/w\)</span>，左边变为</p>
+<div class="arithmatex">\[
+\left(\frac{w'}w\right)' =\frac{w''}{w}-\left(\frac{w'}w\right)^2 =\frac{w''}{w}-\frac1{R^2}
+\]</div>
+<p>两边的 <span class="arithmatex">\(-1/R^2\)</span> 抵消，最后乘上 <span class="arithmatex">\(w\)</span>，就得到</p>
+<div class="arithmatex">\[
+\boxed{w''+\frac{w}{Z_m^2}=\frac{4}{k^2w^3}}
+\]</div>
+<p>这就可以说补全解释了(a)式子的来源。(A)(B)就是 Eq. (8)–(9) 在本文入口条件下的形式。<strong>镜内传播已经把束宽和波前一起改变</strong>。这两个闭式公式保留了衍射，也没有对 <span class="arithmatex">\(L_p/Z_m\)</span> 做薄透镜展开。</p>
+<p>在中心波长 <span class="arithmatex">\(\lambda_0=0.8\,\mu\mathrm m\)</span> 处，令 <span class="arithmatex">\(z=L_p=610\,\mu\mathrm m\)</span>，得到下表。数值是把 Table I 的参数代入理想通道公式所得，<span class="arithmatex">\(w_l\)</span> 和 <span class="arithmatex">\(R_l\)</span> 是解析预测值。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">比较量</th>
+<th style="text-align: center;">中心频率的解析值</th>
+<th style="text-align: center;">物理含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(Z_I\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14.14\,\mathrm{mm}\)</span></td>
+<td style="text-align: center;">入射束宽的真空衍射尺度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(Z_m\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(613.59\,\mu\mathrm m\)</span></td>
+<td style="text-align: center;">通道内的聚焦尺度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(L_p/Z_m\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.9941\)</span></td>
+<td style="text-align: center;">镜内演化角已接近 1，薄透镜展开不适用</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(w_l=w(L_p)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(32.79\,\mu\mathrm m\)</span></td>
+<td style="text-align: center;">出口处的 <span class="arithmatex">\(1/e^2\)</span> 强度半径</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(R_l=R(L_p)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-401.6\,\mu\mathrm m\)</span></td>
+<td style="text-align: center;">出口波前的曲率半径</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(Z_l=kw_l^2/2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.22\,\mathrm{mm}\)</span></td>
+<td style="text-align: center;">由出口束宽定义的衍射尺度</td>
+</tr>
+</tbody>
+</table>
+<p><strong>出口仍在收束。</strong> <span class="arithmatex">\(w_l\)</span> 已约为入射半径的 <span class="arithmatex">\(55\%\)</span>，且 <span class="arithmatex">\(w'(L_p)=w_l/R_l&lt;0\)</span>。如果理想通道一直延伸，第一次镜内束宽最小会出现在 <span class="arithmatex">\(z=\pi Z_m/2\approx964\,\mu\mathrm m\)</span>。实际透镜在 <span class="arithmatex">\(610\,\mu\mathrm m\)</span> 就结束了，此后束宽按真空规律演化。</p>
+<h3 id="5-w_lr_l">5. 以 <span class="arithmatex">\(w_l,R_l\)</span> 为初值，预测镜后焦距与束腰</h3>
+<p>从出口算起，记 <span class="arithmatex">\(s=z-L_p\)</span>。原文 Eq. (12) 给出真空中的束宽</p>
+<p>$$
+w^2(s) =w_l^2\left[ \left(1+\frac{s}{R_l}\right)^2+ \left(\frac{s}{Z_l}\right)^2 \right]
+$$
+对 <span class="arithmatex">\(s\)</span> 求导并令其为零，得到</p>
+<div class="arithmatex">\[
+\boxed{ f_l=\frac{-R_l}{1+(R_l/Z_l)^2}, \qquad w_f=\frac{w_l}{\sqrt{1+(Z_l/R_l)^2}} }
+\]</div>
+<p>代入上面的出口参数</p>
+<div class="arithmatex">\[
+f_l=398.0\,\mu\mathrm m,\qquad z_f=L_p+f_l=1008.0\,\mu\mathrm m,\qquad w_f=3.105\,\mu\mathrm m
+\]</div>
+<p>这里区分三个容易混在一起的量：<span class="arithmatex">\(R_l\)</span> 是<strong>出口处的波前曲率半径</strong>，<span class="arithmatex">\(f_l\)</span> 是<strong>从出口量起的焦距</strong>，<span class="arithmatex">\(z_f\)</span> 是<strong>从入口量起的焦点位置</strong>。本例 <span class="arithmatex">\(|R_l|/Z_l\simeq0.095\)</span>，所以 <span class="arithmatex">\(f_l\)</span> 与 <span class="arithmatex">\(-R_l\)</span> 只差约 <span class="arithmatex">\(0.9\%\)</span>。</p>
+<p>论文 Eq. (16)–(17) 又做了一层简化：用宽入射束条件 <span class="arithmatex">\(Z_I\gg Z_m\)</span> 简化镜内解，再用 <span class="arithmatex">\(Z_l\gg |R_l|\)</span> 简化镜外焦距。由此得到</p>
+<div class="arithmatex">\[
+f_l(\omega)\simeq Z_m(\omega)\cot\!\left(\frac{L_p}{Z_m(\omega)}\right), \qquad w_f(\omega)\simeq \frac{w_m^2}{w_I} \left|\csc\!\left(\frac{L_p}{Z_m(\omega)}\right)\right|
+\]</div>
+<p>这两条简式在中心频率给出 <span class="arithmatex">\(399.1\,\mu\mathrm m\)</span> 和 <span class="arithmatex">\(3.107\,\mu\mathrm m\)</span>。<strong>这里用的是宽束和出口强会聚条件，仍保留整个 <span class="arithmatex">\(L_p/Z_m\)</span> 的三角函数。</strong> 只有进一步令 <span class="arithmatex">\(L_p/Z_m\ll1\)</span>，才会得到薄透镜近似 <span class="arithmatex">\(f_l\simeq Z_m^2/L_p\)</span>。</p>
+<h2 id="wpm">和现有 WPM 怎么直接对照</h2>
+<p>从 <code>exit_field.npz</code> 取中心频率的出口复场 <span class="arithmatex">\(u_l(r,\omega_0)\)</span>。在主光斑内分别看<strong>强度</strong>和<strong>相位</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>要比较的量</th>
+<th>从 WPM 出口复场怎么取</th>
+<th>理想解析基准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(w_l\)</span></td>
+<td>找 (</td>
+<td>u_l(r)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R_l\)</span></td>
+<td>在主光斑内拟合展开后的相位 <span class="arithmatex">\(\arg u_l(r)\simeq\phi_l+b r^2\)</span>，用 <span class="arithmatex">\(R_l=k_0/(2b)\)</span></td>
+<td><span class="arithmatex">\(-401.6\,\mu\mathrm m\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(f_l,w_f\)</span></td>
+<td>对同一频率沿镜后 <span class="arithmatex">\(z\)</span> 找最小束宽和所在位置</td>
+<td><span class="arithmatex">\(398.0\,\mu\mathrm m,\ 3.105\,\mu\mathrm m\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>拟合 <span class="arithmatex">\(R_l\)</span> 时，<strong>要从复场相位取二次系数</strong>。只看出口强度图，可以判断光斑宽不宽，却无法判断它接下来是收束还是发散。以上基准采用论文的理想纵向均匀通道，而我们的 WPM 含进出口坡道并保留完整平方根。因此，先看 <span class="arithmatex">\(w_l\)</span> 和 <span class="arithmatex">\(1/R_l\)</span> 是否已经出现差异，就能判断镜后焦点的差别有多少在透镜出口时已经形成。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
