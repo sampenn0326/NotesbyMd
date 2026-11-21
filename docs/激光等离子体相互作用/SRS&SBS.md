@@ -42,18 +42,32 @@ J_y=-e n_e v_y\simeq-\frac{e^2n_b}{m_e}(1+\eta)A_y
 $$
 
 取横向失势 $A_y(x,t)$ ，于是
+
+
 $$
 E_y =- \partial _t A_y,\quad B_z =\partial _x A_y
 $$
- 考虑Ampere方程的 $y$ 分量，得到  
+
+考虑Ampere方程的 $y$ 分量，得到  
+
+
+
 $$
 \nabla \times \vec{B} =\mu _0\varepsilon _0\frac{\partial \vec{E}}{\partial t}+\mu _0 \vec{J}\quad \to\quad -\partial _x B_z =\mu _0 J_y +\frac{1}{c^2} \partial _tE_y
 $$
+
+
+
 带入、整理得到（把背景密度 $n_b$ 的贡献归到左侧，且以 $a$ 为变量）
+
+
+
 $$
 \boxed{(\partial_t^2-c^2\partial_x^2+\omega_p^2)a
 =-\omega_p^2\eta a} \tag{1}
 $$
+
+
 
 左边给出普通冷等离子体光学色散（取 $\eta$=0 带入平面波就得到色散关系 $\omega ^2 =c^2 k^2 +\omega _p^2$ ）；右边是密度扰动对横向电流的调制，也是频率混合的来源。
 
@@ -61,12 +75,16 @@ $$
 
 对于 \(A_y(x,t)\)，有 \(B_z=\partial_x A_y\)，所以
 
+
 $$
 -\frac{e}{m_e}v_yB_z=-c^2a\,\partial_xa
 =-\frac{c^2}{2}\partial_xa^2 
 $$
 
+
+
 这是纵向洛伦兹力的磁场项 $(\vec{v}\times \vec{B})_x = v_y B_z$ ，把这个力放入纵向动量方程，再联立连续性和 Poisson 方程
+
 
 $$
 \partial_t u=-\frac{e}{m_e}E_x-3v_T^2\partial_x\eta
@@ -75,11 +93,19 @@ $$
 \partial_xE_x=-\frac{en_b}{\epsilon_0}\eta
 $$
 
+
+
 其中 $v_T$ 相关项来自电子热压梯度产生的纵向加速度，即流体动量方程的压力项
+
+
 $$
 -\frac{1}{m_e n_e} \partial _x p_e \approx- \frac{1}{m_e n_b} \partial _x (\delta p_e) = 3v_T^2 \partial \eta \qquad \left( \delta p_e =3k_B T_e  \delta n_e,\;v_T^2 =k_BT_e/m_e \right)
 $$
+
+
 其中采用了一维绝热闭合。对连续性方程再取一次时间导数，得到
+
+
 $$
 \begin{aligned}
 \partial_t^2\eta
@@ -89,12 +115,17 @@ $$
 \end{aligned}
 $$
 
+
+
 （带入Poisson方程）消去 \(E_x\) 后，
+
 
 $$
 \boxed{(\partial_t^2-3v_T^2\partial_x^2+\omega_p^2)\eta
 =\frac{c^2}{2}\partial_x^2a^2} \tag{2}
 $$
+
+
 
 式 (2) 表示光场拍频驱动电子密度波，式 (1) 表示密度波将泵浦散射到种子。两条方程形成闭合反馈。
 
@@ -247,7 +278,6 @@ $$
 $$
 \begin{aligned} \partial_t(I_0+I_1)+\partial_x(v_0I_0+v_1I_1)&=0,\\ \partial_t(I_0+I_2)+\partial_x(v_0I_0+v_2I_2)&=0\\
 \left( \frac{\partial I}{\partial t} +\nabla \cdot(\vec{v}I) =0 \right)\end{aligned}
-
 $$
 其中记 $I_0=|P|^2, I_1 =|S|^2,I_2 =|B|^2$ ，这就是 Manley–Rowe 关系。
 
