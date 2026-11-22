@@ -1,0 +1,1836 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>激光在欠密度等离子体中的传播 - SamPenn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pku-red.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SamPenn" class="md-header__button md-logo" aria-label="SamPenn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SamPenn
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              激光在欠密度等离子体中的传播
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SamPenn" class="md-nav__button md-logo" aria-label="SamPenn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SamPenn
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光基础和技术
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    激光基础和技术
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BF%80%E5%85%89%E5%9F%BA%E7%A1%80%E5%92%8C%E6%8A%80%E6%9C%AF/%E5%B8%B8%E8%A7%81%E5%85%89%E6%9D%9F%E5%BD%A2%E5%BC%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常见光束
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BF%80%E5%85%89%E5%9F%BA%E7%A1%80%E5%92%8C%E6%8A%80%E6%9C%AF/%E8%B6%85%E7%9F%AD%E8%84%89%E5%86%B2%E7%9A%84%E6%97%B6%E5%9F%9F%E9%A2%91%E5%9F%9F%E8%A1%A8%E5%BE%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超短脉冲的时域频域表征
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BF%80%E5%85%89%E5%9F%BA%E7%A1%80%E5%92%8C%E6%8A%80%E6%9C%AF/%E9%A3%9E%E8%A1%8C%E7%84%A6%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    飞行焦点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与等离子体相互作用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    激光与等离子体相互作用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaserPlasma/基本手册.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SRS%26SBS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SRS&SBS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E6%BF%80%E5%85%89%E4%B8%8E%E7%89%A9%E8%B4%A8%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    激光与物质相互作用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F%5B%E7%AC%94%E8%AE%B0%5D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离子加速
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A6%BB%E5%AD%90%E5%8A%A0%E9%80%9F/%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E5%85%89%E5%AD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等离子体光学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数值方法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数值方法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WarpX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WarpX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/FieldSolver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FieldSolver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/RZ%E5%9D%90%E6%A0%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RZ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/MEEP%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MEEP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/WPM%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WPM方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Jupyter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jupyter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/C%2B%2B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Codes/Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 冷等离子体中的非线性平面波
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 波破裂
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 尾场的产生
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 尾场的产生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1 弱泵浦
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2 准静态近似
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.3 任意泵浦强度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#434" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.4 拍波
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">激光在欠密度等离子体中的传播</h1>
+<blockquote>
+<p>Paul Gibbon，《Short Pulse Laser Interactions with Matter》。</p>
+</blockquote>
+<p>本章讨论的物理并非短激光脉冲所独有。这里遇到的许多非线性波现象，实际上比飞秒激光早了十年乃至二十年。不过，技术进步带来了极大的强度提升，在过去十年中约提高了六个数量级。这使得许多原先有些冷僻的设想，例如相对论自导引和基于等离子体的 GeV 粒子加速器，如今已正式列入实验研究的议程。</p>
+<p>与下一章将讨论的飞秒激光与固体相互作用一样，“经典”长脉冲理论中的许多结果必须重新推导，因为关于振幅或时间尺度的假设已经失效。后文会遇到许多具体例子。为了先对这里发生的过程有个直观认识，不妨先看高强度对波在等离子体中传播的一些一般性影响。考虑一个具有有限横向宽度的脉冲中高场振幅的作用。等离子体中的电子感受到振荡电场 <span class="arithmatex">\(E_0\sin\omega t\)</span>，按照式 (3.7)，将获得如下振荡速度。</p>
+<div class="arithmatex">\[
+v_0(r,t)=-\frac{eE_0(r)}{m\omega_0}\cos\omega t
+\]</div>
+<p>若激光脉冲的径向分布为高斯形，中心处电子的振荡比翼部更强，导致光束中部的相位面受到相对论性的“拖曳”。换言之，决定介质折射性质的横向振荡电流 <span class="arithmatex">\(J\sim n_ev_0(r,t)\)</span> 具有空间依赖性。这就是自聚焦、成丝和自调制等一系列非线性传播效应的物理基础。这些效应在其他非线性介质中也有对应现象（Shen，1984）。在这里，这些效应开始显著时，振荡速度接近光速，即 <span class="arithmatex">\(|v_{mathrm{os}}|\sim c\)</span>。和单电子情形一样，对应的强度通常超过 <span class="arithmatex">\(10^{18}\,\mathrm{W\,cm^{-2}}\)</span>。[^quiver]</p>
+<p>[^quiver]: 严格来说，振荡动量可以接近或超过 <span class="arithmatex">\(m_ec\)</span>，速度始终低于 <span class="arithmatex">\(c\)</span>。</p>
+<p>决定相互作用性质的另一个参数当然是脉冲持续时间。文献中常见“有限脉冲长度效应”或“有限上升时间效应”等说法，意思是所考虑现象的时间尺度短于脉冲持续时间 <span class="arithmatex">\(\tau_p\)</span>。这里必须留意“慢”和“快”的含义，因为介质的响应快慢通过 <span class="arithmatex">\(\omega_p\)</span> 取决于等离子体密度。例如，一个 <span class="arithmatex">\(1\,\mathrm{ps}\)</span> 脉冲穿过密度为 <span class="arithmatex">\(10^{17}\,\mathrm{cm^{-3}}\)</span> 的等离子体时，仍可视为“长”脉冲。这是因为等离子体振荡周期相对较短，乘积 <span class="arithmatex">\(\omega_p\tau_p\simeq18\)</span>。在这种情况下，有时可以忽略电子惯性，按绝热响应处理介质。本章后面讨论光在等离子体中的自聚焦时，就会遇到这样的例子。</p>
+<p>由于激光脉冲在欠密度等离子体中以接近光速的速度传播，还必须区分随脉冲一起传播的过程和留在脉冲尾迹中的过程。有时可把光想象成一颗“光子子弹”，即一个刚性的光包穿过果冻般的等离子体。不过后面将看到，有许多效应能够使脉冲解体。</p>
+<p>本章大部分篇幅都将用于讨论这类电磁波在等离子体中的传播。此时线性色散关系不再成立，会出现尾场、非线性频移、光束破裂、粒子俘获和波破裂等现象。在进入短脉冲理论模型之前，值得先回顾一些早期的非线性波传播研究。事实上，Akhiezer 和 Polovin（1956）在四十多年前导出的方程，已经包含了后来专为飞秒激光脉冲建立的模型中的许多特征。</p>
+<h2 id="41">4.1　冷等离子体中的非线性平面波</h2>
+<p>从冷、无磁化等离子体中电子的洛伦兹运动方程 (4.1) 以及麦克斯韦方程出发。假定离子为单电荷（<span class="arithmatex">\(Z=1\)</span>），并将其视为均匀的中和背景，即 <span class="arithmatex">\(Zn_i=n_0\)</span>。对于欠密度等离子体，忽略热运动往往是合理的，因为其温度与典型振荡能量相比很低。回顾第二章，场电离产生的等离子体温度通常只有几个 eV，远低于电子从激光场获得的数 keV 振荡能量。因此，起始方程为</p>
+<div class="arithmatex">\[
+\frac{\partial\mathbf p}{\partial t}+(\mathbf v\cdot\nabla)\mathbf p
+=-e\left(\mathbf E+\frac{1}{c}\mathbf v\times\mathbf B\right)
+\tag{4.1}
+\]</div>
+<div class="arithmatex">\[
+\nabla\cdot\mathbf E=4\pi e(n_0-n_e)
+\tag{4.2}
+\]</div>
+<div class="arithmatex">\[
+\nabla\times\mathbf E=-\frac{1}{c}\frac{\partial\mathbf B}{\partial t}
+\tag{4.3}
+\]</div>
+<div class="arithmatex">\[
+\nabla\times\mathbf B=-\frac{4\pi}{c}en_e\mathbf v+\frac{1}{c}\frac{\partial\mathbf E}{\partial t}
+\tag{4.4}
+\]</div>
+<div class="arithmatex">\[
+\nabla\cdot\mathbf B=0
+\tag{4.5}
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathbf p=\gamma m\mathbf v\)</span>，<span class="arithmatex">\(\gamma=(1+p^2/m^2c^2)^{1/2}\)</span>。和其他电磁平面波传播问题一样，寻找形如 <span class="arithmatex">\(f(\omega t-\mathbf k\cdot\mathbf r)\)</span> 或 <span class="arithmatex">\(f(\tau)\)</span> 的解，其中 <span class="arithmatex">\(\tau=t-\mathbf i\cdot\mathbf r/v_p\)</span>，<span class="arithmatex">\(v_p=\omega/k\)</span> 是波的相速度。这样可将时间和空间微分算符改写为</p>
+<div class="arithmatex">\[
+\frac{\partial}{\partial t}=\frac{d}{d\tau},\qquad
+\nabla\cdot=-\frac{\mathbf i}{v_p}\cdot\frac{d}{d\tau},\qquad
+\nabla\times=-\frac{\mathbf i}{v_p}\times\frac{d}{d\tau}
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathbf i=\mathbf k/|\mathbf k|\)</span> 是沿波传播方向的单位矢量。麦克斯韦–流体方程组 (4.1)–(4.5) 于是变成</p>
+<div class="arithmatex">\[
+\left(\frac{\mathbf i\cdot\mathbf v}{v_p}-1\right)\frac{d\mathbf p}{d\tau}=e\left(\mathbf E+\frac{1}{c}\mathbf v\times\mathbf B\right)
+\tag{4.6}
+\]</div>
+<div class="arithmatex">\[
+-\mathbf i\cdot\frac{d\mathbf E}{d\tau}=4\pi ev_p(n_0-n_e)
+\tag{4.7}
+\]</div>
+<div class="arithmatex">\[
+\mathbf B=\frac{c}{v_p}\mathbf i\times\mathbf E+\mathbf B_0
+\tag{4.8}
+\]</div>
+<div class="arithmatex">\[
+-\mathbf i\times\frac{d\mathbf B}{d\tau}=-\frac{4\pi}{c}ev_pn_e\mathbf v+\frac{v_p}{c}\frac{d\mathbf E}{d\tau}
+\tag{4.9}
+\]</div>
+<div class="arithmatex">\[
+\mathbf i\cdot\frac{d\mathbf B}{d\tau}=0
+\tag{4.10}
+\]</div>
+<blockquote>
+<p>这里算符替换的关键前提在于 <strong>假定波形以固定相速度整体平移</strong>。 <span class="arithmatex">\(f\)</span> 可以是任意波形，只要它在时空中通过同一个变量 <span class="arithmatex">\(\tau\)</span> 变化，链式法则就能把时空导数都写成 <span class="arithmatex">\(\tau\)</span> 导数。</p>
+<p><u>一、为什么写成 <span class="arithmatex">\(f(\omega t-kx)\)</span></u></p>
+<p>先只考虑沿 <span class="arithmatex">\(+x\)</span> 方向传播的一维波。假设时刻 <span class="arithmatex">\(t=0\)</span> 的波形是 <span class="arithmatex">\(F(x)\)</span>，经过时间 <span class="arithmatex">\(t\)</span>，整个波形向右移动了 <span class="arithmatex">\(v_pt\)</span>，于是</p>
+<div class="arithmatex">\[
+Q(x,t)=F(x-v_pt)
+\]</div>
+<p>这里 <span class="arithmatex">\(Q\)</span> 可以是某个电场分量、电子密度或流体动量。两个时空点只要有相同的 <span class="arithmatex">\(x-v_pt\)</span>，就对应波形上的同一个位置，因而 <span class="arithmatex">\(Q\)</span> 的值相同。也可以用等价的变量</p>
+<div class="arithmatex">\[
+\tau=t-\frac{x}{v_p}=-\frac{x-v_pt}{v_p}
+\]</div>
+<p>又因为 <span class="arithmatex">\(v_p=\omega/k\)</span>，所以 <span class="arithmatex">\(\omega t-kx=\omega\tau\)</span>。写成 <span class="arithmatex">\(f(\omega t-kx)\)</span> 时，<strong><span class="arithmatex">\(\omega t-kx\)</span> 是 <span class="arithmatex">\(f\)</span> 的自变量</strong>。锯齿状的电场、带尖峰的密度也可以依赖同一个 <span class="arithmatex">\(\tau\)</span>，因此这种写法适用于书里讨论的非线性波形。</p>
+<p><u>二、为什么时空导数都可以换成 <span class="arithmatex">\(\tau\)</span> 导数</u></p>
+<p>把场量写成 <span class="arithmatex">\(Q(x,t)=q(\tau(x,t))\)</span>，直接用链式法则。</p>
+<p>固定 <span class="arithmatex">\(x\)</span>，改变 <span class="arithmatex">\(t\)</span></p>
+<div class="arithmatex">\[
+\left.\frac{\partial Q}{\partial t}\right|_x =\frac{dq}{d\tau}\left.\frac{\partial\tau}{\partial t}\right|_x =\frac{dq}{d\tau}
+\]</div>
+<p>固定 <span class="arithmatex">\(t\)</span>，改变 <span class="arithmatex">\(x\)</span></p>
+<div class="arithmatex">\[
+\left.\frac{\partial Q}{\partial x}\right|_t =\frac{dq}{d\tau}\left.\frac{\partial\tau}{\partial x}\right|_t =-\frac{1}{v_p}\frac{dq}{d\tau}
+\]</div>
+<p>直观地说，<strong>在固定位置等一会儿</strong>和<strong>在同一时刻沿空间走一段</strong>，都会让你取到同一条波形上的另一个点。两者的区别只在于沿着波形走了多少、朝哪个方向走。</p>
+<p>这也解释了流体导数。电子本身以纵向速度 <span class="arithmatex">\(v_x\)</span> 运动，所以沿电子轨迹观察时，</p>
+<div class="arithmatex">\[
+\frac{D}{Dt} =\frac{\partial}{\partial t}+v_x\frac{\partial}{\partial x} =\left(1-\frac{v_x}{v_p}\right)\frac{d}{d\tau}
+\]</div>
+<p>当 <span class="arithmatex">\(v_x=v_p\)</span> 时，电子和波形同速，它沿轨迹看到的 <span class="arithmatex">\(\tau\)</span> 保持不变。这就是前面那个系数的物理意义。</p>
+<p>这一步的适用范围取决于<strong>波形是否只依赖 <span class="arithmatex">\(\tau\)</span></strong>。例如，如果脉冲一边传播一边展宽，写成 <span class="arithmatex">\(Q(x,t)=q(\tau,x)\)</span>，那么 <span class="arithmatex">\(\partial_x Q\)</span> 还会多出一项 <span class="arithmatex">\(\left.\partial q/\partial x\right|_\tau\)</span>，它描述波形本身随传播距离的演化。</p>
+</blockquote>
+<p><span class="arithmatex">\(\mathbf B_0\)</span> 代表外加磁场，此处取零。于是由式 (4.8) 和 (4.10) 可写出 <span class="arithmatex">\(\mathbf i\cdot\mathbf B=\mathbf E\cdot\mathbf B=0\)</span>，也就是说，磁场同时垂直于波矢和电场。注意，偏微分现在已经换成对变量 <span class="arithmatex">\(\tau\)</span> 的全微分。用方向矢量 <span class="arithmatex">\(\mathbf i\)</span> 与式 (4.9) 作点积，然后利用式 (4.7) 消去 <span class="arithmatex">\(\mathbf E\)</span>，得到密度方程</p>
+<div class="arithmatex">\[
+n_e=\frac{v_pn_0}{v_p-\mathbf i\cdot\mathbf v}
+\tag{4.11}
+\]</div>
+<p>类似地，用方向矢量与式 (4.6) 作叉积，得到</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\left(\frac{\mathbf i\cdot\mathbf v}{v_p}-1\right)\mathbf i\times\frac{d\mathbf p}{d\tau}
+&amp;=e\mathbf i\times\mathbf E+\frac{e}{c}\mathbf i\times(\mathbf v\times\mathbf B)\\
+&amp;=e\frac{v_p}{c}\mathbf B+\frac ec[(\mathbf i\cdot\mathbf B)\mathbf v-(\mathbf i\cdot\mathbf v)\mathbf B]\\
+&amp;=e\frac{v_p}{c}\mathbf B\left(1-\frac{\mathbf i\cdot\mathbf v}{v_p}\right)
+\end{aligned}
+\]</div>
+<p>由此得到 <span class="arithmatex">\(\mathbf B\)</span> 的显式方程。</p>
+<div class="arithmatex">\[
+\mathbf B=-\frac{c}{ev_p}\mathbf i\times\frac{d\mathbf p}{d\tau}
+\tag{4.12}
+\]</div>
+<p>同样地，用 <span class="arithmatex">\(\mathbf i\)</span> 与式 (4.9) 作叉积，并利用式 (4.8)，得到 <span class="arithmatex">\(d\mathbf B/d\tau\)</span> 的方程。</p>
+<div class="arithmatex">\[
+\frac{d\mathbf B}{d\tau}=\frac{4\pi en_e\beta_p}{\beta_p^2-1}\mathbf i\times\mathbf v
+\tag{4.13}
+\]</div>
+<p>其中 <span class="arithmatex">\(\beta_p=v_p/c\)</span>。</p>
+<p>从式 (4.12) 对 <span class="arithmatex">\(\tau\)</span> 的导数中减去式 (4.13)，可以消去 <span class="arithmatex">\(\mathbf B\)</span>，剩下一个横向波动方程。</p>
+<div class="arithmatex">\[
+\mathbf i\times\frac{d^2\mathbf p}{d\tau^2}+\frac{4\pi e^2n_e\beta_p^2}{\beta_p^2-1}\mathbf i\times\mathbf v=0
+\tag{4.14}
+\]</div>
+<p>对式 (4.6) 与 <span class="arithmatex">\(\mathbf i\)</span> 的点积求导，这次用式 (4.12) 消去 <span class="arithmatex">\(\mathbf B\)</span>，用式 (4.11) 消去 <span class="arithmatex">\(n_e\)</span>，即可求得流体运动的纵向分量。</p>
+<div class="arithmatex">\[
+\frac{d}{d\tau}\left[\left(\frac{\mathbf i\cdot\mathbf v}{v_p}-1\right)\mathbf i\cdot\frac{d\mathbf p}{d\tau}\right]
+=\frac{4\pi e^2v_pn_0\mathbf i\cdot\mathbf v}{v_p-\mathbf i\cdot\mathbf v}
+-\frac{1}{v_p}\frac{d}{d\tau}\left[\mathbf v\cdot\frac{d\mathbf p}{d\tau}-(\mathbf i\cdot\mathbf v)\left(\mathbf i\cdot\frac{d\mathbf p}{d\tau}\right)\right]
+\tag{4.15}
+\]</div>
+<p>为了使式 (4.14) 和 (4.15) 更便于处理，取波矢 <span class="arithmatex">\(\mathbf k\)</span> 沿 <span class="arithmatex">\(x\)</span> 方向。因此 <span class="arithmatex">\(\mathbf i=\hat{\mathbf x}\)</span>，<span class="arithmatex">\(\mathbf i\cdot\mathbf p=p_x\)</span>，<span class="arithmatex">\(\mathbf i\times\mathbf p=(0,-p_z,p_y)\)</span>。作上述化简并定义 <span class="arithmatex">\(\mathbf u=\mathbf v/c\)</span> 后，式 (4.11) 变为</p>
+<div class="arithmatex">\[
+n_e=\frac{\beta_pn_0}{\beta_p-u_x}
+\tag{4.16}
+\]</div>
+<p>由此可立即推出非线性等离子体波的一个显著特征。当流体速度接近相速度时，所在区域的密度会变得非常大。</p>
+<p>取式 (4.14) 的 <span class="arithmatex">\(y\)</span> 和 <span class="arithmatex">\(z\)</span> 分量，利用式 (4.16) 和通常的定义 <span class="arithmatex">\(\omega_p^2=4\pi e^2n_0/m\)</span>，得到耦合的横向波动方程。</p>
+<div class="arithmatex">\[
+\frac{d^2p_z}{d\tau^2}+\frac{\omega_p^2\beta_p^2}{\beta_p^2-1}\frac{\beta_p u_z}{\beta_p-u_x}=0
+\tag{4.17}
+\]</div>
+<div class="arithmatex">\[
+\frac{d^2p_y}{d\tau^2}+\frac{\omega_p^2\beta_p^2}{\beta_p^2-1}\frac{\beta_p u_y}{\beta_p-u_x}=0
+\tag{4.18}
+\]</div>
+<p>这里 <span class="arithmatex">\(p_y\)</span> 和 <span class="arithmatex">\(p_z\)</span> 已用 <span class="arithmatex">\(mc\)</span> 归一化，因而 <span class="arithmatex">\(\mathbf p=\gamma\mathbf u\)</span>。纵向波动方程由式 (4.15) 得出，采用同样的波矢方向后，化为</p>
+<div class="arithmatex">\[
+\frac{d}{d\tau}\left[(u_x-\beta_p)\frac{dp_x}{d\tau}+u_y\frac{dp_y}{d\tau}+u_z\frac{dp_z}{d\tau}\right]
+=\frac{\omega_p^2\beta_p^2 u_x}{\beta_p-u_x}
+\tag{4.19}
+\]</div>
+<p>除坐标轴的循环互换（<span class="arithmatex">\(x\to y\)</span>，<span class="arithmatex">\(y\to z\)</span>，<span class="arithmatex">\(z\to x\)</span>）外，式 (4.18) 和 (4.19) 与 Akhiezer 和 Polovin（1956）的式 (15) 相同。这是一组描述任意振幅、固定相速度 <span class="arithmatex">\(v_p\)</span> 的非线性等离子体波的封闭方程。求得 <span class="arithmatex">\(\mathbf p\)</span> 后，即可直接由下式求得相应的电场和磁场，两者均以 <span class="arithmatex">\(m\omega_pc/e\)</span> 为单位。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+E_x&amp;=-\frac{1}{\beta_p}\frac{d}{d(\omega_p\tau)}\left(\beta_pp_x-(1+p^2)^{1/2}\right),\\
+E_y&amp;=-\frac{dp_y}{d(\omega_p\tau)},\\
+E_z&amp;=-\frac{dp_z}{d(\omega_p\tau)}
+\end{aligned}
+\tag{4.20}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+B_x&amp;=0,\\
+B_y&amp;=\frac{1}{\beta_p}\frac{dp_z}{d(\omega_p\tau)},\\
+B_z&amp;=-\frac{1}{\beta_p}\frac{dp_y}{d(\omega_p\tau)}
+\end{aligned}
+\tag{4.21}
+\]</div>
+<p>式 (4.20) 所述的 <span class="arithmatex">\(\mathbf B\)</span> 分量以及 <span class="arithmatex">\(\mathbf E\)</span> 的横向分量由式 (4.12) 和法拉第定律 (4.3) 得到。将式 (4.6) 与 <span class="arithmatex">\(\mathbf i\)</span> 作点积，再用能量方程 <span class="arithmatex">\(d\gamma/dt=-\mathbf v\cdot\mathbf E\)</span> 从所得的动量导数方程中消去 <span class="arithmatex">\(E_x\)</span> 和 <span class="arithmatex">\(E_y\)</span>，便可求出纵向场。细节留给读者。令 <span class="arithmatex">\(E_x=\beta_p^{-1}d\phi/d\tau\)</span>，积分，并注意到在 <span class="arithmatex">\(\tau=-\infty\)</span> 时 <span class="arithmatex">\(\phi=p_x=0\)</span>、<span class="arithmatex">\(\gamma=1\)</span>，可得一个相当简单的势函数表达式。</p>
+<div class="arithmatex">\[
+\phi=\gamma-\beta_pp_x-1
+\tag{4.22}
+\]</div>
+<p>完整的流体方程组一般无法解析求解。Akhiezer 和 Polovin（1956）的原始工作给出了若干极限情形。关于方程允许的各种解，可参阅 Decoster（1978）的综述。这里仅分析一个与短脉冲传播特别相关的例子，即纯纵向等离子体振荡。这一解由 Noble（1984）给出，他为研究新型粒子加速方案分析了这些冷等离子体方程。令式 (4.19) 中 <span class="arithmatex">\(p_y=p_z=0\)</span>，省去 <span class="arithmatex">\(x\)</span> 下标，得到</p>
+<div class="arithmatex">\[
+\frac{d}{d\tau}\left[(u-\beta_p)\frac{dp}{d\tau}\right]=\frac{\omega_p^2\beta_p^2u}{\beta_p-u}
+\]</div>
+<p>写成 <span class="arithmatex">\(p=\gamma u=u/\sqrt{1-u^2}\)</span> 并重新整理后，可得到仅含纵向速度的二阶微分方程。</p>
+<div class="arithmatex">\[
+\frac{d^2}{d\tau^2}[\gamma(1-\beta_pu)]=\frac{\omega_p^2\beta_p^2u}{\beta_p-u}
+\tag{4.23}
+\]</div>
+<p>得到式 (4.23) 的中间步骤留作章末习题。对这个方程积分一次，有</p>
+<div class="arithmatex">\[
+\frac12Y^2=\beta_p^2\omega_p^2(\gamma_m-\gamma)
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+Y=\frac{d}{d\tau}[\gamma(1-\beta_pu)],\qquad
+\gamma_m=(1-u_m^2)^{-1/2}
+\]</div>
+<p>而 <span class="arithmatex">\(u_m=(v/c)_{\max}\)</span> 是波的最大振荡速度。因此，求解下式即可确定波形。</p>
+<div class="arithmatex">\[
+\frac{d}{d\tau}[\gamma(1-\beta_pu)]=\pm\sqrt{2}\,\omega_p\beta_p(\gamma_m-\gamma)^{1/2}
+\tag{4.24}
+\]</div>
+<p>求得 <span class="arithmatex">\(u\)</span> 后，分别用式 (4.16) 和式 (4.20a) 即可确定密度和电场。</p>
+<div class="arithmatex">\[
+n_e(\tau)=\frac{\beta_pn_0}{\beta_p-u(\tau)}
+\tag{4.25}
+\]</div>
+<div class="arithmatex">\[
+E(\tau)=\frac{Y}{\beta_p}=\pm\sqrt{2}(\gamma_m-\gamma(\tau))^{1/2}
+\tag{4.26}
+\]</div>
+<p>在对应于高度欠密度等离子体的 <span class="arithmatex">\(\beta_p=1\)</span> 极限下，式 (4.24)–(4.26) 可以得到精确解析解。细节参见 Noble（1984）。不过，对任意相速度做数值求解，可以更直观地了解这类波的非线性性质。图 4.1 给出了不同 <span class="arithmatex">\(\beta_p\)</span> 和 <span class="arithmatex">\(u_m\)</span> 的三个例子。第一例（<span class="arithmatex">\(u_m=0.1\)</span>）呈现了经典的线性朗缪尔波，电场与密度相位相差 <span class="arithmatex">\(90^\circ\)</span>。图 4.1(b) 中 <span class="arithmatex">\(\beta_p\simeq1\)</span>、<span class="arithmatex">\(u_m=0.9\)</span> 的解是非线性等离子体波的典型例子。电场呈锯齿形，密度带有尖峰，振荡周期同时延长至原来的 <span class="arithmatex">\(\gamma\)</span> 倍。其物理原因在于电子速度达到相对论量级时惯性增大。若振荡速度接近相速度，即使振幅较小也可以出现尖峰波形，见图 4.1(c)。在有温度的等离子体中，这种尖峰容易引发粒子俘获和波破裂（见下一节），最终使波衰减。</p>
+<p><img alt="19b2b8d4d8aa092d7204bf4e1323f87b" src="D:\File\Wechat\xwechat_files\wxid_zlcy42xusxde22_1eba\temp\RWTemp\2026-11\9e20f478899dc29eb19741386f9343c8\19b2b8d4d8aa092d7204bf4e1323f87b.png" /></p>
+<p><strong>图 4.1　欠密度等离子体中的非线性等离子体波。</strong> (a) <span class="arithmatex">\(\beta_p=1\)</span>、<span class="arithmatex">\(u_m=0.2\)</span>；(b) <span class="arithmatex">\(\beta_p=1\)</span>、<span class="arithmatex">\(u_m=0.9\)</span>；(c) <span class="arithmatex">\(\beta_p=0.6\)</span>、<span class="arithmatex">\(u_m=0.55\)</span>。横轴为 <span class="arithmatex">\(\omega_p\tau\)</span>，纵轴为振幅。点线为 <span class="arithmatex">\(u\)</span>，虚线为 <span class="arithmatex">\(E\)</span>，实线为 <span class="arithmatex">\(n_e/n_0\)</span>。</p>
+<blockquote>
+<p>转写注：图 4.1(a) 的 <span class="arithmatex">\(u_m\)</span> 在正文中为 <span class="arithmatex">\(0.1\)</span>，图注中为 <span class="arithmatex">\(0.2\)</span>，两处分别保留。</p>
+</blockquote>
+<h2 id="42">4.2　波破裂</h2>
+<p>关于纵向等离子体振荡，自然会问其振幅实际上能达到多大。对于粒子加速等应用，这显然是一个关键问题。为了充分利用有限长度的等离子体，人们希望电场尽可能强，见第 7.1 节。即便不考虑实际应用，这个问题也让理论研究者忙碌了近半个世纪。Akhiezer 和 Polovin 给出的冷等离子体振荡解为此开辟了道路，见上一节。</p>
+<p>要从式 (4.26) 求最大电场，首先注意到流体速度不能超过相速度。如果超过，某些电子电荷片就可能彼此“交叉”，波随之失去相干性，发生破裂。实际上，波破裂有几种定义，具体取决于所涉及的振荡类型。这里暂取 <span class="arithmatex">\(u_m=u_p\)</span>，或等价地取 <span class="arithmatex">\(\gamma_m=\gamma_p\)</span>。电场在 <span class="arithmatex">\(\gamma=1\)</span> 时达到极值，此时电子在振荡中瞬时静止。因此，用有量纲的物理单位表示，有</p>
+<div class="arithmatex">\[
+E_{\max}=\frac{mc\omega_p}{e}\sqrt{2}\,(\gamma_p-1)^{1/2}
+\tag{4.27}
+\]</div>
+<p>对于非相对论相速度，<span class="arithmatex">\(\gamma_p-1\simeq\beta_p^2/2\)</span>，因而</p>
+<div class="arithmatex">\[
+E_{\max}=\frac{m\omega_pv_p}{e}
+\tag{4.28}
+\]</div>
+<p>这就是著名的“冷波破裂极限”，Dawson 和 Oberman（1962）用物理图像更直接的拉格朗日电荷片模型导出了这一结果。在这个图像中，波破裂可理解为相邻电荷片的交叉，并伴随密度奇点。</p>
+<p>温等离子体中的情况有所变化，因为热效应会降低波所能达到的最大振幅。原因有两个。首先，等离子体压强会抵抗密度急剧增大的趋势。其次，沿波传播方向运动的热电子，在比冷粒子更低的波振幅下就可能被俘获。Coffey（1971）用所谓的“水袋”模型表示电子分布函数，得到了这些修正。他给出的温等离子体中非相对论等离子体波的波破裂极限为</p>
+<div class="arithmatex">\[
+\frac{eE_{\max}}{m\omega_pv_p}
+=\left(1-\frac{\mu}{3}-\frac{8}{3}\mu^{1/4}+2\mu^{1/2}\right)^{1/2}
+\tag{4.29}
+\]</div>
+<p>其中 <span class="arithmatex">\(\mu=3k_BT_e/(mv_p^2)\)</span>。</p>
+<p>要把这个结果推广到相对论情形，仅对式 (4.24)–(4.26) 加上热修正还不够。必须先有一个满足相对论要求的状态方程，才能写出恰当的流体运动方程（即欧拉方程）。Katsouleas 和 Mori（1988）首次以自洽的方式做到了这一点。他们推广了 Coffey 的水袋模型，纳入相对论性流体动量，并由此得到温等离子体中相当于式 (4.23) 的流体速度方程。</p>
+<div class="arithmatex">\[
+\frac{d^2}{d\tau^2}F(u)=\frac{\omega_p^2\beta_p^2u}{\beta_p-u},
+\tag{4.30}
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+F(u)=\frac{1-\beta_pu}{(1-u^2)^{1/2}}
+\left[1+\mu\beta_p^2\frac{1-u^2}{(\beta_p^2-u^2)^{1/2}}\right].
+\]</div>
+<p>与冷等离子体的情形一样，可对式 (4.30) 积分一次，最终在极限 <span class="arithmatex">\(\beta_p\simeq1\pm\sqrt{2}\omega_p\beta_p(\gamma_m-\gamma)^{1/2}\)</span> 下得到最大电场。</p>
+<div class="arithmatex">\[
+\frac{eE_{\max}}{m\omega_pc}
+=\mu^{-1/4}\left(\ln 2\gamma_p^{1/2}\mu^{1/4}\right)^{1/2}.
+\tag{4.31}
+\]</div>
+<p>其适用条件为</p>
+<div class="arithmatex">\[
+\gamma_p\gg\frac{1}{2\mu^{1/2}}\log 2\mu^{1/4}\gamma_p^{1/2}.
+\]</div>
+<p>图 4.2 同时画出了这个结果和非相对论极限。</p>
+<blockquote>
+<p>转写注：式 (4.31) 前的极限表达式按原版印刷保留。其中 <span class="arithmatex">\(\pm\sqrt{2}\omega_p\beta_p(\gamma_m-\gamma)^{1/2}\)</span> 与式 (4.24) 右端相同，有频率量纲，和无量纲的 <span class="arithmatex">\(\beta_p\)</span> 不能相加。</p>
+</blockquote>
+<p><strong>图 4.2　不同相速度下纵向等离子体振荡的波破裂振幅。</strong> 相对论曲线只画到式 (4.31) 的适用范围边界。完整数值解会接上冷波破裂极限（图注称 <span class="arithmatex">\(\gamma_p=10\)</span> 和 <span class="arithmatex">\(\gamma_p=100\)</span> 的极限显示在右侧）。横轴为 <span class="arithmatex">\(\mu\)</span>，纵轴为 <span class="arithmatex">\(eE_{\max}/(m\omega_pv_p)\)</span>。图例列出非相对论情形以及 <span class="arithmatex">\(\gamma_p=10\)</span>、<span class="arithmatex">\(100\)</span>、<span class="arithmatex">\(10^3\)</span>。</p>
+<blockquote>
+<p>转写注：图 4.2 的水平冷极限线实际画在小 <span class="arithmatex">\(\mu\)</span> 的左侧，图注中的方位按原书保留。</p>
+</blockquote>
+<h2 id="43">4.3　尾场的产生</h2>
+<p>此前，我们考察了可以在冷等离子体中传播的大振幅波的类型，暂且搁置了波是怎样产生的。不过，等离子体波可以通过多种方式产生，例如粒子束、不稳定性、湍流和模式转换。模式转换是将电磁波能量耦合进等离子体的主要手段之一。低强度激光脉冲通常会穿过均匀的欠密度等离子体而不扰动它。将式 (4.18)–(4.20) 线性化即可说明这一点。取 <span class="arithmatex">\(p_{x,y,z}\ll1\)</span>，并假定 <span class="arithmatex">\(u_x\ll\beta_p\)</span>，从而可以忽略所有 <span class="arithmatex">\(O(u^2)\)</span> 及更高阶的项。仍选取激光（电磁波）沿 <span class="arithmatex">\(x\)</span> 轴传播的几何构型，即 <span class="arithmatex">\(\mathbf E_L=(0,E_y,0)\)</span>、<span class="arithmatex">\(\mathbf B_L=(0,0,B_z)\)</span>、<span class="arithmatex">\(p_y=A_y\)</span>。这样，波的纵向和横向分量解耦，恢复为通常的波动方程。</p>
+<div class="arithmatex">\[
+\frac{d^2u_y}{d\tau^2}+\frac{\omega_p^2\beta_p^2u_y}{\beta_p^2-1}=0.
+\tag{4.32}
+\]</div>
+<p>其解为</p>
+<div class="arithmatex">\[
+u_y=u_0e^{-i\omega\tau},
+\]</div>
+<p>条件是</p>
+<div class="arithmatex">\[
+-\omega^2+\frac{\omega_p^2\beta_p^2}{\beta_p^2-1}=0.
+\]</div>
+<p>回想 <span class="arithmatex">\(\beta_p=v_p/c=\omega/(kc)\)</span>，上式可整理为</p>
+<div class="arithmatex">\[
+\omega^2=\omega_p^2+c^2k^2,
+\tag{4.33}
+\]</div>
+<p>这就是冷、无碰撞等离子体中电磁波的通常色散关系（Kruer，1988）。</p>
+<p>将纵向动量方程线性化，得到</p>
+<div class="arithmatex">\[
+-\beta_p\frac{d^2p_x}{d\tau^2}-\omega_p^2\beta_pu_x=0.
+\]</div>
+<p>由于 <span class="arithmatex">\(\gamma\simeq1\)</span>，也可以写成</p>
+<div class="arithmatex">\[
+\frac{d^2u_x}{d\tau^2}+\omega_p^2u_x=0.
+\tag{4.34}
+\]</div>
+<p>同样，写成 <span class="arithmatex">\(u_x=u_{x0}e^{-i\omega\tau}\)</span>，即得 <span class="arithmatex">\(T_e\to0\)</span> 极限下熟知的纵波色散关系。</p>
+<div class="arithmatex">\[
+\omega^2=\omega_p^2.
+\tag{4.35}
+\]</div>
+<h3 id="431">4.3.1　弱泵浦</h3>
+<p>既然激光的传播由横向波动方程 (4.18) 描述，自然要问是否能用激光脉冲驱动等离子体波，以及如何驱动。关键在于，式 (4.18) 和 (4.19) 通过非线性项耦合，这些项在各自方程的左端第二项中。因此，作为对线性化方程的第一步改进，在式 (4.19) 中保留一个非线性泵浦项，得到</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{d^2u_x}{d\tau^2}+\omega_p^2u_x
+&amp;=\frac1{\beta_p}\frac d{d\tau}\left(u_y\frac{dp_y}{d\tau}\right)\\
+&amp;\simeq\frac1{\beta_p}\frac{d^2}{d\tau^2}\left(\frac{u_y^2}{2}\right).
+\end{aligned}
+\tag{4.36}
+\]</div>
+<p>这里在 <span class="arithmatex">\(u_{x,y}\ll1\)</span> 的条件下取 <span class="arithmatex">\(p_y=\gamma u_y\simeq u_y\)</span>。由式 (4.16) 可写出密度扰动</p>
+<div class="arithmatex">\[
+\begin{aligned}
+n\equiv n_e-n_0
+&amp;=\frac{\beta_pn_0-n_0(\beta_p-u_x)}{\beta_p-u_x}\\
+&amp;=\frac{n_0u_x}{\beta_p-u_x}\\
+&amp;\simeq\frac{n_0u_x}{\beta_p}.
+\end{aligned}
+\tag{4.37}
+\]</div>
+<p>将式 (4.37) 代入式 (4.36)，得到</p>
+<div class="arithmatex">\[
+\frac{d^2n}{d\tau^2}+\omega_p^2n
+=\frac{n_0}{\beta_p^2}\frac{d^2}{d\tau^2}\frac{u_y^2}{2}.
+\]</div>
+<p>回想最初的变量替换包含以下变换。</p>
+<div class="arithmatex">\[
+\frac{\partial}{\partial t}=\frac{\partial}{\partial\tau},\qquad
+\frac{\partial}{\partial x}=-\frac{1}{c\beta_p}\frac{\partial}{\partial\tau}.
+\]</div>
+<p>因此，可把方程左右两侧的导数分别认作时间导数和空间导数。用原来的欧拉变量 <span class="arithmatex">\((t,x)\)</span> 表示，有</p>
+<div class="arithmatex">\[
+\frac{\partial^2n}{\partial t^2}+\omega_p^2n
+=\frac{n_0}{2}\frac{\partial^2}{\partial x^2}\frac{v_y^2}{c^2}.
+\tag{4.38}
+\]</div>
+<p>这个方程描述弱场极限下受驱动的等离子体波，是分析参量不稳定性（例如第 4.4 节要讨论的拉曼散射）和尾场激发的起点。在尾场激发中，电磁波被限制在一个小波包内，所以式 (4.38) 中的驱动项类似冲量，波包通过时便在等离子体中激起尾迹振荡。Gorbunov 和 Kirsanov（1987）以及 Sprangle 等（1988）最先详细分析了式 (4.38) 描述的尾场激发过程。用激光产生高相速度等离子体波的想法，可以追溯到约十年前的 Tajima 和 Dawson（1979）。他们提出以这种方式将粒子加速到 GeV 能量，见第 4.3.4 节和第 7.1 节。</p>
+<h3 id="432">4.3.2　准静态近似</h3>
+<p>此处方便再做一次坐标变换，这次进入以激光脉冲群速度 <span class="arithmatex">\(v_g\simeq c\)</span> 运动的参考系。选取变量 <span class="arithmatex">\((\xi,\tau)\)</span>，使 <span class="arithmatex">\(\xi=x-ct\)</span>、<span class="arithmatex">\(\tau=t\)</span>。偏导数变为</p>
+<div class="arithmatex">\[
+\frac{\partial}{\partial x}=\frac{\partial}{\partial\xi},\qquad
+\frac{\partial}{\partial t}=\frac{\partial}{\partial\tau}-c\frac{\partial}{\partial\xi}
+\simeq-c\frac{\partial}{\partial\xi}.
+\tag{4.39}
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+\frac{\partial^2}{\partial x^2}=\frac{\partial^2}{\partial\xi^2},\qquad
+\frac{\partial^2}{\partial t^2}=c^2\frac{\partial^2}{\partial\xi^2}.
+\]</div>
+<p>在脉冲通过所需的时间内，认为量随时间 <span class="arithmatex">\(\tau\)</span> 缓慢变化，因而在这个随动参考系中可以有效地取 <span class="arithmatex">\(\partial/\partial\tau=0\)</span>。这里采用的是欧拉坐标变换。也可以采用洛伦兹变换，它给出的电磁波与静电波耦合方程组在数学上更对称（McKinstrie 和 DuBois，1988），但还需回到实验室参考系解释结果。</p>
+<p>从物理上看，式 (4.39) 所表示的<strong>准静态近似</strong>（QSA）类似一艘快艇驶过水面。一个刚性的“光子子弹”穿过原本未受扰动的等离子体，在身后留下等离子体振荡的尾迹。以距脉冲前沿的距离来描述时，尾迹保持原有形状。在随动参考系中，脉冲形状的变化才会改变尾迹的性质。Gorbunov 和 Kirsanov 将这一过程比作电磁波包“发射”等离激元，类似相对论粒子穿过非线性介质时产生的切伦科夫辐射。</p>
+<p>在新坐标系中，令 <span class="arithmatex">\(a=v_y/c\)</span>，式 (4.38) 变为</p>
+<div class="arithmatex">\[
+\left(\frac{\partial^2}{\partial\xi^2}+k_p^2\right)n
+=\frac{n_0}{2}\frac{\partial^2}{\partial\xi^2}a^2.
+\tag{4.40}
+\]</div>
+<p>利用泊松方程</p>
+<div class="arithmatex">\[
+\frac{\partial^2\phi}{\partial\xi^2}
+=-\frac{\partial E}{\partial\xi}=4\pi en,
+\]</div>
+<p>还可以写出尾场的电场和势的方程（原书分别标作以 <span class="arithmatex">\(m\omega_pc/e\)</span> 和 <span class="arithmatex">\(mc/e\)</span> 归一化）。</p>
+<div class="arithmatex">\[
+\left(\frac{\partial^2}{\partial\xi^2}+k_p^2\right)E
+=k_p^2\frac{\partial}{\partial\xi}\Phi_L,
+\tag{4.41}
+\]</div>
+<div class="arithmatex">\[
+\left(\frac{\partial^2}{\partial\xi^2}+k_p^2\right)\phi
+=-k_p^2\Phi_L,
+\tag{4.42}
+\]</div>
+<p>其中 <span class="arithmatex">\(\Phi_L=-\tfrac12\langle a^2\rangle\)</span> 是归一化的激光脉冲有质动力势。这里取激光周期 <span class="arithmatex">\(2\pi/\omega_0\)</span> 上的平均。因此，用缓变脉冲包络表示时，<span class="arithmatex">\(\Phi_L(\xi)=-\tfrac14a(\xi)^2\)</span>。</p>
+<blockquote>
+<p>转写注：若 <span class="arithmatex">\(\phi\)</span> 表示通常的静电势，势的自然归一化单位是 <span class="arithmatex">\(mc^2/e\)</span>。原书此处排印为 <span class="arithmatex">\(mc/e\)</span>。</p>
+</blockquote>
+<p>这三个尾场方程中，式 (4.41) 可能最便于直观理解。此时的驱动项是有质动力。正如第 3.2 节所见，它将电子推离高强度区。因此，脉冲进入尚未受扰动的等离子体时，先将电子向前推。然而脉冲通过一半后，有质动力反号，电子受到一次反向的推动，见图 4.3。显然，如果脉冲的通过时间（即有质动力的作用时间）与等离子体的时间尺度 <span class="arithmatex">\(\omega_p^{-1}\)</span> 大致匹配，纵向振荡的振幅就会增大。</p>
+<p>式 (4.42) 是受驱动的亥姆霍兹方程，可以用格林函数法求解（见 Mathews 和 Walker，1970，第 9 章）。其形式解为</p>
+<div class="arithmatex">\[
+\phi(\xi)=-\frac{k_p}{4}\int_\xi^\infty d\xi'\,|a(\xi')|^2
+\sin[k_p(\xi-\xi')].
+\tag{4.43}
+\]</div>
+<p>电场和数密度也可得到类似的表达式，见习题 2。</p>
+<p>为了体会这个解的特性，考虑一个具体例子，即振幅由下式给出的“<span class="arithmatex">\(\sin^2\)</span> 脉冲”。</p>
+<div class="arithmatex">\[
+a^2(\xi)=
+\begin{cases}
+a_0^2\sin^2(\pi\xi/\xi_L),&amp;0\le\xi\le\xi_L,\\
+0,&amp;\xi&lt;0\text{ 或 }\xi&gt;\xi_L.
+\end{cases}
+\]</div>
+<p><strong>图 4.3　激光脉冲两次施加有质动力而产生尾场。</strong> 三幅图依次显示脉冲前沿将电子向前推、后沿施加反向有质动力，以及脉冲离开后电子在电场作用下运动。图中标出 <span class="arithmatex">\(f_{\mathrm{pond}}\)</span> 和 <span class="arithmatex">\(eE_x\)</span>。</p>
+<p>因此，在脉冲之后（<span class="arithmatex">\(\xi&lt;0\)</span>），有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\phi(\xi)
+&amp;=-\frac{k_pa_0^2}{4}\int_0^{\xi_L}d\xi'\,
+ \sin[k_p(\xi-\xi')]\sin^2\left(\frac{\pi\xi'}{\xi_L}\right)\\
+&amp;=-\frac{k_pa_0^2}{8}\left[
+ \frac{\cos[k_p(\xi-\xi')]}{k_p}
+ +\frac{\xi_L/2}{2\pi-k_p\xi_L}
+ \cos\left\{k_p\xi-k_p\xi'\left(1-\frac{2\pi}{k_p\xi_L}\right)\right\}
+ -\frac{\xi_L/2}{2\pi+k_p\xi_L}
+ \cos\left\{k_p\xi-k_p\xi'\left(1+\frac{2\pi}{k_p\xi_L}\right)\right\}
+ \right]_0^{\xi_L}\\
+&amp;=\frac{2\pi^2\Phi_L}{4\pi^2-k_p^2\xi_L^2}
+ \left[\cos k_p(\xi-\xi_L)-\cos k_p\xi\right].
+\end{aligned}
+\tag{4.44}
+\]</div>
+<p>在脉冲内（<span class="arithmatex">\(0&lt;\xi&lt;\xi_L\)</span>），解的形式略有不同（Esarey 等，1989；Gorbunov 和 Kirsanov，1987），这里将其留作习题。因此，脉冲身后留下的纵向尾场为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+E_z&amp;=-\frac{\partial\phi}{\partial\xi}\\
+&amp;=\frac{2\pi^2\Phi_Lk_p}{4\pi^2-k_p^2\xi_L^2}
+ \left[\sin k_p(\xi-\xi_L)-\sin k_p\xi\right].
+\end{aligned}
+\tag{4.45}
+\]</div>
+<p>图 4.4 给出了这些量的数值示例。</p>
+<p><strong>图 4.4　小振幅尾场方程的解。</strong> 横轴为 <span class="arithmatex">\(k_p\xi\)</span>，纵轴为尾场。图中以不同线型表示 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(\phi\)</span>、<span class="arithmatex">\(E\)</span> 和 <span class="arithmatex">\(n\)</span>。</p>
+<p>观察可见，式 (4.45) 在 <span class="arithmatex">\(k_p\xi_L=2\pi\)</span> 时取得最大值，等价地说，脉冲长度为 <span class="arithmatex">\(\xi_L=\lambda_p\)</span>。对于方形脉冲，这一最大值出现在 <span class="arithmatex">\(\xi_L=\lambda_p/2\)</span>，见 Gorbunov 和 Kirsanov（1987）以及习题 2。在这个极限下，用洛必达法则得到</p>
+<div class="arithmatex">\[
+E_z^{\max}(\xi)=\frac{\pi^2\Phi_L}{\lambda_p}\cos k_p\xi,
+\tag{4.46}
+\]</div>
+<p>它基本上按激光强度（即 <span class="arithmatex">\(a_0^2\)</span>）缩放。类似地，尾场势的最大值为 <span class="arithmatex">\(\phi_{\max}=-\tfrac{\pi}{2}\Phi_L\sin k_p\xi\)</span>。只要激光脉冲在横向上足够宽，即 <span class="arithmatex">\(\sigma\gg c/\omega_p\)</span>，这个结果就可以推广到三维尾场。换言之，可考虑高斯光束剖面 <span class="arithmatex">\(a=a_0\exp(-r^2/2\sigma^2)\)</span>，于是 <span class="arithmatex">\(\Phi_L=-\tfrac14a_0^2\exp(-r^2/\sigma^2)\)</span>。这时，纵向场的形式和上面一样，但随到光束轴线的距离增大而单调减弱。有限的光斑尺寸还会额外产生径向尾场。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+E_r^{\max}(\xi,r)&amp;=-\frac{\partial\phi}{\partial r}\\
+&amp;=-\frac{\Phi_L\pi r}{\sigma^2}\sin k_p\xi.
+\end{aligned}
+\tag{4.47}
+\]</div>
+<p>径向场与纵向分量的相位相差 <span class="arithmatex">\(90^\circ\)</span>。这是尾场的一个普遍特征，对等离子体波粒子加速有值得注意的影响，见第 7.1 节。</p>
+<p>尾场产生还有许多方面超出了这里的导论范围。若想继续阅读，可以从 Sprangle 等（1990b）以及 Gorbunov 和 Kirsanov（1987）的原始论文入手。有两点值得指出，都可以从式 (4.44) 看出。第一，远在脉冲之后的尾场对激光脉冲形状的依赖较弱。第二，脉冲很短（<span class="arithmatex">\(\xi_L\ll\pi/k_p\)</span>）或很长（<span class="arithmatex">\(\xi_L\gg\pi/k_p\)</span>）时，产生的尾场都很小，见图 4.5。</p>
+<p><strong>图 4.5　弱泵浦激发尾场的共振曲线。</strong> 横轴为 <span class="arithmatex">\(k_p\xi_L\)</span>，纵轴为 <span class="arithmatex">\(|E_{\max}|\)</span>。</p>
+<h3 id="433">4.3.3　任意泵浦强度</h3>
+<p>本节把前面的理论推广到任意强度的激光脉冲所产生的等离子体波。由第三章可知，电子的振荡动量达到 <span class="arithmatex">\(p_y/mc\simeq1\)</span> 时，相对论效应变得重要。改进线性化方程 (4.36) 的标准做法，是把非线性项按归一化泵浦强度 <span class="arithmatex">\(a^2\)</span> 展开。对于大约 <span class="arithmatex">\(10^{15}\)</span> 至 <span class="arithmatex">\(10^{17}\,\mathrm{W\,cm^{-2}}\)</span> 的激光强度，这样处理通常已经足够。第 4.3.4 节讨论与之相关的拍波激发时，会看到一个具体例子。当强度超过 <span class="arithmatex">\(10^{18}\,\mathrm{W\,cm^{-2}}\)</span>，或等价地说，当 <span class="arithmatex">\(p_y/mc\gg1\)</span> 时，就需要一个完全非线性的模型，并且该模型要适用于任意等离子体密度，也就是允许 <span class="arithmatex">\(v_g\ne c\)</span>。</p>
+<p>Sprangle 等（1990b）较早建立了这类模型之一。他们在 <span class="arithmatex">\(v_g=c\)</span> 的极限下，为尾场势建立了完全非线性的常微分方程。Bulanov 等（1989）、Tsytovich 等（1989）以及 Berezhiani 和 Murusidze（1990）分别独立提出了许多类似的一维表述。后来，这些表述被推广到任意坐标变换速度，即可用 <span class="arithmatex">\(v_g\)</span> 或 <span class="arithmatex">\(v_p\)</span> 代替 <span class="arithmatex">\(c\)</span>（Esarey 等，1997；Mori 等，1993；Dalla 和 Lontano，1993；Kingham 和 Bell，1997）。这里考虑这一最一般的情形，随后对它作适当简化，即可恢复文献中的大部分结果。我们特别关心强相对论情形，最终必须借助数值求解。</p>
+<p>仍以洛伦兹方程 (4.1) 和麦克斯韦方程 (4.2)–(4.5) 为起点，但这次一开始就按激光传播方向采用一维几何。若电磁波 <span class="arithmatex">\(\mathbf A=\hat{\mathbf y}A_y(x-v_gt)\)</span> 只包含 <span class="arithmatex">\(E_y\)</span> 和 <span class="arithmatex">\(B_z\)</span>，便可用矢势 <span class="arithmatex">\(A_y\)</span> 表示这两个场并求得横向动量 <span class="arithmatex">\(p_y\)</span>。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{dp_y}{dt}
+&amp;=-e\left(E_y-\frac{v_x}{c}B_z\right)\\
+&amp;=\frac ec\left(\frac{\partial A_y}{\partial t}
++v_x\frac{\partial A_y}{\partial x}\right)
+=\frac ec\frac{dA_y}{dt}.
+\end{aligned}
+\]</div>
+<p>若 <span class="arithmatex">\(y\)</span> 方向没有初始漂移，则</p>
+<div class="arithmatex">\[
+p_y=\frac ec A_y.
+\tag{4.48}
+\]</div>
+<p>同样，式 (4.1) 的纵向分量给出</p>
+<div class="arithmatex">\[
+\frac{dp_x}{dt}=-e\left(E_x+\frac{v_y}{c}B_z\right).
+\]</div>
+<p>令 <span class="arithmatex">\(E_x=-\partial\phi/\partial x\)</span>、<span class="arithmatex">\(B_z=\partial A/\partial x\)</span>，并利用恒等式 (4.48)，得到</p>
+<div class="arithmatex">\[
+\frac d{dt}(\gamma u)=c\frac{\partial\phi}{\partial x}
+-\frac{c}{2\gamma}\frac{\partial a^2}{\partial x}.
+\tag{4.49}
+\]</div>
+<p>和前面一样，<span class="arithmatex">\(u=v_x/c\)</span>。势 <span class="arithmatex">\(\phi\)</span> 和 <span class="arithmatex">\(a\)</span> 都以 <span class="arithmatex">\(mc^2/e\)</span> 归一化，因此 <span class="arithmatex">\(a\equiv eA_y/(mc^2)\)</span>，<span class="arithmatex">\(\phi\)</span> 同理。相对论因子 <span class="arithmatex">\(\gamma=(1-\mathbf u^2)^{-1/2}\)</span> 可以方便地分解成纵向与横向因子。</p>
+<div class="arithmatex">\[
+\gamma=\gamma_\perp\gamma_\parallel
+=\frac{(1+a^2)^{1/2}}{(1-u^2)^{1/2}}.
+\tag{4.50}
+\]</div>
+<p>与多数流体问题一样，可以写出质量密度的连续性方程，在本问题中对应的是电荷密度的连续性方程。</p>
+<div class="arithmatex">\[
+\frac{\partial n_e}{\partial t}+\nabla\cdot(n_e\mathbf v)=0.
+\tag{4.51}
+\]</div>
+<p>在一维情况下，它变成</p>
+<div class="arithmatex">\[
+\frac{\partial n_e}{\partial t}
++c\frac{\partial}{\partial x}(n_ev_x)=0.
+\tag{4.52}
+\]</div>
+<blockquote>
+<p>转写注：式 (4.52) 按原书保留。若 <span class="arithmatex">\(v_x\)</span> 是有量纲速度，通量项前无须再乘 <span class="arithmatex">\(c\)</span>；若保留系数 <span class="arithmatex">\(c\)</span>，括号内应使用 <span class="arithmatex">\(u=v_x/c\)</span>。后文式 (4.56) 使用的是后一写法。</p>
+</blockquote>
+<p>为得到电磁模的方程，将 <span class="arithmatex">\(\mathbf E=-\nabla\phi-c^{-1}\partial\mathbf A/\partial t\)</span> 和 <span class="arithmatex">\(\mathbf B=\nabla\times\mathbf A\)</span> 代入安培定律 (4.4)，并使用库仑规范 <span class="arithmatex">\(\nabla\cdot\mathbf A=0\)</span>，得到</p>
+<div class="arithmatex">\[
+\frac{1}{c^2}\frac{\partial^2 A_y}{\partial t^2}-\nabla^2 A_y
+=\frac{4\pi}{c}J_y=-4\pi en_e\frac{v_y}{c}.
+\]</div>
+<p>一般来说，上面的波动方程还会含有一个涉及标势的项 <span class="arithmatex">\(c^{-1}\nabla\partial\phi/\partial t\)</span>。它与横向电流项相比通常很小，可以忽略。在这里的一维情形下，这一项严格为零。采用库仑规范也意味着 <span class="arithmatex">\(A_x=0\)</span>，推导式 (4.49) 时已经隐含采用了这个条件。照前面的方法归一化，令</p>
+<div class="arithmatex">\[
+\frac{v_y}{c}=\frac{eA_y}{mc^2\gamma}=\frac a\gamma,
+\]</div>
+<p>并令 <span class="arithmatex">\(n=n_e/n_0\)</span>，便把波动方程化成</p>
+<div class="arithmatex">\[
+\frac{\partial^2a}{\partial t^2}-c^2\nabla^2 a
+=-\omega_p^2\frac{na}{\gamma}.
+\tag{4.53}
+\]</div>
+<p>式 (4.49)–(4.53) 与泊松方程</p>
+<div class="arithmatex">\[
+\frac{\partial^2\phi}{\partial x^2}=k_p^2(n-1)
+\tag{4.54}
+\]</div>
+<p>构成描述电磁波与等离子体波耦合的封闭方程组。为继续求解，再次在随脉冲运动的参考系中应用准静态近似。这次采用任意群速度 <span class="arithmatex">\(v_g\)</span>。取 <span class="arithmatex">\(\tau=t\)</span>、<span class="arithmatex">\(\xi=x-v_gt\)</span>，相应的导数为</p>
+<div class="arithmatex">\[
+\frac{\partial}{\partial x}=\frac{\partial}{\partial\xi},\qquad
+\frac{\partial}{\partial t}=\frac{\partial}{\partial\tau}
+-v_g\frac{\partial}{\partial\xi}.
+\]</div>
+<p>在将这一变换应用于动量方程 (4.49) 之前，先注意到由恒等式 (4.50) 可得</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial a^2}{\partial\xi}
+&amp;=\frac{\partial}{\partial\xi}\big[\gamma^2(1-u^2)-1\big]\\
+&amp;=2\gamma\frac{\partial\gamma}{\partial\xi}
+-2u^2\gamma\frac{\partial\gamma}{\partial\xi}
+-2\gamma^2u\frac{\partial u}{\partial\xi}.
+\end{aligned}
+\]</div>
+<p>因此，</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac d{dt}(\gamma u)
+&amp;=\left(\frac{\partial}{\partial\tau}
+-v_g\frac{\partial}{\partial\xi}
++cu\frac{\partial}{\partial\xi}\right)\gamma u\\
+&amp;=c\frac{\partial\phi}{\partial\xi}
+-\frac{c}{2\gamma}\frac{\partial a^2}{\partial\xi}.
+\end{aligned}
+\]</div>
+<p>代入上面 <span class="arithmatex">\(\partial a^2/\partial\xi\)</span> 的表达式，并令 <span class="arithmatex">\(\beta_g=v_g/c\)</span>，得到</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac1c\frac{\partial}{\partial\tau}(\gamma u)
+&amp;=\frac{\partial\phi}{\partial\xi}-\frac{\partial\gamma}{\partial\xi}
++u^2\frac{\partial\gamma}{\partial\xi}+\gamma u\frac{\partial u}{\partial\xi}\\
+&amp;\quad+\beta_gu\frac{\partial\gamma}{\partial\xi}
++\beta_g\gamma\frac{\partial u}{\partial\xi}
+-u^2\frac{\partial\gamma}{\partial\xi}-\gamma u\frac{\partial u}{\partial\xi}\\
+&amp;=\frac{\partial}{\partial\xi}\big[\phi-\gamma(1-\beta_gu)\big].
+\end{aligned}
+\tag{4.55}
+\]</div>
+<p>同样，用新坐标表示的连续性方程为</p>
+<div class="arithmatex">\[
+\frac1c\frac{\partial n}{\partial\tau}
+=\frac{\partial}{\partial\xi}[n(\beta_g-u)].
+\tag{4.56}
+\]</div>
+<p>这里无须显式使用电磁波方程，而且它在这些坐标下的形式略显繁复。不过，脉冲包络的演化时间尺度 <span class="arithmatex">\(\tau\)</span> 通常为瑞利衍射时间</p>
+<div class="arithmatex">\[
+t_R=R_L/c=\frac{k_0\sigma^2}{c},
+\]</div>
+<p>它远长于一个激光周期。由于在随动参考系中，矢势具有 <span class="arithmatex">\(a=a(\xi,r,\tau)\exp(ik_0\xi)\)</span> 的形式，这实际上允许相对于 <span class="arithmatex">\(\partial/\partial\xi\sim ik_0\)</span> 忽略 <span class="arithmatex">\(\partial/\partial\tau\)</span>。和先前处理小振幅尾场时一样，现在将这一准静态近似应用到流体方程。具体地说，在式 (4.55) 和 (4.56) 中令 <span class="arithmatex">\(\partial/\partial\tau=0\)</span>，然后积分，得到以下守恒关系。</p>
+<div class="arithmatex">\[
+n(\beta_g-u)=\mathrm{const}.
+\]</div>
+<p>要求 <span class="arithmatex">\(n(\xi=+\infty)=1\)</span>，便有</p>
+<div class="arithmatex">\[
+n=\frac{\beta_g}{\beta_g-u}.
+\tag{4.57}
+\]</div>
+<p>同样，</p>
+<div class="arithmatex">\[
+\phi-\gamma(1-\beta_gu)+1=0,
+\tag{4.58}
+\]</div>
+<p>因为没有等离子体波时，<span class="arithmatex">\(\phi=u=0\)</span> 且 <span class="arithmatex">\(\gamma=1\)</span>，即在 <span class="arithmatex">\(\xi=+\infty\)</span> 处取未扰动条件。</p>
+<p>这样，关于流体变量 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(\phi\)</span> 的偏微分方程组，就化成一个关于 <span class="arithmatex">\(\phi\)</span> 的常微分方程，以及联系 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(n\)</span>、<span class="arithmatex">\(\phi\)</span> 与泵浦强度 <span class="arithmatex">\(a\)</span> 的三个代数表达式 (4.50)、(4.57) 和 (4.58)。要记住，在流体响应的时间尺度上，激光视为固定的，所以可以独立于激光演化确定尾场各量。事实上，给定泵浦振幅 <span class="arithmatex">\(a\)</span> 就可以确定这些流体量。为此，将式 (4.58) 平方，得到</p>
+<div class="arithmatex">\[
+\begin{aligned}
+(1+\phi)^2
+&amp;=\gamma^2(1-\beta_gu)^2\\
+&amp;=\gamma^2[2(1-\beta_gu)+\beta_g^2u^2-1]\\
+&amp;=\gamma^2\left[
+\frac{2(1+\phi)}{\gamma}+\beta_g^2-1
+-\beta_g^2\frac{1+a^2}{\gamma^2}
+\right].
+\end{aligned}
+\]</div>
+<p>这里利用 <span class="arithmatex">\(1-\beta_gu=(1+\phi)/\gamma\)</span> 以及 <span class="arithmatex">\(u^2=1-(1+a^2)/\gamma^2\)</span> 消去了 <span class="arithmatex">\(u\)</span>。展开右端括号，两边同除以 <span class="arithmatex">\(\gamma_g^2(1+\phi)^2\)</span>，稍作整理可得</p>
+<div class="arithmatex">\[
+1-\frac{2\gamma}{\gamma_g^2(1+\phi)}
++\frac{\gamma^2}{\gamma_g^4(1+\phi)^2}
+=\beta_g^2\left[1-\frac{1+a^2}{\gamma_g^2(1+\phi)^2}\right].
+\]</div>
+<p>左端为完全平方，由此容易解得 <span class="arithmatex">\(\gamma\)</span> 的显式表达式。</p>
+<div class="arithmatex">\[
+\gamma=\gamma_g^2(1+\phi)
+\left[1-\beta_g\left(1-\frac{1+a^2}{\gamma_g^2(1+\phi)^2}\right)^{1/2}\right].
+\tag{4.59}
+\]</div>
+<p>现在可由式 (4.58) 求出 <span class="arithmatex">\(u\)</span> 关于 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(\phi\)</span> 的表达式。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+u&amp;=\frac1{\beta_g}\left[1-\frac{1+\phi}{\gamma}\right]\\
+&amp;=\frac1{\beta_g}\left[1-\frac1{\gamma_g^2(1-\beta_g\psi)}\right],
+\end{aligned}
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+\psi=\left(1-\frac{1+a^2}{\gamma_g^2(1+\phi)^2}\right)^{1/2}.
+\]</div>
+<p>经过一些代数运算，可以化简为</p>
+<div class="arithmatex">\[
+u=\frac{\beta_g-\psi}{1-\beta_g\psi}.
+\tag{4.60}
+\]</div>
+<p>用式 (4.60) 消去式 (4.57) 中的 <span class="arithmatex">\(u\)</span> 而求得密度时，这些繁琐运算的用处就显现出来了。</p>
+<div class="arithmatex">\[
+n=\gamma_g^2\beta_g\left(\frac1\psi-\beta_g\right).
+\tag{4.61}
+\]</div>
+<p>接着，由随动坐标中的泊松方程可得</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial^2\phi}{\partial\xi^2}
+&amp;=k_p^2(n-1)\\
+&amp;=k_p^2\gamma_g^2\left(\frac{\beta_g}{\psi}-1\right)\\
+&amp;=k_p^2\gamma_g^2\left\{
+\frac{\beta_g(1+\phi)}
+{\left[(1+\phi)^2-\gamma_g^{-2}(1+a^2)\right]^{1/2}}
+-1
+\right\}.
+\end{aligned}
+\tag{4.62}
+\]</div>
+<p>式 (4.62) 是尾场势 <span class="arithmatex">\(\phi(\xi)\)</span> 的非线性常微分方程，在准静态近似内是精确的。给定某个时刻 <span class="arithmatex">\(\tau\)</span> 的脉冲振幅 <span class="arithmatex">\(a(\xi)\)</span>，就可以进行数值积分。Berezhiani 和 Murusidze（1990）在 <span class="arithmatex">\(\beta_g\to1\)</span> 的极限下，导出了方形泵浦的精确解析解（另见习题 4），由此可以推知尾场各量最大值的标度。</p>
+<div class="arithmatex">\[
+\phi_{\max}\sim\gamma_\perp^2-1,\qquad
+E_{\max}\sim\frac{\gamma_\perp^2-1}{\gamma_\perp},\qquad
+p_{\max}\sim(\gamma u)_{\max}=\frac{\gamma_\perp^4-1}{2\gamma_\perp^2}.
+\tag{4.63}
+\]</div>
+<p>其中 <span class="arithmatex">\(\gamma_\perp=(1+a^2)^{1/2}\)</span>，与前面的定义相同。</p>
+<p>一般来说，求得 <span class="arithmatex">\(\phi(\xi)\)</span> 后，即可分别由式 (4.60) 和 (4.61) 得到 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(n\)</span>。结果见图 4.6。</p>
+<p><strong>图 4.6　极强非线性情形下的激光尾场激发。</strong> 横轴为 <span class="arithmatex">\(k_p\xi\)</span>，纵轴为尾场。图例区分泵浦、势 <span class="arithmatex">\(\phi\)</span>、电场 <span class="arithmatex">\(E\)</span> 和密度 <span class="arithmatex">\(n\)</span>。</p>
+<p>注意准静态近似与第 4.1 节所推导的 Akhiezer 和 Polovin 平面波解之间的对应关系，见图 4.1。将式 (4.22) 与式 (4.58) 对照，再将式 (4.25) 与式 (4.57) 对照，可以看到，如果令 <span class="arithmatex">\(\beta_p\to\beta_g\)</span>、<span class="arithmatex">\(\tau\to-\xi\)</span>，平面波解就与准静态表达式相同。这样的对称性是可以理解的。平面波假设显式排除了空间导数（<span class="arithmatex">\(\partial/\partial\xi=0\)</span>），所以所有变量仅为推迟时间 <span class="arithmatex">\(\tau=t-x/v_p\)</span> 的函数。准静态近似则在脉冲之后的尾场中排除了时间导数。两种描述是等价的。很容易把横向激光泵浦以缓变包络 <span class="arithmatex">\(p_\perp=a(\tau)\)</span> 的形式引入纵向方程 (4.23)，同时满足最初的平面波假设。</p>
+<blockquote>
+<p>转写注：<span class="arithmatex">\(\tau\to-\xi\)</span> 是原书的简写。按两种变量的有量纲定义，取 <span class="arithmatex">\(v_p=v_g\)</span> 时有 <span class="arithmatex">\(\tau=t-x/v_p=-\xi/v_g\)</span>。</p>
+</blockquote>
+<p>因此，短脉冲产生尾场时的这些“新”非线性特征，在某种程度上已经包含在 Akhiezer 和 Polovin（1956）的原始工作及 Noble（1984）随后的分析中。不过，准静态表述在物理上更容易理解，也易于推广，以纳入激光脉冲在二维或三维中的演化（Esarey 等，1997；Bulanov 等，1995）。</p>
+<h3 id="434">4.3.4　拍波</h3>
+<p>本章到目前为止主要讨论了大振幅等离子体波的性质，以及如何在欠密度等离子体中产生这种波。随着高功率短脉冲激光器的广泛使用，这个课题已成为等离子体粒子加速研究中的重点。所谓桌面式粒子加速器的细节留待第七章讨论，不过这里正好可以简要提及激光尾场加速（LWFA）的先驱，即拍波加速（BWA）方案。Tajima 和 Dawson 提出了 BWA，以便在飞秒激光技术尚未出现时，用另一种方式产生高相速度的等离子体波。</p>
+<p>当时激光脉冲的持续时间超过数百皮秒，因此 Tajima 和 Dawson（1979）建议使用两个波长稍有不同的脉冲，使拍频 <span class="arithmatex">\(\delta\omega=\omega_0-\omega_1\)</span> 与等离子体频率相匹配。这样实际上得到一列较短的脉冲，可以在多个等离子体周期内持续驱动拍波，产生与单一脉冲所产生的尾场几乎相同的尾场。</p>
+<p>拍波激发可作如下数学分析。考虑等离子体密度扰动的线性化方程 (4.38)，令</p>
+<div class="arithmatex">\[
+\widetilde n=\frac n{n_0}=-\frac c{\omega_p}\frac{\partial\mathcal E}{\partial x},
+\qquad \frac{v_y}{c}=a,
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathcal E=eE_x/(m\omega_pc)\)</span>。则该方程可改写为</p>
+<div class="arithmatex">\[
+\left(\frac{\partial^2}{\partial t^2}+\omega_p^2\right)\mathcal E
+=-\frac{\omega_pc}{2}\frac{\partial a^2}{\partial x}.
+\tag{4.64}
+\]</div>
+<p>回想右端正是激光的有质动力。用单频激光照射时，只有在 <span class="arithmatex">\(\omega_p\tau_L\sim1\)</span> 的情况下，它才能有效驱动等离子体波。现在考虑把频率为 <span class="arithmatex">\(\omega_0\)</span> 和 <span class="arithmatex">\(\omega_1\)</span> 的两个激光脉冲叠加起来。合成矢势的平方为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+a^2&amp;=\frac14\left[a_0e^{i(\omega_0t-k_0x)}
++a_1e^{i(\omega_1t-k_1x)}+\text{复共轭}\right]^2\\
+&amp;=\frac{a_0a_1^*}{2}e^{i[(\omega_0-\omega_1)t-(k_0-k_1)x]}
++\frac{a_0a_1}{2}e^{i[(\omega_0+\omega_1)t-(k_0+k_1)x]}
++\text{复共轭}.
+\end{aligned}
+\]</div>
+<blockquote>
+<p>转写注：原书第二行仅列出两束激光的交叉项，完整平方还含两束激光各自的自乘项。</p>
+</blockquote>
+<p><strong>图 4.7　两列频差为 <span class="arithmatex">\(\omega_0-\omega_1=\omega_p\)</span> 的电磁波通过拍频产生等离子体波。</strong> 图中自上而下为波数分别为 <span class="arithmatex">\(k_0\)</span>、<span class="arithmatex">\(k_1\)</span> 的波，合成场 <span class="arithmatex">\(E(k_0)+E(k_1)\)</span>，以及电子密度 <span class="arithmatex">\(n_e\)</span>。合成场下方的箭头表示有质动力 <span class="arithmatex">\(f_p\)</span>。</p>
+<p>合力显然同时含有快变项（<span class="arithmatex">\(\omega_0+\omega_1\)</span>）和慢变项（<span class="arithmatex">\(\omega_0-\omega_1\)</span>）。为与式 (4.64) 左端的共振模匹配，令</p>
+<div class="arithmatex">\[
+\mathcal E=\epsilon(t)e^{i(\omega_pt-k_px)},
+\]</div>
+<p>并采用相位匹配条件 <span class="arithmatex">\(\omega_p=\omega_0-\omega_1\)</span>、<span class="arithmatex">\(k_p=k_0-k_1\)</span>。图 4.7 给出了拍波驱动过程的示意图。假定等离子体波振幅 <span class="arithmatex">\(\epsilon\)</span> 缓慢变化，即 <span class="arithmatex">\(|\partial\epsilon/\partial t|\ll\omega_p|\epsilon|\)</span>，便得到所谓的等离子体波包络方程。</p>
+<div class="arithmatex">\[
+\frac{\partial\epsilon}{\partial t}
+=\frac{\omega_pa_0a_1^*}{4}.
+\tag{4.65}
+\]</div>
+<p>换言之，泵浦振幅恒定时，等离子体波振幅在初期随时间线性增长。</p>
+<div class="arithmatex">\[
+\epsilon(t)=\frac{a_0a_1^*}{4}\omega_pt.
+\tag{4.66}
+\]</div>
+<p>以 1980 年代中期拍波实验的典型参数为例，泵浦强度 <span class="arithmatex">\(a_0=0.03\)</span>（<span class="arithmatex">\(I=10^{15}\,\mathrm{W\,cm^{-2}}\)</span>），密度 <span class="arithmatex">\(n_e=10^{17}\,\mathrm{cm^{-3}}\)</span>。由此可见，等离子体波增长到非线性振幅（<span class="arithmatex">\(\epsilon\sim1\)</span>）的特征时间约为</p>
+<div class="arithmatex">\[
+\tau_{\mathrm{pw}}\sim\frac4{a_0^2\omega_p}\simeq250\,\mathrm{ps}.
+\]</div>
+<p>掺钕玻璃激光器和 <span class="arithmatex">\(\mathrm{CO}_2\)</span> 激光器的脉冲持续时间在 <span class="arithmatex">\(10\,\mathrm{ps}\)</span> 与 <span class="arithmatex">\(2\,\mathrm{ns}\)</span> 之间，因此与拍波增长时间大体相容。不过，有一系列过程既限制等离子体波的最大振幅，也会破坏尾场的相干性。这些因素缩短了能够有效产生等离子体波的时间（Mora，1988）。假定采用足够强的驱动可以避开碰撞阻尼、离子调制不稳定性等效应（Pesme 等，1988；Mora 等，1988），余下最重要的效应有两种。</p>
+<ol>
+<li><strong>线性失谐。</strong> 拍频 <span class="arithmatex">\(\Delta\omega=\omega_0-\omega_1\)</span> 与等离子体频率不匹配，即 <span class="arithmatex">\(\delta\equiv\Delta\omega-\omega_p\ne0\)</span>。</li>
+<li><strong>相对论失谐。</strong> 强烈振荡的电子的相对论质量增大，使局部等离子体频率降低。</li>
+</ol>
+<p>实际上，采用准线性方法可以把这两种效应都纳入等离子体波振幅方程 (4.65)（Tang 等，1985；McKinstrie 和 Forslund，1986；Karttunen 和 Salomaa，1986；Gibbon，1990），得到以下包络方程。</p>
+<div class="arithmatex">\[
+\frac{\partial\epsilon}{\partial t}
+-\frac{3i}{16}|\epsilon|^2\epsilon-i\delta\epsilon=\kappa.
+\tag{4.67}
+\]</div>
+<p>这里 <span class="arithmatex">\(\delta=(\Delta\omega-\omega_p)/\Delta\omega\)</span>，<span class="arithmatex">\(\kappa=a_0a_1^*/4\)</span>，时间以 <span class="arithmatex">\(\omega_p^{-1}\)</span> 归一化。获得这个包络方程所用的方法，将在后面讨论二维波时给出。为继续求解，可把场写成振幅与相位因子的乘积 <span class="arithmatex">\(\epsilon=r\exp(i\theta)\)</span>。关于缓变包络近似的各种表示为何等价，见附录 A。</p>
+<p>分别令实部和虚部相等，得到振幅和相位的两个耦合方程。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\dot r&amp;=\kappa\cos\theta,\\
+r\dot\theta&amp;=-\kappa\sin\theta+\delta r+\frac{3r^3}{16}.
+\end{aligned}
+\tag{4.68}
+\]</div>
+<p><span class="arithmatex">\(\dot\theta\)</span> 方程中的末项可看作非线性频移，给出的有效波频率为</p>
+<div class="arithmatex">\[
+\omega'_p=\omega_p\left(1-\frac{3r^2}{16}\right).
+\]</div>
+<p>这些方程可以积分（见习题 6），并写成势能形式（McKinstrie 和 Forslund，1986）。</p>
+<div class="arithmatex">\[
+\left(\frac{\partial r}{\partial t}\right)^2
++r^2\left(\frac{3r^2}{64}+\frac{\delta}{2}\right)^2=\kappa^2.
+\]</div>
+<p>等离子体波振幅在 <span class="arithmatex">\(\dot r=0\)</span> 时达到最大值，即发生饱和，余下一个三次方程。</p>
+<div class="arithmatex">\[
+\frac{3r^3}{16}+2\delta r-4\kappa=0.
+\tag{4.69}
+\]</div>
+<p>当频率完全匹配（<span class="arithmatex">\(\delta=0\)</span>）时，式 (4.69) 预测的最大振幅为</p>
+<div class="arithmatex">\[
+|\epsilon|_{\mathrm{sat}}
+=\left(\frac{64\kappa}{3}\right)^{1/3}
+=\left(\frac{16a_0a_1}{3}\right)^{1/3}.
+\tag{4.70}
+\]</div>
+<p>这是由相对论失谐导致等离子体波饱和的标准结果，最初由 Rosenbluth 和 Liu（1972）导出。达到这个振幅后，等离子体波的振幅又在驱动作用下降低，形成周期为 <span class="arithmatex">\(\tau_r\simeq17(a_0a_1)^{-2/3}\)</span> 的振荡解（Karttunen 和 Salomaa，1989），见图 4.8。</p>
+<p><strong>图 4.8　不同频率失配下拍波振幅的演化。</strong> 横轴为 <span class="arithmatex">\(\omega_pt\)</span>，纵轴为振幅 <span class="arithmatex">\(|\epsilon|\)</span>。各曲线对应 <span class="arithmatex">\(\delta=0,-0.022,-0.04,+0.02\)</span>，水平虚线标出 <span class="arithmatex">\(|\epsilon|_{\mathrm{sat}}\)</span>。</p>
+<p>值得注意的是，如果用略低于等离子体频率的拍频（<span class="arithmatex">\(\delta&lt;0\)</span>）补偿非线性频移，实际上可以超过相对论饱和振幅。事实上，由式 (4.69) 可以证明（Tang 等，1985），最佳失谐为</p>
+<div class="arithmatex">\[
+\delta=-\frac12\left(\frac{9a_0a_1}{8}\right)^{2/3},
+\]</div>
+<p>对应的饱和振幅为</p>
+<div class="arithmatex">\[
+|\epsilon|_{\max}=4\left(\frac{a_0a_1}{3}\right)^{1/3}.
+\]</div>
+<p>实际中，这些参数无法选得如此精确，尤其是因为线性失谐参数对背景等离子体密度敏感，而密度很难维持在上述公式要求的百分之几的范围内。不过，现代短脉冲激光器提供了重新研究拍波加速方案的机会，其泵浦强度大大高于 1980 年代中期所能达到的水平。事实上，在光导引和相速度控制方面，拍波加速甚至可能比尾场方案有一定优势（Esarey 等，1988；Gibbon 和 Bell，1988）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
